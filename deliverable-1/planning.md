@@ -75,10 +75,18 @@ Describe the different roles on the team and the responsibilities associated wit
  * Roles should reflect the structure of your team and be appropriate for your project. Not necessarily one role to one team member.  
  * Add role(s) to your Team-[Team_Number]-[Team_Name].csv file on the main folder
 
+### Role list:
+Frontend Developer (React components)\
+Frontend Developer (User interface/experience)\
+Backend Developer (Database manager/designer)\
+Backend Developer (Server-side programming)\
+Coordinator (To handle biweekly meetings with partner)\
+
 List each team member and:
  * A description of their role(s) and responsibilities including the components they'll work on and non-software related work
  * 3 technical strengths and weaknesses each (e.g. languages, frameworks, libraries, development methodologies, etc.)
 
+ Rebecca: Responsibility will be working on database design/management as a backend developer. 3 technical strengths are databases (and database design), Python and JavaScript. 3 technical weaknesses are frontend work (React),  mobile development (more specifically iOS) and responsive web development.
 
 #### Q7: What operational events will you have as a team?
 
