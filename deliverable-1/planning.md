@@ -1,4 +1,4 @@
-# YOUR PRODUCT/TEAM NAME
+# Cello Exercise Index
 > _Note:_ This document is meant to evolve throughout the planning phase of your project.   That is, it makes sense for you commit regularly to this file while working on the project (especially edits/additions/deletions to the _Highlights_ section). Most importantly, it is a reflection of all the planning you work you've done in the first iteration. 
  > **This document will serve as a master plan between your team, your partner and your TA.**
 
@@ -18,12 +18,25 @@
    For example: This is not the time or the place to talk about which programming language and/or framework you are planning to use.
  * **Feel free (and very much encouraged) to include useful diagrams, mock-ups and/or links**.
 
+:memo: **Draft** :memo:
+
+One main problem that cellists have encountered for a long time is wasting time and money on finding great resources for practicing cello. For instance, students need to find good cello teachers for having 1-on-1 lessons while teachers have difficulty in finding the teaching materials. 
+
+To solve this inconvenient situation, we are planning to create an website called, **“Cello Exercise Index”**, in which anyone who plays cello can easily find exercises that are suitable for their levels and interests. 
+
+[**Check Our Mock up!**](https://www.figma.com/file/BcjEF5YitgXXXUJx7p4tHs/CSC301-Cello-Index-Website?node-id=0%3A1)
+
+------------------------------------------------------
 
 #### Q2: Who are your target users?
 
   > Short (1 - 2 min' read max)
  * Be specific (e.g. a 'a third-year university student studying Computer Science' and not 'a student')
  * **Feel free to use personas. You can create your personas as part of this Markdown file, or add a link to an external site (for example, [Xtensio](https://xtensio.com/user-persona/)).**
+
+:memo: **Draft** :memo:
+
+------------------------------------------------------
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
@@ -36,6 +49,10 @@
     * Does this application exist in another form? If so, how does your differ and provide value to the users?
     * How does this align with your partner's organization's values/mission/mandate?
 
+:memo: **Draft** :memo:
+
+------------------------------------------------------
+
 #### Q4: How will you build it?
 
 > Short (1-2 min' read max)
@@ -45,12 +62,17 @@
  * Will you be using third party applications or APIs? If so, what are they?
  * What is your testing strategy?
 
+:memo: **Draft** :memo:
+
+------------------------------------------------------
+
 #### Q5: What are the user stories that make up the MVP?
 
  * At least 5 user stories concerning the main features of the application - note that this can broken down further
  * You must follow proper user story format (as taught in lecture) ```As a <user of the app>, I want to <do something in the app> in order to <accomplish some goal>```
  * User stories must contain acceptance criteria. Examples of user stories with different formats can be found here: https://www.justinmind.com/blog/user-story-examples/. **It is important that you provide a link to an artifact containing your user stories**.
  * If you have a partner, these must be reviewed and accepted by them. You need to include the evidence of partner approval (e.g., screenshot from email) or at least communication to the partner (e.g., email you sent)
+:memo: **Draft** :memo:
 
 ----
 ## Intellectual Property Confidentiality Agreement 
@@ -65,6 +87,12 @@
 
 **Briefly describe which option you have agreed to. Your partner cannot ask you to sign any legally binding agreements or documents pertaining to non-disclosure, confidentiality, IP ownership, etc.**
 
+
+:memo: **Answer** :memo:
+
+Our team and partner have agreed to the first option: **_"You can share the software and the code freely with anyone with or without a license, regardless of domain, for any use"_**.
+
+
 ----
 
 ## Process Details
@@ -75,18 +103,27 @@ Describe the different roles on the team and the responsibilities associated wit
  * Roles should reflect the structure of your team and be appropriate for your project. Not necessarily one role to one team member.  
  * Add role(s) to your Team-[Team_Number]-[Team_Name].csv file on the main folder
 
-### Role list:
-Frontend Developer (React components)\
-Frontend Developer (User interface/experience)\
-Backend Developer (Database manager/designer)\
-Backend Developer (Server-side programming)\
-Coordinator (To handle biweekly meetings with partner)\
+### Role List
+- Frontend Developer (React components)
+- Frontend Developer (User interface/experience)
+- Backend Developer (Database manager/designer)
+- Backend Developer (Server-side programming)
+- Coordinator (To handle biweekly meetings with partner)
 
 List each team member and:
  * A description of their role(s) and responsibilities including the components they'll work on and non-software related work
  * 3 technical strengths and weaknesses each (e.g. languages, frameworks, libraries, development methodologies, etc.)
 
- Rebecca: Responsibility will be working on database design/management as a backend developer. 3 technical strengths are databases (and database design), Python and JavaScript. 3 technical weaknesses are frontend work (React),  mobile development (more specifically iOS) and responsive web development.
+| Member | Role(s) | 3 technical strengths | 3 technical weaknesses |
+| ------------- | ------------- | ------------- | ------------- |
+| Rebecca   | Backend Developer (database design/management)     |  <ul><li>database & database design</li> <li>Python</li> <li>Javascript</li></ul>  |  <ul><li>Frontend (React)</li> <li>Mobile Development</li> <li>Responsive Web Development</li></ul> |
+| Rachel  | <ul><li>Backend Developer (database design, server-side)</li><li>Coordinator</li><ul>     |  <ul><li>Python</li> <li>React</li> <li>Mobile Development (React Native, Android)</li></ul>  | <ul><li>Django</li> <li>CSS</li> <li>Cloud Services</li></ul> |
+| Eren   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
+| Franklin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
+| Benjamin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
+| Mark   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
+| Alan   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
+
 
 #### Q7: What operational events will you have as a team?
 
@@ -120,6 +157,7 @@ Describe your team's working culture.
  * What is the expected frequency? What methods/channels are appropriate? 
  * If you have a partner project, what is your process (in detail) for communicating with your partner?
 
+:memo: **Answer** :memo:
 
 Discord is used for text discussion and weekly voice chat meetings. Meetings between all members are expected to be weekly. Text discussion is held between meeting times whenever it is needed to discuss a topic. A Discord webhook is set to Discord to notify members when an action is done on Github, so team members can check and discuss commits/pull requests in Discord as well.
 
@@ -128,6 +166,8 @@ Communication with our partner is done through email. A meeting is held on Zoom 
 **Meetings:**
  * How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
 
+:memo: **Answer** :memo:
+ 
 Currently, we are running on an honor system - if someone says they are going to do something, they are expected to do it. However, if someone ends up missing meetings and not completing action items for no valid reason, someone from our group will send them a message inquiring about it. If it keeps happening for no valid reason, conversation will happen with the TA.
 
 ----
@@ -144,6 +184,8 @@ and/or collaborative process.
  * Essentially, we want to understand how (and why) you ended up with your current product and process plan.
  * This section is useful for important information regarding your decision making process that may not necessarily fit in other sections. 
 
+:memo: **Answer** :memo:
+ 
 1) While figuring out our tech stack, we were deciding between Node (with Express) and Django for our backend, since those were the two that those on our team had some experience on. For Node, we thought that it would be easier to work with since our front end is React. For Django, we thought it would be a good choice since multiple of our members are taking CSC309 and would thus acquire more in depth experience with Django than React through university projects. We ended up going with Django as it made more sense to go with the option that more people in our team will eventually be comfortable using.
 2) We had multiple discussions on whether or not we should embed a PDF for each exercise into their respective exercise page. The for argument, was that it would help students be able to easily access their exercise from the page without any hassle. The against argument was that it would be too difficult to get all the exercise pages (since we would have to do it manually, and all of them may not even exist on the internet) and we may also run into copyright issues. We decided in the end to not embed a pdf, however to have a link to the book on IMSLP (to freely download it) or where they can purchase the book. This will help users be able to quickly find the book they need, without our team running into copyright issues and manually looking for the pages online.
 3) Another decision we made was where we should hold our conversations. Several options that came up but the larger ones were Microsoft Teams and Discord. For Teams, that would be good since it is directly connected to our university accounts and we would also be able to schedule meetings with delivered notifications to our university email. For Discord, we would be able to create a Github to Discord webhook to easily notify members about actions on Github, and we could split the channels for better organization. As well, a lot of our team members frequently use Discord so it would be more checked than Microsoft Teams would. Discord ended up being the better option, as we would be able to easily pin tasks that needed to be done which would ease the task delegation process to each member, and have a Github to Discord webhook to notify team members of Github activity.
