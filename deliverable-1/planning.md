@@ -51,6 +51,12 @@ To solve this inconvenient situation, we are planning to create an website calle
 
 :memo: **Draft** :memo:
 
+Currently, there are many books containing valuable technical exercises for the Cello, but discovering and navigating through them is difficult and cumbersome. Performers, students and teachers of an instrument know what technical skills they or their student has a lack of ability in, and technical books are an asset that can help improve their skills. As the website will contain a collection of Cello technical books and their corresponding exercises, which will have tags such as “trills” or “scales”, etc. and page numbers associated with each exercise, cellists will be able to filter and search for specific types of exercises quickly.
+
+For Cello students, having the ability to discover exercise books conveniently from online means that they do not have to access a Cello teacher in order to know what exercise books to get, saving them money. For Cello teachers, if a student is struggling with a technical skill on the Cello and they are looking for exercise books to complement their teaching, teachers will be able to quickly find an exercise book for that skill.
+
+https://imslp.org/ is a large digital music library containing public domain music scores, works and recordings. It allows users to view a list of only Cello exercise books but navigating to this page is not very clear and confusing. It also does not allow users to filter the list of books into specific types of exercises. The way our website will differ and bring value that imslp does not, is to have a simple and easily navigable UI, and a detailed filtering system to fit each Cellists’ needs.
+
 ------------------------------------------------------
 
 #### Q4: How will you build it?
@@ -147,6 +153,12 @@ List/describe the artifacts you will produce in order to organize your team.
    * **How do you prioritize tasks?**
    * How do tasks get assigned to team members?
    * How do you determine the status of work from inception to completion?
+ 
+For every meeting we have with ourselves, or with the partner, in order to document our discussions, we will create a meeting document, where a designated note taker will take notes during the meeting. We will try to have a checklist of what items we should talk about in the meeting document before going into the meeting so that our time can be used productively. 
+ 
+In terms of organizing tasks, we will use Trello. In the Trello board, we will create task items and distribute them into 3 columns (lists): “To-do”, “In-Progress” and “Completed” to track the progress of the tasks (from inception to conception). We will most likely organize the project into sprints, in which tasks will be prioritized by what needs to be finished in the current sprint or by deadlines in the course. In general, items that depend on the backend team to complete for the frontend team to progress and vice versa should be prioritized so that we minimize the time that people may be blocked in impacting the website. 
+
+In terms of assigning tasks, for every sprint, we will designate a meeting time for sprint planning where we talk about the items we should complete for the current sprint, and assign tasks equally to every team member.
 
 #### Q9: What are the rules regarding how your team works?
 
