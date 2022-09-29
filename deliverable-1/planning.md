@@ -148,7 +148,9 @@ We will have weekly team meetings on zoom. The meeting time varies depending on 
 We have had 2 meetings with the project partner and we have discussed the outline of this project, presented the user stories and design mockups. We also discussed some details on how the provided data should be managed and organized. After the first meeting, we learned what our partner wants and how the data works. After the second meeting, we have the user stories and design mockups approved with some feedbacks for improvement. 
  
 Meeting minutes:
+ 
 Week of Sep 19: about 45 minutes
+ 
 Week of Sep 26: about 30 minutes
  
 Our regular meeting schedule is on Thursday mornings at 11:00 a.m.
