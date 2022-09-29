@@ -142,6 +142,16 @@ Describe meetings (and other events) you are planning to have.
    * What were the outcomes of each meeting?
    * You must keep track of meeting minutes and add them to your repo.
    * You must have a regular meeting schedule established by the second meeting.  
+ 
+We will have weekly team meetings on zoom. The meeting time varies depending on everyone's availability. We try to plan meetings when most members are able to attend, and leave notes for those who cannot make it. In each meeting, we want to update everyone with the information from the project partner and address any questions. Then, each team can report their progress and discuss any concerns or difficulties they encounter. 
+ 
+We have had 2 meetings with the project partner and we have discussed the outline of this project, presented the user stories and design mockups. We also discussed some details on how the provided data should be managed and organized. After the first meeting, we learned what our partner wants and how the data works. After the second meeting, we have the user stories and design mockups approved with some feedbacks for improvement. 
+ 
+Meeting minutes:
+Week of Sep 19: about 45 minutes
+Week of Sep 26: about 30 minutes
+ 
+Our regular meeting schedule is on Thursday mornings at 11:00 a.m.
   
 #### Q8: What artifacts will you use to self-organize?
 
