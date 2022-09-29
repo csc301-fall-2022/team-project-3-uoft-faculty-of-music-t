@@ -149,9 +149,8 @@ We have had 2 meetings with the project partner and we have discussed the outlin
  
 Meeting minutes:
  
-Week of Sep 19: about 45 minutes
- 
-Week of Sep 26: about 30 minutes
+* Week of Sep 19: about 45 minutes
+* Week of Sep 26: about 30 minutes
  
 Our regular meeting schedule is on Thursday mornings at 11:00 a.m.
   
