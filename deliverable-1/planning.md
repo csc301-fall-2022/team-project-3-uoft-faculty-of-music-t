@@ -127,7 +127,7 @@ List each team member and:
 | Eren   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
 | Franklin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
 | Benjamin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
-| Mark   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
+| Mark   | Frontend Developer |  <ul><li>Python</li> <li>Java</li> <li>Data persistence</li></ul>  | <ul><li>Mobile Development</li> <li>C</li> <li>Backend</li></ul> |
 | Alan   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
 
 
