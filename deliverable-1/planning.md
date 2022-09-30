@@ -143,9 +143,9 @@ Describe meetings (and other events) you are planning to have.
    * You must keep track of meeting minutes and add them to your repo.
    * You must have a regular meeting schedule established by the second meeting.  
  
-We will have weekly team meetings on zoom. The meeting time varies depending on everyone's availability. We try to plan meetings when most members are able to attend, and leave notes for those who cannot make it. In each meeting, we want to update everyone with the information from the project partner and address any questions. Then, each team can report their progress and discuss any concerns or difficulties they encounter. 
+We will have weekly team meetings on zoom on Saturdays. The regular meeting will start at 1:00 p.m. We try to plan meetings when most members are able to attend, and leave notes for those who cannot make it. In each meeting, we want to update everyone with the information from the project partner and address any questions. Then, each team can report their progress and discuss any concerns or difficulties they encounter. We can set expectations and make accommodations if needed.
  
-We have had 2 meetings with the project partner and we have discussed the outline of this project, presented the user stories and design mockups. We also discussed some details on how the provided data should be managed and organized. After the first meeting, we learned what our partner wants and how the data works. After the second meeting, we have the user stories and design mockups approved with some feedbacks for improvement. 
+We have had 2 meetings with the project partner. We have discussed the outline of this project and presented the user stories and design mockups. We also discussed details on how the provided data should be managed and organized. After the first meeting, we learned what our partner wants and how the data works. After the second meeting, we have the user stories and design mockups approved with some feedbacks for further improvement. 
  
 Meeting minutes:
  
