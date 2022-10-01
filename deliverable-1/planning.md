@@ -36,10 +36,7 @@ To solve this inconvenient situation, we are planning to create an website calle
 
 :memo: **Draft** :memo:
 
-Our main target users are independent students who are looking for exercises. Many of the independent/self-taught students do not possess exercise books, therefore they look up exercises online. Our website will guide them to find the right exercise easily. These students can be beginners to advanced players; our database has exercises for every player of level.
-
-Our secondary target users are teachers (especially ones that work online). By using this website, teachers could provide their students with many exercises via online.
-
+Our main target users are cello teachers and self-motivated cello students. Cello students who are serious about improving their technical skills on the cello and are looking for cello exercises to play through will find our website beneficial. These students can be beginners to advanced players; our database has exercises for every level of playing. Cello teachers, more likely teachers earlier in their career of teaching, who are looking to provide and recommend new cello technical books to students to complement and enhance their lessons will also find our website to be valuable and serve this need well.
 
 ------------------------------------------------------
 
@@ -58,7 +55,7 @@ Our secondary target users are teachers (especially ones that work online). By u
 
 Currently, there are many books containing valuable technical exercises for the Cello, but discovering and navigating through them is difficult and cumbersome. Performers, students and teachers of an instrument know what technical skills they or their student has a lack of ability in, and technical books are an asset that can help improve their skills. As the website will contain a collection of Cello technical books and their corresponding exercises, which will have tags such as “trills” or “scales”, etc. and page numbers associated with each exercise, cellists will be able to filter and search for specific types of exercises quickly.
 
-For Cello students, having the ability to discover exercise books conveniently from online means that they do not have to access a Cello teacher in order to know what exercise books to get, saving them money. For Cello teachers, if a student is struggling with a technical skill on the Cello and they are looking for exercise books to complement their teaching, teachers will be able to quickly find an exercise book for that skill.
+For self-motivated Cello students, having the ability to discover exercise books conveniently from online means that they do not have to access a Cello teacher in order to know what exercise books to get, saving them money. Even if they do have teachers, they will always be able to find new resources quickly and easily if they are looking for more ways to improve their playing. For Cello teachers, if a student is struggling with a technical skill on the Cello and they are looking for exercise books to complement their teaching, teachers will be able to quickly find an exercise book for that skill.
 
 https://imslp.org/ is a large digital music library containing public domain music scores, works and recordings. It allows users to view a list of only Cello exercise books but navigating to this page is not very clear and confusing. It also does not allow users to filter the list of books into specific types of exercises. The way our website will differ and bring value that imslp does not, is to have a simple and easily navigable UI, and a detailed filtering system to fit each Cellists’ needs.
 
