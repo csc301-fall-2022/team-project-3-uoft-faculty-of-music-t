@@ -36,6 +36,11 @@ To solve this inconvenient situation, we are planning to create an website calle
 
 :memo: **Draft** :memo:
 
+Our main target users are independent students who are looking for exercises. Many of the independent/self-taught students do not possess exercise books, therefore they look up exercises online. Our website will guide them to find the right exercise easily. These students can be beginners to advanced players; our database has exercises for every player of level.
+
+Our secondary target users are teachers (especially ones that work online). By using this website, teachers could be able to monitor their student’s progress, and provide their students with many exercises via online.
+
+
 ------------------------------------------------------
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
@@ -124,7 +129,7 @@ List each team member and:
 | ------------- | ------------- | ------------- | ------------- |
 | Rebecca   | Backend Developer (database design/management)     |  <ul><li>database & database design</li> <li>Python</li> <li>Javascript</li></ul>  |  <ul><li>Frontend (React)</li> <li>Mobile Development</li> <li>Responsive Web Development</li></ul> |
 | Rachel  | <ul><li>Backend Developer (database design, server-side)</li><li>Coordinator</li><ul>     |  <ul><li>Python</li> <li>React</li> <li>Mobile Development (React Native, Android)</li></ul>  | <ul><li>Django</li> <li>CSS</li> <li>Cloud Services</li></ul> |
-| Eren   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
+| Eren   | Backend Developer (Database manager/designer) |  <ul><li>SQL </li> <li>Python (Psycopg for database)</li> <li>Java/C++</li></ul>  | <ul><li>Django</li> <li>React</li> <li>Web Development</li></ul> |
 | Franklin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
 | Benjamin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
 | Mark   | Frontend Developer |  <ul><li>Python</li> <li>Java</li> <li>Data persistence</li></ul>  | <ul><li>Mobile Development</li> <li>C</li> <li>Backend</li></ul> |
