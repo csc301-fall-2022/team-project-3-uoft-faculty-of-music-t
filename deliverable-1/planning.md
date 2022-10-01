@@ -138,7 +138,7 @@ List each team member and:
 | Rebecca   | Backend Developer (database design/management)     |  <ul><li>database & database design</li> <li>Python</li> <li>Javascript</li></ul>  |  <ul><li>Frontend (React)</li> <li>Mobile Development</li> <li>Responsive Web Development</li></ul> |
 | Rachel  | <ul><li>Backend Developer (database design, server-side)</li><li>Coordinator</li><ul>     |  <ul><li>Python</li> <li>React</li> <li>Mobile Development (React Native, Android)</li></ul>  | <ul><li>Django</li> <li>CSS</li> <li>Cloud Services</li></ul> |
 | Eren   | Backend Developer (Database manager/designer) |  <ul><li>SQL </li> <li>Python (Psycopg for database)</li> <li>Java/C++</li></ul>  | <ul><li>Django</li> <li>React</li> <li>Web Development</li></ul> |
-| Franklin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
+| Franklin   | Frontend Developer |  <ul><li>Python</li> <li>HTML+CSS</li> <li>Java</li></ul>  | <ul><li>React</li> <li>Javascript</li> <li>Cloud</li></ul> |
 | Benjamin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
 | Mark   | Frontend Developer |  <ul><li>Python</li> <li>Java</li> <li>Data persistence</li></ul>  | <ul><li>Mobile Development</li> <li>C</li> <li>Backend</li></ul> |
 | JUNSEO   | Frontend Developer (React components and UI) |  <ul><li>React</li> <li>Python</li> <li>Javascript</li></ul>  | <ul><li>Django</li> <li>Database Design</li> <li>C</li></ul> |
