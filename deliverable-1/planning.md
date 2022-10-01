@@ -38,7 +38,7 @@ To solve this inconvenient situation, we are planning to create an website calle
 
 Our main target users are independent students who are looking for exercises. Many of the independent/self-taught students do not possess exercise books, therefore they look up exercises online. Our website will guide them to find the right exercise easily. These students can be beginners to advanced players; our database has exercises for every player of level.
 
-Our secondary target users are teachers (especially ones that work online). By using this website, teachers could be able to monitor their student’s progress, and provide their students with many exercises via online.
+Our secondary target users are teachers (especially ones that work online). By using this website, teachers could provide their students with many exercises via online.
 
 
 ------------------------------------------------------
