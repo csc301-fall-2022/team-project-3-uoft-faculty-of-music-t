@@ -128,7 +128,7 @@ List each team member and:
 | Franklin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
 | Benjamin   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
 | Mark   | Frontend Developer |  <ul><li>Python</li> <li>Java</li> <li>Data persistence</li></ul>  | <ul><li>Mobile Development</li> <li>C</li> <li>Backend</li></ul> |
-| Alan   | .. |  <ul><li>..</li> <li>..</li> <li>..</li></ul>  | <ul><li>..</li> <li>..</li> <li>..</li></ul> |
+| JUNSEO   | Frontend Developer (React components and UI) |  <ul><li>React</li> <li>Python</li> <li>Javascript</li></ul>  | <ul><li>Django</li> <li>Database Design</li> <li>C</li></ul> |
 
 
 #### Q7: What operational events will you have as a team?
