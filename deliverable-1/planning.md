@@ -46,11 +46,8 @@ https://imslp.org/ is a large digital music library containing public domain mus
 
 #### Q5: What are the user stories that make up the MVP?
 
- * At least 5 user stories concerning the main features of the application - note that this can broken down further
- * You must follow proper user story format (as taught in lecture) ```As a <user of the app>, I want to <do something in the app> in order to <accomplish some goal>```
- * User stories must contain acceptance criteria. Examples of user stories with different formats can be found here: https://www.justinmind.com/blog/user-story-examples/. **It is important that you provide a link to an artifact containing your user stories**.
- * If you have a partner, these must be reviewed and accepted by them. You need to include the evidence of partner approval (e.g., screenshot from email) or at least communication to the partner (e.g., email you sent)
-:memo: **Draft** :memo:
+:bangbang: **Proof that the partner has agreed with our user stories** can be found in the deliverable-1 folder. 
+
 
 |User Story| Acceptance Criteria|
 | -------- | ------------------ |
@@ -62,17 +59,13 @@ https://imslp.org/ is a large digital music library containing public domain mus
 
 ----
 ## Intellectual Property Confidentiality Agreement 
-> Note this section is **not marked** but must be completed briefly if you have a partner. If you have any questions, please ask on Piazza.
->  
+
 **By default, you own any work that you do as part of your coursework.** However, some partners may want you to keep the project confidential after the course is complete. As part of your first deliverable, you should discuss and agree upon an option with your partner. Examples include:
 1. You can share the software and the code freely with anyone with or without a license, regardless of domain, for any use.
 2. You can upload the code to GitHub or other similar publicly available domains.
 3. You will only share the code under an open-source license with the partner but agree to not distribute it in any way to any other entity or individual. 
 4. You will share the code under an open-source license and distribute it as you wish but only the partner can access the system deployed during the course.
 5. You will only reference the work you did in your resume, interviews, etc. You agree to not share the code or software in any capacity with anyone unless your partner has agreed to it.
-
-**Briefly describe which option you have agreed to. Your partner cannot ask you to sign any legally binding agreements or documents pertaining to non-disclosure, confidentiality, IP ownership, etc.**
-
 
 :memo: **Answer** :memo:
 
@@ -85,11 +78,7 @@ Our team and partner have agreed to the first option: **_"You can share the soft
 
 #### Q6: What are the roles & responsibilities on the team?
 
-Describe the different roles on the team and the responsibilities associated with each role. 
- * Roles should reflect the structure of your team and be appropriate for your project. Not necessarily one role to one team member.  
- * Add role(s) to your Team-[Team_Number]-[Team_Name].csv file on the main folder
-
-### Role List
+### List of Role (Responsibility)
 - Frontend Developer (React components)
 - Frontend Developer (User interface/experience)
 - Backend Developer (Database manager/designer)
@@ -100,16 +89,17 @@ List each team member and:
  * A description of their role(s) and responsibilities including the components they'll work on and non-software related work
  * 3 technical strengths and weaknesses each (e.g. languages, frameworks, libraries, development methodologies, etc.)
 
-| Member | Role(s) | 3 technical strengths | 3 technical weaknesses |
+| Member | Role(s) & Responsibilities | 3 technical strengths | 3 technical weaknesses |
 | ------------- | ------------- | ------------- | ------------- |
-| Rebecca   | Backend Developer (database design/management)     |  <ul><li>database & database design</li> <li>Python</li> <li>Javascript</li></ul>  |  <ul><li>Frontend (React)</li> <li>Mobile Development</li> <li>Responsive Web Development</li></ul> |
-| Rachel  | <ul><li>Backend Developer (database design, server-side)</li><li>Coordinator</li><ul>     |  <ul><li>Python</li> <li>React</li> <li>Mobile Development (React Native, Android)</li></ul>  | <ul><li>Django</li> <li>CSS</li> <li>Cloud Services</li></ul> |
-| Eren   | Backend Developer (Database manager/designer) |  <ul><li>SQL </li> <li>Python (Psycopg for database)</li> <li>Java/C++</li></ul>  | <ul><li>Django</li> <li>React</li> <li>Web Development</li></ul> |
-| Franklin   | Frontend Developer |  <ul><li>Python</li> <li>HTML+CSS</li> <li>Java</li></ul>  | <ul><li>React</li> <li>Javascript</li> <li>Cloud</li></ul> |
-| Benjamin   | Backend Developer |  <ul><li>JavaScript, HTML, CSS</li><li>Responsive Web design (Bootstrap, flexbox, media query)</li> <li>Python syntax</li> </ul>  | <ul><li>React</li> <li>Django</li> <li>Databases</li></ul> |
-| Mark   | Frontend Developer |  <ul><li>Python</li> <li>Java</li> <li>Data persistence</li></ul>  | <ul><li>Mobile Development</li> <li>C</li> <li>Backend</li></ul> |
-| JUNSEO   | Frontend Developer (React components and UI) |  <ul><li>React</li> <li>Python</li> <li>Javascript</li></ul>  | <ul><li>Django</li> <li>Database Design</li> <li>C</li></ul> |
-
+| Rebecca Nhan   | Backend Developer (database design/management)     |  <ul><li>database & database design</li> <li>Python</li> <li>Javascript</li></ul>  |  <ul><li>Frontend (React)</li> <li>Mobile Development</li> <li>Responsive Web Development</li></ul> |
+| Eunchae (Rachel) Seong | Backend Developer (database design, server-side) & Coordinator    |  <ul><li>Python</li> <li>React</li> <li>Mobile Development (React Native, Android)</li></ul>  | <ul><li>Django</li> <li>CSS</li> <li>Cloud Services</li></ul> |
+| Eren Findik  | Backend Developer (Database manager/designer) |  <ul><li>SQL </li> <li>Python (Psycopg for database)</li> <li>Java/C++</li></ul>  | <ul><li>Django</li> <li>React</li> <li>Web Development</li></ul> |
+| Franklin Yeung | Frontend Developer |  <ul><li>Python</li> <li>HTML+CSS</li> <li>Java</li></ul>  | <ul><li>React</li> <li>Javascript</li> <li>Cloud</li></ul> |
+| Benjamin Lee  | Backend Developer |  <ul><li>JavaScript, HTML, CSS</li><li>Responsive Web design (Bootstrap, flexbox, media query)</li> <li>Python syntax</li> </ul>  | <ul><li>React</li> <li>Django</li> <li>Databases</li></ul> |
+| Mark Hu  | Frontend Developer |  <ul><li>Python</li> <li>Java</li> <li>Data persistence</li></ul>  | <ul><li>Mobile Development</li> <li>C</li> <li>Backend</li></ul> |
+| Junseo Moon | Frontend Developer (React components and UI) |  <ul><li>React</li> <li>Python</li> <li>Javascript</li></ul>  | <ul><li>Django</li> <li>Database Design</li> <li>C</li></ul> |
+ 
+------------------------------------------------------
 
 #### Q7: What operational events will you have as a team?
 
@@ -124,6 +114,8 @@ We have had 2 meetings with the project partner on Zoom. We have discussed the o
  
 Our regular meeting schedule is on Thursday mornings at 11:00 a.m.
   
+------------------------------------------------------
+ 
 #### Q8: What artifacts will you use to self-organize?
 
 For every meeting we have with ourselves, or with the partner, in order to document our discussions, we will create a meeting document, where a designated note taker will take notes during the meeting. We will try to have a checklist of what items we should talk about in the meeting document before going into the meeting so that our time can be used productively. 
@@ -132,44 +124,23 @@ In terms of organizing tasks, we will use Trello. In the Trello board, we will c
 
 In terms of assigning tasks, for every sprint, we will designate a meeting time for sprint planning where we talk about the items we should complete for the current sprint, and assign tasks equally to every team member.
 
+ ------------------------------------------------------
+ 
 #### Q9: What are the rules regarding how your team works?
-
-Describe your team's working culture.
 
 **Communications:**
 
- * What is the expected frequency? What methods/channels are appropriate? 
- * If you have a partner project, what is your process (in detail) for communicating with your partner?
-
-:memo: **Answer** :memo:
-
-Discord is used for text discussion and weekly voice chat meetings. Meetings between all members are expected to be weekly. Text discussion is held between meeting times whenever it is needed to discuss a topic. A Discord webhook is set to Discord to notify members when an action is done on Github, so team members can check and discuss commits/pull requests in Discord as well.
+ Discord is used for text discussion and weekly voice chat meetings. Meetings between all members are expected to be weekly. Text discussion is held between meeting times whenever it is needed to discuss a topic. A Discord webhook is set to Discord to notify members when an action is done on Github, so team members can check and discuss commits/pull requests in Discord as well.
 
 Communication with our partner is done through email. A meeting is held on Zoom between Alan, Rachel, Mark and our partner every other Thursday.
 
 **Meetings:**
- * How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
 
-:memo: **Answer** :memo:
- 
-Currently, we are running on an honor system - if someone says they are going to do something, they are expected to do it. However, if someone ends up missing meetings and not completing action items for no valid reason, someone from our group will send them a message inquiring about it. If it keeps happening for no valid reason, conversation will happen with the TA.
+ Currently, we are running on an honor system - if someone says they are going to do something, they are expected to do it. However, if someone ends up missing meetings and not completing action items for no valid reason, someone from our group will send them a message inquiring about it. If it keeps happening for no valid reason, conversation will happen with the TA.
 
 ----
 ## Highlights
 
-Specify 3 - 5 key decisions and/or insights that came up during your meetings
-and/or collaborative process.
-
- * Short (5 min' read max)
- * Decisions can be related to the product and/or the team process.
-    * Mention which alternatives you were considering.
-    * Present the arguments for each alternative.
-    * Explain why the option you decided on makes the most sense for your team/product/users.
- * Essentially, we want to understand how (and why) you ended up with your current product and process plan.
- * This section is useful for important information regarding your decision making process that may not necessarily fit in other sections. 
-
-:memo: **Answer** :memo:
- 
 1) While figuring out our tech stack, we were deciding between Node (with Express) and Django for our backend, since those were the two that those on our team had some experience on. For Node, we thought that it would be easier to work with since our front end is React. For Django, we thought it would be a good choice since multiple of our members are taking CSC309 and would thus acquire more in depth experience with Django than React through university projects. We ended up going with Django as it made more sense to go with the option that more people in our team will eventually be comfortable using.
 2) We had multiple discussions on whether or not we should embed a PDF for each exercise into their respective exercise page. The for argument, was that it would help students be able to easily access their exercise from the page without any hassle. The against argument was that it would be too difficult to get all the exercise pages (since we would have to do it manually, and all of them may not even exist on the internet) and we may also run into copyright issues. We decided in the end to not embed a pdf, however to have a link to the book on IMSLP (to freely download it) or where they can purchase the book. This will help users be able to quickly find the book they need, without our team running into copyright issues and manually looking for the pages online.
 3) Another decision we made was where we should hold our conversations. Several options that came up but the larger ones were Microsoft Teams and Discord. For Teams, that would be good since it is directly connected to our university accounts and we would also be able to schedule meetings with delivered notifications to our university email. For Discord, we would be able to create a Github to Discord webhook to easily notify members about actions on Github, and we could split the channels for better organization. As well, a lot of our team members frequently use Discord so it would be more checked than Microsoft Teams would. Discord ended up being the better option, as we would be able to easily pin tasks that needed to be done which would ease the task delegation process to each member, and have a Github to Discord webhook to notify team members of Github activity.
