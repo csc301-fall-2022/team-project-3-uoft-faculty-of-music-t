@@ -6,52 +6,22 @@
  
 #### Q1: What are you planning to build?
 
- > Short (1 - 2 min' read)
- * Start with a single sentence, high-level description of the product.
- * Be clear - Describe the problem you are solving in simple terms.
- * Be concrete. For example:
-    * What are you planning to build? Is it a website, mobile app,
-   browser extension, command-line app, etc.?      
-    * When describing the problem/need, give concrete examples of common use cases.
-    * Assume your the reader knows nothing about the problem domain and provide the necessary context. 
- * Focus on *what* your product does, and avoid discussing *how* you're going to implement it.      
-   For example: This is not the time or the place to talk about which programming language and/or framework you are planning to use.
- * **Feel free (and very much encouraged) to include useful diagrams, mock-ups and/or links**.
-
-:memo: **Draft** :memo:
-
 One main problem that cellists have encountered for a long time is wasting time and money on finding great resources for practicing cello. For instance, students need to find good cello teachers for having 1-on-1 lessons while teachers have difficulty in finding the teaching materials. 
 
 To solve this inconvenient situation, we are planning to create an website called, **“Cello Exercise Index”**, in which anyone who plays cello can easily find exercises that are suitable for their levels and interests. 
 
 [**Check Our Mock up!**](https://www.figma.com/file/BcjEF5YitgXXXUJx7p4tHs/CSC301-Cello-Index-Website?node-id=0%3A1)
+(If you can't access the link, you can check the image uploaded in the folder, _deliverable-1_.)
 
 ------------------------------------------------------
 
 #### Q2: Who are your target users?
-
-  > Short (1 - 2 min' read max)
- * Be specific (e.g. a 'a third-year university student studying Computer Science' and not 'a student')
- * **Feel free to use personas. You can create your personas as part of this Markdown file, or add a link to an external site (for example, [Xtensio](https://xtensio.com/user-persona/)).**
-
-:memo: **Draft** :memo:
 
 Our main target users are cello teachers and self-motivated cello students. Cello students who are serious about improving their technical skills on the cello and are looking for cello exercises to play through will find our website beneficial. These students can be beginners to advanced players; our database has exercises for every level of playing. Cello teachers, more likely teachers earlier in their career of teaching, who are looking to provide and recommend new cello technical books to students to complement and enhance their lessons will also find our website to be valuable and serve this need well.
 
 ------------------------------------------------------
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
-
-> Short (1 - 2 min' read max)
- * We want you to "connect the dots" for us - Why does your product (as described in your answer to Q1) fits the needs of your users (as described in your answer to Q2)?
- * Explain the benefits of your product explicitly & clearly. For example:
-    * Save users time (how much?)
-    * Allow users to discover new information (which information? And, why couldn't they discover it before?)
-    * Provide users with more accurate and/or informative data (what kind of data? Why is it useful to them?)
-    * Does this application exist in another form? If so, how does your differ and provide value to the users?
-    * How does this align with your partner's organization's values/mission/mandate?
-
-:memo: **Draft** :memo:
 
 Currently, there are many books containing valuable technical exercises for the Cello, but discovering and navigating through them is difficult and cumbersome. Performers, students and teachers of an instrument know what technical skills they or their student has a lack of ability in, and technical books are an asset that can help improve their skills. As the website will contain a collection of Cello technical books and their corresponding exercises, which will have tags such as “trills” or “scales”, etc. and page numbers associated with each exercise, cellists will be able to filter and search for specific types of exercises quickly.
 
@@ -143,21 +113,11 @@ List each team member and:
 
 #### Q7: What operational events will you have as a team?
 
-Describe meetings (and other events) you are planning to have. 
- * When and where? Recurring or ad hoc? In-person or online?
- * What's the purpose of each meeting?
- * Other events could be coding sessions, code reviews, quick weekly sync meeting online, etc.
- * You should have at least 2 meetings with your project partner (if you have one) before D1 is due. Describe them here:
-   * What did you discuss during the meetings?
-   * What were the outcomes of each meeting?
-   * You must keep track of meeting minutes and add them to your repo.
-   * You must have a regular meeting schedule established by the second meeting.  
+We will have weekly team meetings on Discord Voice Channel (Zoom if there is a problem) on Saturdays. The regular meeting will start at 1:00 p.m. We try to plan meetings when most members are able to attend, and leave notes for those who cannot make it. In each meeting, we want to update everyone with the information from the project partner and address any questions. Then, each team can report their progress and discuss any concerns or difficulties they encounter. We can set expectations and make accommodations if needed.
  
-We will have weekly team meetings on zoom on Saturdays. The regular meeting will start at 1:00 p.m. We try to plan meetings when most members are able to attend, and leave notes for those who cannot make it. In each meeting, we want to update everyone with the information from the project partner and address any questions. Then, each team can report their progress and discuss any concerns or difficulties they encounter. We can set expectations and make accommodations if needed.
+We have had 2 meetings with the project partner on Zoom. We have discussed the outline of this project and presented the user stories and design mockups. We also discussed details on how the provided data should be managed and organized. After the first meeting, we learned what our partner wants and how the data works. After the second meeting, we have the user stories and design mockups approved with some feedbacks for further improvement. 
  
-We have had 2 meetings with the project partner. We have discussed the outline of this project and presented the user stories and design mockups. We also discussed details on how the provided data should be managed and organized. After the first meeting, we learned what our partner wants and how the data works. After the second meeting, we have the user stories and design mockups approved with some feedbacks for further improvement. 
- 
-Meeting minutes:
+**Meeting minutes:**
  
 * Week of Sep 19: about 45 minutes
 * Week of Sep 26: about 30 minutes
@@ -166,15 +126,6 @@ Our regular meeting schedule is on Thursday mornings at 11:00 a.m.
   
 #### Q8: What artifacts will you use to self-organize?
 
-List/describe the artifacts you will produce in order to organize your team.       
-
- * Artifacts can be To-Do lists, Task boards, schedule(s), meeting minutes, etc.
- * We want to understand:
-   * How do you keep track of what needs to get done?
-   * **How do you prioritize tasks?**
-   * How do tasks get assigned to team members?
-   * How do you determine the status of work from inception to completion?
- 
 For every meeting we have with ourselves, or with the partner, in order to document our discussions, we will create a meeting document, where a designated note taker will take notes during the meeting. We will try to have a checklist of what items we should talk about in the meeting document before going into the meeting so that our time can be used productively. 
  
 In terms of organizing tasks, we will use Trello. In the Trello board, we will create task items and distribute them into 3 columns (lists): “To-do”, “In-Progress” and “Completed” to track the progress of the tasks (from inception to conception). We will most likely organize the project into sprints, in which tasks will be prioritized by what needs to be finished in the current sprint or by deadlines in the course. In general, items that depend on the backend team to complete for the frontend team to progress and vice versa should be prioritized so that we minimize the time that people may be blocked in impacting the website. 
