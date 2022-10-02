@@ -33,14 +33,13 @@ https://imslp.org/ is a large digital music library containing public domain mus
 
 #### Q4: How will you build it?
 
-> Short (1-2 min' read max)
- * What is the technology stack? Specify any and all languages, frameworks, libraries, PaaS products or tools. 
- * How will you deploy the application?
- * Describe the architecture - what are the high level components or patterns you will use? Diagrams are useful here. 
- * Will you be using third party applications or APIs? If so, what are they?
- * What is your testing strategy?
+This will be a simple website with a client-side component, a server-side component, and a database.
 
-:memo: **Draft** :memo:
+For the frontend of the website, we will use the React JavaScript library, as it is what our team has the most experience with. As for the backend implementation, we will use Python with the Django library with SQL to manage the database. The everything will then be deployed on the web using Heroku, which we will integrate with GitHub to deploy automatically.
+
+At this phase we do not anticipate that we will be using any third party applications or APIs. However this is prone to change if we decided later down the line to add functionality to the site.
+
+The site will be tested on multiple devices and browsers to ensure that there are no compatibility issues. In addition, we will test the performance and the sorting functionalities thoroughly to make sure that it is seamless, efficient, and can handle a large number of excercises in the database. Once a minimum viable product has been produced, we can invited potential users to try using the site and provide feedback on its usability.
 
 ------------------------------------------------------
 
