@@ -106,10 +106,7 @@ We will have weekly team meetings on Discord Voice Channel (Zoom if there is a p
  
 We have had 2 meetings with the project partner on Zoom. We have discussed the outline of this project and presented the user stories and design mockups. We also discussed details on how the provided data should be managed and organized. After the first meeting, we learned what our partner wants and how the data works. After the second meeting, we have the user stories and design mockups approved with some feedbacks for further improvement. 
  
-**Meeting minutes:**
- 
-* Week of Sep 19: about 45 minutes
-* Week of Sep 26: about 30 minutes
+[**Meeting minutes**](https://docs.google.com/document/d/1cGbrdYXaGraL9nI5sKSiO8PQ6SRZciD3PJPWaqkkxFU/edit?usp=sharing)
  
 Our regular meeting schedule is on Thursday mornings at 11:00 a.m.
   
