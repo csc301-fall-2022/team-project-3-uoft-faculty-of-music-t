@@ -27,6 +27,7 @@ def extract_books():
 def create_book_csv(books):
     with open('new_csv/book.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
+        writer.writerow(['book_id', 'author', 'publish_date', 'title', 'link'])
         for book in books:
             writer.writerow([book.book_id, book.author, book.date, book.title, book.link])
 
@@ -71,6 +72,7 @@ def extract_exercise_info(books):
 def create_exercise_info_csv(exercises):
     with open('new_csv/exerciseinfo.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
+        writer.writerow(['exercise_id', 'side', 'page_and_exercise', 'tenor', 'treble', 'book_id'])
         for ex in exercises:
             writer.writerow([ex.exercise_id, ex.side, ex.page_and_exercise, ex.tenor, ex.treble, ex.book_id])
 
@@ -120,6 +122,7 @@ def extract_tags_and_exercises():
 def create_tags(tags):
     with open('new_csv/tag.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
+        writer.writerow(['tag_id', 'tag_level', 'tag_name'])
         for tag in tags:
             writer.writerow([tag.tag_id, tag.level, tag.tag_name])
 
@@ -128,6 +131,7 @@ def create_tags(tags):
 def create_exercise(exercises):
     with open('new_csv/exercise.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
+        writer.writerow(['exercise_id','tag_id'])
         for ex in exercises:
             writer.writerow([ex.exercise_id, ex.tag_id])
 
@@ -136,11 +140,23 @@ if __name__ == "__main__":
     # Extract and create books csv
     extracted_books = extract_books()
     create_book_csv(extracted_books)
-    # Extract and create exercise csv
+    # Extract exercise csv
     extracted_exercise_info = extract_exercise_info(extracted_books)
+    # If the book ID is 0, we don't have a valid book matching, so remove it
+    invalid_exercise_data = []
+    for i in range(len(extracted_exercise_info)-1, 0, -1):
+        if extracted_exercise_info[i].book_id == 0:
+            invalid_exercise_data.append(extracted_exercise_info[i].exercise_id)
+            extracted_exercise_info.remove(extracted_exercise_info[i])
+    # Create new exercise csv
     create_exercise_info_csv(extracted_exercise_info)
-    # Extract and create tag csv
+    # Extract and create tag csv and exercise csv 
     extracted_tags_and_exercises = extract_tags_and_exercises()
+    # If the book ID is 0, we don't have a valid book matching, so remove it
+    for i in range(len(extracted_tags_and_exercises[1])-1, 0, -1):
+        if extracted_tags_and_exercises[1][i].exercise_id in invalid_exercise_data:
+            extracted_tags_and_exercises[1].remove(extracted_tags_and_exercises[1][i])
+    # Extract and create tag csv
     create_tags(extracted_tags_and_exercises[0])
     # Create exercise list pairing each exercise with its tags
     create_exercise(extracted_tags_and_exercises[1])

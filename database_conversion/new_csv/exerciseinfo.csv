@@ -1,3 +1,4 @@
+exercise_id,side,page_and_exercise,tenor,treble,book_id
 1,Left Side,pp. 151–164,False,False,1
 2,Left Side,"pp. 3–27, Exercises 1–82",False,False,3
 3,Left Side,"pp. 2–5, Trill Studies",True,False,4
@@ -59,8 +60,6 @@
 59,Left Side,"p. 19, Ex. 24",False,True,26
 60,Left Side,"p. 20, Ex. 25–26",False,True,26
 61,Left Side,"p. 25, Ex. 30, no. 2",False,True,26
-62,Left Side,"p. 28, Ex. 38, no. 2",True,False,0
-63,Left Side,"p. 37, Ex. 56",True,True,0
 64,Left Side,"pp. 27–28, Exercise 1",False,False,28
 65,Left Side,"pp. 91–92, Exercise for the Accuracy of Finger Placement in the Thumb Positions",True,True,28
 66,Left Side,"p. 93, Exercise for the Eight Openings of the Hand in Thumb Position",False,True,28
@@ -83,7 +82,6 @@
 83,Left Side,"p. 16, Ex. 17–19",True,True,26
 84,Left Side,"p. 25, Ex. 30, no. 2",False,True,26
 85,Left Side,"p. 31, Ex. 43",True,True,26
-86,Left Side,"p. 31, Ex. 44",True,False,0
 87,Left Side,"pp. 92–93, Exercise for the Development of the 4th Finger's Agility",False,True,28
 88,Left Side,pp. 12–17,False,True,4
 89,Left Side,pp. 18–25,False,True,4
@@ -112,7 +110,6 @@
 112,Left Side,"pp. 33–34, Control Exercise For Connections of Positions",True,False,27
 113,Left Side,"p. 61, Exercises 1–3",True,True,28
 114,Left Side,"pp. 23–24, Demi Position",False,False,11
-115,Left Side,"p. 4, Exercises 21–27",False,False,0
 116,Left Side,"p. 13, Exercise 18",False,False,17
 117,Left Side,"pp. 7–8, Exercises 34–36",False,False,20
 118,Left Side,"p. 4, Exercise 2",False,False,21
@@ -178,7 +175,6 @@
 178,Left Side,"pp. 25–26, 2me Exercice avec Extensions",False,False,11
 179,Left Side,"pp. 28–29, 2me Exercice avec Extensions",False,False,11
 180,Left Side,"p. 30, 2me Exercice avec Extensions",False,False,11
-181,Left Side,"pp. 4–5, Exercises 28–38",False,False,0
 182,Left Side,"p. 16, The Flexibility of the Webs of the Hand",True,False,18
 183,Left Side,"p. 31, Exercise II",False,True,18
 184,Left Side,"p. 3, Exercise 7",False,False,20
@@ -315,7 +311,6 @@
 315,Left Side,"pp. 7–8, Exercises 1–2",True,True,19
 316,Left Side,"pp. 11–15, Placing the Left Hand",True,False,18
 317,Left Side,"pp. 38–40, Exercises I–II",True,True,18
-318,Left Side,"pp. 3–4, no. 19–20",False,False,0
 319,Left Side,"p. 14, Ex. 12",False,True,26
 320,Left Side,"p. 29, Ex. 40",False,False,26
 321,Left Side,"pp. 3–27, Exercises 1–82",False,False,3
@@ -348,8 +343,6 @@
 348,Left Side,"pp. 68–69, 22 Sliding Shifts",False,True,28
 349,Left Side,"p. 29, Exercise 20",False,True,21
 350,Left Side,"pp. 25–26, Triad–Studies in Double Stops",True,True,8
-351,Left Side,"pp. 26–28, Exercises 107–114",False,False,0
-352,Left Side,"pp. 28–29, Exercises 116–119",False,False,0
 353,Left Side,"pp. 11–12, Exercise I, The Thumb",True,False,18
 354,Left Side,"pp. 27–29, Connection of Positions",False,False,27
 355,Left Side,"p. 30, Connections of Positions Across Strings",False,False,27
@@ -375,7 +368,6 @@
 375,Left Side,"p. 14, Exercise 14",False,True,23
 376,Left Side,"p. 20, Exercise 22",True,True,23
 377,Left Side,"pp. 23–24, Exercise 16",False,True,24
-378,Left Side,p. 9,True,False,0
 379,Left Side,"p. 17, no. 4",False,True,6
 380,Left Side,"p. 17, Exercise 14, no. 1–6",True,False,7
 381,Left Side,"pp. 8–131, Exercises 1–4",True,True,9
@@ -391,10 +383,8 @@
 391,Left Side,"p. 17, Exercise 17",False,True,22
 392,Left Side,"p. 13, Exercises 1–10",False,True,23
 393,Left Side,"p. 5, Ex. 4",False,True,26
-394,Left Side,p. 9,True,False,0
 395,Left Side,"pp. 4–16, Exercises 1–40",False,False,2
 396,Left Side,"p. 9, no. 36",False,False,5
-397,Left Side,"pp. 6–7, Gammes Majeures, Gammes Mineures",True,False,0
 398,Left Side,"p. 4, Gamme d'Ut Majeur a Deux Octaves",False,False,11
 399,Left Side,"p. 15, 19, Gamme de Ré Majeur, Gamme de Ré Mineur",False,False,11
 400,Left Side,"p. 33, Gamme d'Ut",False,False,11
@@ -472,7 +462,6 @@
 472,Left Side,"p. 8, Major Scales",False,True,17
 473,Left Side,"pp. 3–9, Exercise 1",True,True,29
 474,Left Side,"p. 14, Exercise 6",False,True,29
-475,Left Side,"p. 2, Major Scales",True,True,0
 476,Left Side,"p. 25, Exercise 19",True,False,7
 477,Left Side,"pp. 26–28, Exercise 20",True,True,7
 478,Left Side,"pp. 8–131, Exercise 5",True,True,9
@@ -480,11 +469,9 @@
 480,Left Side,"pp. 12–15, Scales in Three Octaves",True,True,14
 481,Left Side,"p. 9, Minor Scales",False,True,17
 482,Left Side,"pp. 3–9, Exercise 1",True,True,29
-483,Left Side,"p. 3, Melodic Minor Scales",True,True,0
 484,Left Side,"p. 25, Exercise 19",True,False,7
 485,Left Side,"pp. 26–28, Exercise 20",True,True,7
 486,Left Side,"pp. 12–19, Three–Octave Scales",False,True,10
-487,Left Side,"p. 4, Harmonic Minor Scales",True,True,0
 488,Left Side,"p. 6, no. 16",True,True,5
 489,Left Side,"p. 12, no. 49",True,True,5
 490,Left Side,"p. 17, no. 1–2",False,True,6
@@ -493,7 +480,6 @@
 493,Left Side,p. 54,False,True,10
 494,Left Side,"p. 12, C., Exercise 1",False,False,12
 495,Left Side,"p. 20, Exercise 1",False,True,12
-496,Left Side,"pp. 8–9, Chromatic Scales",True,True,0
 497,Left Side,"pp. 102–103, Three–Octave Scale",False,True,10
 498,Left Side,"pp. 30–31, Les Gammes par Tons",False,True,19
 499,Left Side,pp. 18–20,False,True,4
@@ -537,7 +523,6 @@
 537,Left Side,pp. 56–59,False,False,20
 538,Left Side,pp. 14–18,True,True,21
 539,Left Side,"pp. 32–35, Exercises 70–81",False,True,29
-540,Left Side,"p. 2, Major Scales",True,True,0
 541,Left Side,"pp. 167–172, Gammes et Arpèges",True,True,1
 542,Left Side,"pp. 18–47, Scales and Arpeggios in all Major and Minor Keys",False,True,2
 543,Left Side,"p. 25, Exercise 19",True,True,7
@@ -551,13 +536,11 @@
 551,Left Side,"pp. 44–45, Exercise b, 2",False,True,18
 552,Left Side,pp. 56–59,False,False,20
 553,Left Side,pp. 14–18,True,True,21
-554,Left Side,"p. 3, Melodic Minor Scales",True,True,0
 555,Left Side,"p. 25, Exercise 19",True,True,7
 556,Left Side,"pp. 26–28, Exercise 20",True,True,7
 557,Left Side,"pp. 39–48, Four–Octave Scales",False,True,10
 558,Left Side,"pp. 44–45, Exercise b, 1",False,True,18
 559,Left Side,"pp. 35–38, Exercises 82–93",False,True,29
-560,Left Side,"p. 4, Harmonic Minor Scales",True,True,0
 561,Left Side,"p. 201, Gammes Chromatiques",True,True,1
 562,Left Side,"pp. 6–7, no. 17–18",True,True,5
 563,Left Side,"pp. 10–11, no. 39–41",True,True,5
@@ -568,7 +551,6 @@
 568,Left Side,"p. 45, Exercise d",False,True,18
 569,Left Side,"p. 60, no. 1",False,True,20
 570,Left Side,"p. 50, Exercise 145",True,True,29
-571,Left Side,"p. 8, Chromatic Scales",True,True,0
 572,Left Side,"p. 10, no. 15",True,True,31
 573,Left Side,"p. 33, Exercise 23",True,True,7
 574,Left Side,"p. 45, Exercise c",False,True,18
@@ -582,17 +564,14 @@
 582,Left Side,"pp. 85–87, Scales on One String",True,True,10
 583,Left Side,"pp. 107–108, Groups of Twelve Notes",False,True,10
 584,Left Side,pp. 9–11,False,False,12
-585,Left Side,"p. 11, Exercise 82",True,False,0
 586,Left Side,"pp. 28–30, Several Scales in the Same Position of the Thumb",True,True,17
 587,Left Side,"p. 13, Exercises 3–6",True,False,12
-588,Left Side,"pp. 12–13, Exercise 83",True,True,0
 589,Left Side,"p. 9, Exercise 22",False,False,21
 590,Left Side,"pp. 26–27, Exercises 57–59",True,True,25
 591,Left Side,"p. 5, Ex. 4, no. 1-7",False,True,26
 592,Left Side,"p. 13, Ex. 11, no. 3",False,False,26
 593,Left Side,"p. 5, no. 1–8",False,False,11
 594,Left Side,"p. 12, Exercises 1–2",False,False,12
-595,Left Side,"pp. 12–13, Exercise 83",True,True,0
 596,Left Side,"p. 6, No. 1–4",False,False,17
 597,Left Side,"p. 34, Exercise I",False,True,18
 598,Left Side,"pp. 7–9, Exercises 1, 6, 11, 14",False,False,23
@@ -661,8 +640,6 @@
 661,Left Side,"p. 16, Exercise 2",False,True,12
 662,Left Side,"pp. 7–9, Exercises 2, 7",False,False,23
 663,Left Side,"p. 14, Exercise 11",False,True,23
-664,Left Side,"p. 31, Ex. 44",True,False,0
-665,Left Side,"p. 5, Tierces",False,False,0
 666,Left Side,"p. 14, Exercise 12",True,False,7
 667,Left Side,"pp. 4–8, Broken Thirds in Two Octaves",True,False,10
 668,Left Side,"pp. 9–10, Scales in Thirds of Two Octaves",True,False,14
@@ -732,7 +709,6 @@
 732,Left Side,"p. 18, Exercise 16",True,True,23
 733,Left Side,"pp. 20–21, Exercise 12",False,True,24
 734,Left Side,"p. 6, no. 9",False,False,11
-735,Left Side,"p. 5, Quartes",False,False,0
 736,Left Side,"p. 7, Fourths",False,False,17
 737,Left Side,"p. 89, Fourths on One String",False,True,10
 738,Left Side,"p. 75, Broken Fourths in One Position",False,True,10
@@ -741,14 +717,12 @@
 741,Left Side,"p. 43, no. 9",False,True,31
 742,Left Side,"p. 90, Fifths on One String",False,True,10
 743,Left Side,"p. 6, no. 11",False,False,11
-744,Left Side,"p. 5, Quintes",False,False,0
 745,Left Side,"p. 7, Fifths",False,False,17
 746,Left Side,"p. 25, Fifths",False,True,17
 747,Left Side,"p. 43, no. 10",False,True,31
 748,Left Side,"p. 91, Sixths on One String",False,True,10
 749,Left Side,"p. 6, no. 14",False,False,11
 750,Left Side,"p. 3, Exercise 4",False,False,21
-751,Left Side,"p. 5, Sixtes",False,False,0
 752,Left Side,"p. 7, Sixths",False,False,17
 753,Left Side,"p. 22, no. 7",False,True,31
 754,Left Side,"p. 61, no. 7",False,True,31
@@ -759,7 +733,6 @@
 759,Left Side,"p. 25, no. 8",False,True,31
 760,Left Side,"p. 25, Sixths",False,True,17
 761,Left Side,"p. 43, no. 11",False,True,31
-762,Left Side,"p. 5, Septièmes et Neuvièmes",False,False,0
 763,Left Side,"p. 7, Sevenths",False,False,17
 764,Left Side,"p. 25, Sevenths",False,True,17
 765,Left Side,"p. 7, Octaves",False,False,17
@@ -770,7 +743,6 @@
 770,Left Side,"p. 59, no. 9–10",False,True,31
 771,Left Side,"p. 7, Ninths",False,False,17
 772,Left Side,"p. 15, Exercise 7",True,True,29
-773,Left Side,"p. 5, Huitièmes et Dixièmes",False,False,0
 774,Left Side,"p. 7, Tenths",False,False,17
 775,Left Side,"p. 17, Exercise 14, no. 1–3",False,False,7
 776,Left Side,"p. 57, Exercices sur Chaque Corde",False,False,11
@@ -792,7 +764,6 @@
 792,Left Side,"pp. 29–30, Exercises m–n",False,True,18
 793,Left Side,"p. 41, Exercise 11",False,True,21
 794,Left Side,"p. 31, Ex. 43",True,True,26
-795,Left Side,"p. 31, Ex. 44",True,False,0
 796,Left Side,"p. 19, Exercise 13",False,True,29
 797,Left Side,"p. 55, Exercise 172",False,True,29
 798,Left Side,"pp. 8–131, Exercises 1–4",True,True,9
@@ -858,17 +829,13 @@
 858,Left Side,"p. 42, Exercise 22",False,True,21
 859,Left Side,"pp. 18–19, Triads through Three Octaves",True,True,14
 860,Left Side,pp. 32–33,False,True,21
-861,Left Side,"p. 5, Arpeggios of the Major and Minor Common Chords",False,True,0
 862,Left Side,"pp. 18–19, Triads through Three Octaves",True,True,14
 863,Left Side,pp. 32–33,False,True,21
-864,Left Side,"p. 5, Arpeggios of the Major and Minor Common Chords",False,True,0
 865,Left Side,"p. 11, no. 42–46",True,True,5
 866,Left Side,"p. 17, Exercise 12",False,True,12
 867,Left Side,"p. 26, Ex. 33, no. 3",False,True,26
 868,Left Side,"pp. 24–26, Arpèges de Septième de Dominante",True,True,19
 869,Left Side,"p. 34, Septim Akkorder",False,True,21
-870,Left Side,"p. 6, Arpeggios on the Chord of the Dominant Seventh",True,True,0
-871,Left Side,"p. 7, Arpeggios on the Chord of the Diminished Seventh",True,True,0
 872,Left Side,"pp. 28–30, Arpèges a 3 et 4 Octaves de 7th",False,True,19
 873,Left Side,"pp. 31–33, Accords de Septième",False,True,19
 874,Left Side,"pp. 33–34, Accords de Neuvième",False,True,19
@@ -881,7 +848,6 @@
 881,Left Side,p. 50,False,True,18
 882,Left Side,"pp. 8–11, Exercises 3–30",True,True,19
 883,Left Side,"p. 13, Exercises 37–40",False,True,19
-884,Left Side,"p. 5, Arpeggios of the Major and Minor Common Chords",False,True,0
 885,Left Side,"p. 5, no. 3",False,True,31
 886,Left Side,"p. 11, no. 3–5",False,True,31
 887,Left Side,"p. 14, no. 3–4",False,True,31
@@ -921,9 +887,7 @@
 921,Left Side,pp. 16–17,False,True,4
 922,Left Side,"pp. 36–37, Des Septièmes Diminuées",False,True,19
 923,Left Side,"pp. 35–36, Formindskede Septimakkorder",False,True,21
-924,Left Side,"p. 7, Arpeggios on the Chord of the Diminished Seventh",True,True,0
 925,Left Side,"pp. 24–26, Arpèges de Septième de Dominante",True,True,19
-926,Left Side,"p. 6, Arpeggios on the Chord of the Dominant Seventh",True,True,0
 927,Left Side,"pp. 28–30, Arpèges a 3 et 4 Octaves de 7th",False,True,19
 928,Left Side,"pp. 31–33, Accords de Septième",False,True,19
 929,Left Side,"pp. 33–34, Accords de Neuvième",False,True,19
@@ -978,10 +942,6 @@
 978,Left Side,"pp. 66–67, Exercise 12",False,False,14
 979,Left Side,"p. 107, Exercises 90–92",False,True,14
 980,Left Side,"p. 110, Exercise 108",False,True,14
-981,Left Side,"pp. 16–25, Exercises 88–106",False,False,0
-982,Left Side,"pp. 26–28, Exercises 107–114",False,False,0
-983,Left Side,"pp. 28–29, Exercises 116–119",False,False,0
-984,Left Side,"pp. 30–31, Exercises 123–135",False,False,0
 985,Left Side,"p. 23, Exercises in Double-Stops",False,False,17
 986,Left Side,"p. 23, Exercise a",False,True,18
 987,Left Side,"p. 24, Exercise b",False,True,18
@@ -1017,10 +977,8 @@
 1017,Left Side,"p. 5, Ex. 3, no. 5–6",False,False,26
 1018,Left Side,"p. 16, Ex. 17–19",True,True,26
 1019,Left Side,"p. 19, Ex. 23",False,True,26
-1020,Left Side,"p. 22, Ex. 29",False,False,0
 1021,Left Side,"p. 25, Ex. 30 ",False,True,26
 1022,Left Side,"p. 31, Ex. 43",True,True,26
-1023,Left Side,"p. 31, Ex. 44",True,False,0
 1024,Left Side,"p. 60 top, For Intonation",False,False,28
 1025,Left Side,"pp. 95–96, Exercise to Prevent the Hand from a Natural but Faulty Tendency to Slope Backwards",True,False,28
 1026,Left Side,"p. 10, no. 13",True,True,31
@@ -1051,7 +1009,6 @@
 1051,Left Side,"p. 19, Ex. 24",False,True,26
 1052,Left Side,"p. 20, Ex. 25 ",False,True,26
 1053,Left Side,"p. 25, Ex. 31",False,False,26
-1054,Left Side,"p. 37, Ex. 56",True,True,0
 1055,Left Side,"pp. 165–166, Exercises 1–2",False,True,1
 1056,Left Side,"pp. 192–195, Gammes en Tierces",True,True,1
 1057,Left Side,"pp. 8–9, no. 27–29",True,True,5
@@ -1062,7 +1019,6 @@
 1062,Left Side,"p. 48, Exercises 3–4",True,True,21
 1063,Left Side,"pp. 51–52, Exercises 14–18",True,True,21
 1064,Left Side,"p. 21, Exercise 7",False,True,23
-1065,Left Side,"pp. 13–15, Major Scales, Melodic Minor Scales, Harmonic Minor Scales",True,True,0
 1066,Left Side,"pp. 6–7, no. 6",False,True,31
 1067,Left Side,"p. 12, no. 7",False,True,31
 1068,Left Side,"pp. 16–17, Exercise 41",False,False,2
@@ -1074,7 +1030,6 @@
 1074,Left Side,"pp. 104–105, Exercises 64–66",False,True,14
 1075,Left Side,"p. 106, Exercises 77–78",False,True,14
 1076,Left Side,"p. 109, Exercises 99–103",False,True,14
-1077,Left Side,"pp. 29–30, Exercises 120–122",False,False,0
 1078,Left Side,"p. 23, Scale of D Major with Thirds above, Bb Major, C Minor",False,False,17
 1079,Left Side,"p. 31, Exercises 1–2",True,True,17
 1080,Left Side,"p. 28, Exercise j",False,True,18
@@ -1090,7 +1045,6 @@
 1090,Left Side,"p. 20, Exercises 1–3",True,True,23
 1091,Left Side,"p. 21, Exercises 10–12",True,True,23
 1092,Left Side,"p. 20, Ex. 26",False,True,26
-1093,Left Side,"p. 37, Ex. 56",True,True,0
 1094,Left Side,"p. 60, For Intonation",True,True,28
 1095,Left Side,"pp. 6–7, no. 6",False,True,31
 1096,Left Side,"p. 15, no. 6",False,True,31
@@ -1113,7 +1067,6 @@
 1113,Left Side,"pp. 111–117, New Fingering for Scales in Thirds ",False,True,28
 1114,Left Side,"pp. 41–43 ,Exercises 97–108, Dur- Scalen in Terzen",False,True,29
 1115,Left Side,"pp. 43–45, Exercises 109–120, Moll-Scalen in Terzen",False,True,29
-1116,Left Side,"pp. 13–15, Major Scales, Melodic Minor Scales, Harmonic Minor Scales",True,True,0
 1117,Left Side,"pp. 165–166, Exercises 1–2",False,True,1
 1118,Left Side,"pp. 8–131, Exercise 6",True,True,9
 1119,Left Side,"p. 108, Exercises 96–98",False,True,14
@@ -1138,7 +1091,6 @@
 1138,Left Side,"p. 38, Exercise 30",True,True,7
 1139,Left Side,"pp. 58–59, Doubles Cordes",False,False,11
 1140,Left Side,"p. 107, Exercises 87–89",False,True,14
-1141,Left Side,"p. 28, Exercise 115",False,False,0
 1142,Left Side,"p. 23, Scale of A Major with Sixths Below, E Minor, F Major",False,False,17
 1143,Left Side,"p. 23, Trills in Double Stops",False,False,17
 1144,Left Side,"p. 31, Exercise 3",False,True,17
@@ -1170,9 +1122,7 @@
 1170,Left Side,pp. 11–12,False,False,8
 1171,Left Side,"pp. 46–47, Exercises 121–132, Dur-Scalen in Sexten",True,True,29
 1172,Left Side,"pp. 48–49, Exercises 133–144, Moll-Scalen in Sexten",True,True,29
-1173,Left Side,"pp. 10–12, Major Scales, Melodic Minor Scales, Harmonic Minor Scales",True,True,0
 1174,Left Side,"pp. 8–131, Exercise 7",True,True,9
-1175,Left Side,"pp. 26–28, Exercises 107–114",False,False,0
 1176,Left Side,"p. 32, Exercise 4",True,True,17
 1177,Left Side,"p. 50, Exercise 50",True,True,20
 1178,Left Side,"p. 51, Exercise 52",True,True,20
@@ -1223,7 +1173,6 @@
 1223,Left Side,"p. 52, Exercise 54",False,True,20
 1224,Left Side,"p. 61, Exercises 15–16",False,True,20
 1225,Left Side,"p. 47, Exercise 23",True,True,21
-1226,Left Side,"p. 9, Scales in Octaves",True,True,0
 1227,Left Side,"p. 9, no. 11",False,True,31
 1228,Left Side,"p. 19, no. 10",False,True,31
 1229,Left Side,"p. 29, no. 12",False,True,31
@@ -1292,7 +1241,6 @@
 1292,Left Side,"p. 8, Exercises 14–15",False,False,21
 1293,Left Side,"p. 52, Exercises 1–4",False,True,21
 1294,Left Side,"p. 55, Exercise 173",False,True,29
-1295,Left Side,"p. 9, Scales in Tenths",False,True,0
 1296,Left Side,"p. 9, no. 12",False,True,31
 1297,Left Side,"p. 19, no. 11",False,True,31
 1298,Left Side,"p. 29, no. 13",False,True,31
@@ -1326,7 +1274,6 @@
 1326,Left Side,"pp. 74–76, Exercises 2–20",True,True,14
 1327,Left Side,"p. 79, Exercises 10–15",False,True,14
 1328,Left Side,"pp. 82–83, Exercises 35–46",False,True,14
-1329,Left Side,"pp. 7–11, Exercises 47–80",True,False,0
 1330,Left Side,"p. 25, Exercises for the Fourth Finger in the Thumb Position",False,True,17
 1331,Left Side,p. 22,True,True,18
 1332,Left Side,"p. 4, Exercise 1",False,False,21
@@ -1335,7 +1282,6 @@
 1335,Left Side,"pp. 2–3, no. 1–4",True,False,5
 1336,Left Side,"p. 44, Préparation à l'Étude du Trille",True,False,11
 1337,Left Side,"p. 13, Exercise 9",True,False,12
-1338,Left Side,"pp. 4–7, Exercises 21–46",False,False,0
 1339,Left Side,"p. 13, Exercises 18–22",False,False,17
 1340,Left Side,"pp. 35–42, Exercises 2, 4, 6, 8, 10, 12, 14, 16, 18",True,True,20
 1341,Left Side,"pp. 4–5, Exercise 2",False,False,21
@@ -1343,7 +1289,6 @@
 1343,Left Side,"pp. 4–8, Exercises I–IV",False,False,22
 1344,Left Side,"p. 1, Exercise 1",False,False,7
 1345,Left Side,"pp. 10–11, no. 1–4",False,False,11
-1346,Left Side,"pp. 2–3, Exercises 1–18",False,False,0
 1347,Left Side,"p. 12, Exercises 1–15",False,False,17
 1348,Left Side,"pp. 3–7, Exercises 1–109",False,False,23
 1349,Left Side,"p. 21, Ex. 28",False,False,26
@@ -1354,10 +1299,6 @@
 1354,Left Side,"pp. 25–26, Triad–Studies in Double Stops",True,True,8
 1355,Left Side,"p. 42, Exercices pour Obtenir l'Indépendance des Doigts",True,False,11
 1356,Left Side,"p. 107, Exercises 81–84",False,True,14
-1357,Left Side,"pp. 26–28, Exercises 107–114",False,False,0
-1358,Left Side,"pp. 28–29, Exercises 116–119",False,False,0
-1359,Left Side,"p. 30, Exercises 123–125",False,False,0
-1360,Left Side,"p. 31, Exercises 127–134",False,False,0
 1361,Left Side,"p. 16, The Flexibility of the Webs of the Hand",True,False,18
 1362,Left Side,"p. 15, Exercises 47–49",False,True,19
 1363,Left Side,"p. 7, Exercise 33",False,False,20
@@ -1379,9 +1320,6 @@
 1379,Left Side,"p. 27, Exercises 16–17",False,True,12
 1380,Left Side,"pp. 95–98, Exercises 1–34",False,True,14
 1381,Left Side,"p. 109, Exercise 104",False,True,14
-1382,Left Side,"pp. 14–16, Exercises 84–87",False,False,0
-1383,Left Side,"pp. 16–25, Exercises 88–106",False,False,0
-1384,Left Side,"pp. 30–31, Exercises 126, 135",False,False,0
 1385,Left Side,"p. 24, Double Trills",False,False,17
 1386,Left Side,"p. 32, Trills and Double Trills in the Thumb-Position",True,True,17
 1387,Left Side,"pp. 51–54, The Independence of the Fingers in Multiple Stops, I",False,False,18
@@ -1395,7 +1333,6 @@
 1395,Left Side,"p. 9, Doppeltriller",True,True,22
 1396,Left Side,"pp. 4–7, Exercises 34–109",False,False,23
 1397,Left Side,"p. 29, Exercise 20",False,True,24
-1398,Left Side,"p. 22, Ex. 29",False,False,0
 1399,Left Side,"p. 120, Exercises for the Independence of the Fingers",True,True,28
 1400,Left Side,"pp. 16–19, Exercises 9–12",True,True,29
 1401,Left Side,"pp. 151–155, Exercices pour l'Indépendance des Doigts",False,False,1
@@ -1403,7 +1340,6 @@
 1403,Left Side,"pp. 26–28, Studies for the Thumb with Frequent Use of the Fourth Finger",False,True,4
 1404,Left Side,"pp. 2–3, no. 1–4",True,False,5
 1405,Left Side,"p. 18, Exercise 15",True,False,7
-1406,Left Side,"pp. 7–11, Exercises 47–80",True,False,0
 1407,Left Side,"p. 46, Exercise III, a, c",False,True,18
 1408,Left Side,"pp. 35–42, Exercises 2, 4, 6, 8, 10, 12, 14, 16, 18",True,True,20
 1409,Left Side,"p. 27, Exercise 5",False,False,21
@@ -1482,10 +1418,8 @@
 1482,Left Side,"pp. 32–38, Exercises 70–93",False,True,29
 1483,Left Side,"p. 37, Dobbeltslag",True,False,21
 1484,Left Side,"pp. 26–27, Anhang",False,False,6
-1485,Left Side,"p. 40, Ex. 63",False,False,0
 1486,Left Side,"pp. 54–56, Finger Catapult",True,False,28
 1487,Left Side,"p. 60, Exercise 200b",False,False,29
-1488,Left Side,"p. 40, Ex. 62",True,False,0
 1489,Left Side,"pp. 54–56, Finger Catapult",True,False,28
 1490,Left Side,"p. 60, Exercise 200a",False,False,29
 1491,Left Side,"pp. 11–15, Placing the Left Hand",True,False,18
@@ -1534,10 +1468,7 @@
 1534,Right Side,"pp. 10–11, Exercises 1–10",False,False,23
 1535,Right Side,"p. 14, Exercises 17–18",False,True,23
 1536,Right Side,"pp. 18–19, Exercise 11",False,False,24
-1537,Right Side,"p. 8, Ex. 7",True,False,0
 1538,Right Side,"p. 27, Ex. 36",True,False,26
-1539,Right Side,"p. 28, Ex. 37",True,False,0
-1540,Right Side,"p. 28, Ex. 38",True,False,0
 1541,Right Side,"p. 44, To Overcome Weakness of Sound Volume",False,False,28
 1542,Right Side,"p. 42, Exercise 35",False,False,7
 1543,Right Side,"p. 3, Exercise 6",False,False,12
@@ -1630,10 +1561,7 @@
 1630,Right Side,"p. 56, Exercise 3",True,False,21
 1631,Right Side,"p. 19, Exercise 11, no. 64–71",False,True,24
 1632,Right Side,"pp. 30–33, Exercise 21",False,True,24
-1633,Right Side,"p. 8, Ex. 7",True,False,0
 1634,Right Side,"p. 27, Ex. 36",True,False,26
-1635,Right Side,"p. 28, Ex. 37",True,False,0
-1636,Right Side,"p. 28, Ex. 38",True,False,0
 1637,Right Side,"pp. 41–42, Exercises 1–5",False,False,28
 1638,Right Side,"pp. 10–11, Exercises 2–3",False,True,29
 1639,Right Side,"p. 31, Exercise 64",False,True,29
@@ -1683,7 +1611,6 @@
 1683,Right Side,"pp. 29–32, Exercises 1–4, 11–25",True,True,12
 1684,Right Side,"p. 19, Exercise 11, no. 72",False,True,24
 1685,Right Side,"pp. 30–33, Exercise 21",False,True,24
-1686,Right Side,"p. 8, Ex. 7",True,False,0
 1687,Right Side,"p. 27, Ex. 36",True,False,26
 1688,Right Side,"p. 42–43, For Sautillé",False,False,28
 1689,Right Side,"pp. 17–18, no. 1–6",False,True,31
@@ -1809,7 +1736,6 @@
 1809,Other,"p. 26, no. 1",False,True,31
 1810,Other,"pp. 163–164, Exercises 9–12, Trois Notes Contre Deux",False,False,1
 1811,Other,"p. 37, Exercise 29",False,False,7
-1812,Other,"p. 22, Ex. 29",False,False,0
 1813,Other,"p. 4, Exercise 5, no. 1–20",False,False,7
 1814,Other,"pp. 5–6, Exercises 7–11",False,False,2
 1815,Other,"p. 8, Exercise 8, Variations",True,False,7
