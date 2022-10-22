@@ -4,13 +4,13 @@ from .models import Book, Exercise, ExerciseInfo, Tag
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = ('book_id', 'title', 'author', 'date', 'link')
+        fields = ('title', 'author', 'date', 'link')
 
 
 class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
-        fields = ('exercise_id', 'side', 'page_and_exercise', 'tenor', 'treble', 'bookID')
+        fields = ('side', 'page_and_exercise', 'tenor', 'treble', 'bookID')
 
 
 class ExerciseInfoSerializer(serializers.ModelSerializer):
@@ -22,5 +22,5 @@ class ExerciseInfoSerializer(serializers.ModelSerializer):
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
-        fields = ('tag_id', 'level', 'tag_name')
+        fields = ('level', 'tag_name')
 
