@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Book(models.Model):
+    book_id = models.IntegerField(primary_key = True)
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=150)
     date = models.DateField()
@@ -9,17 +10,21 @@ class Book(models.Model):
 
 
 class ExerciseInfo(models.Model):
+    exercise_id = models.IntegerField(primary_key = True)
     side = models.CharField(max_length=50)
-    pageAndExercise = models.IntegerField()
+    page_and_exercise = models.IntegerField()
     tenor = models.BooleanField()
     treble = models.BooleanField()
-    bookID = models.ForeignKey(Book, on_delete=models.CASCADE)
+    book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
+
+
+class Tag(models.Model):
+    tag_id = models.IntegerField(primary_key = True)
+    level = models.IntegerField()
+    tag_name = models.CharField(max_length=150)
 
 
 class Exercise(models.Model):
-    exerciseID = models.ForeignKey(ExerciseInfo, on_delete=models.CASCADE)
-    tagID = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    exercise_id = models.ForeignKey(ExerciseInfo, on_delete=models.CASCADE)
+    tag_id = models.ForeignKey(Tag, on_delete=models.CASCADE)
 
-class Tag(models.Model):
-    level = models.IntegerField()
-    tagName = models.CharField(max_length=150)
