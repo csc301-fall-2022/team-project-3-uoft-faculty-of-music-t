@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 class Book(models.Model):
-    book_id = models.IntegerField(primary_key = True)
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=150)
     date = models.DateField()
@@ -10,7 +9,6 @@ class Book(models.Model):
 
 
 class ExerciseInfo(models.Model):
-    exercise_id = models.IntegerField(primary_key = True)
     side = models.CharField(max_length=50)
     page_and_exercise = models.IntegerField()
     tenor = models.BooleanField()
@@ -19,7 +17,6 @@ class ExerciseInfo(models.Model):
 
 
 class Tag(models.Model):
-    tag_id = models.IntegerField(primary_key = True)
     level = models.IntegerField()
     tag_name = models.CharField(max_length=150)
 
