@@ -27,7 +27,7 @@ def extract_books():
 def create_book_csv(books):
     with open('new_csv/book.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['book_id', 'author', 'publish_date', 'title', 'link'])
+        writer.writerow(['id', 'author', 'publish_date', 'title', 'link'])
         for book in books:
             writer.writerow([book.book_id, book.author, book.date, book.title, book.link])
 
@@ -72,7 +72,7 @@ def extract_exercise_info(books):
 def create_exercise_info_csv(exercises):
     with open('new_csv/exerciseinfo.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['exercise_id', 'side', 'page_and_exercise', 'tenor', 'treble', 'book_id'])
+        writer.writerow(['id', 'side', 'page_and_exercise', 'tenor', 'treble', 'book_id'])
         for ex in exercises:
             writer.writerow([ex.exercise_id, ex.side, ex.page_and_exercise, ex.tenor, ex.treble, ex.book_id])
 
@@ -122,18 +122,20 @@ def extract_tags_and_exercises():
 def create_tags(tags):
     with open('new_csv/tag.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['tag_id', 'tag_level', 'tag_name'])
+        writer.writerow(['id', 'tag_level', 'tag_name'])
         for tag in tags:
             writer.writerow([tag.tag_id, tag.level, tag.tag_name])
 
 
 # Creates the exercise.csv file
 def create_exercise(exercises):
+    count = 1
     with open('new_csv/exercise.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['exercise_id','tag_id'])
+        writer.writerow(['id', 'exercise_id','tag_id'])
         for ex in exercises:
-            writer.writerow([ex.exercise_id, ex.tag_id])
+            writer.writerow([count, ex.exercise_id, ex.tag_id])
+            count += 1
 
 
 if __name__ == "__main__":

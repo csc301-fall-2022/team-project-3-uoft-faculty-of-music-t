@@ -1,4 +1,4 @@
-exercise_id,side,page_and_exercise,tenor,treble,book_id
+id,side,page_and_exercise,tenor,treble,book_id
 1,Left Side,pp. 151–164,False,False,1
 2,Left Side,"pp. 3–27, Exercises 1–82",False,False,3
 3,Left Side,"pp. 2–5, Trill Studies",True,False,4

@@ -4,35 +4,40 @@ DROP TABLE IF EXISTS Exercise;
 DROP TABLE IF EXISTS Tag;
 DROP TABLE IF EXISTS ExerciseInfo;
 DROP TABLE IF EXISTS Book;
+DROP TABLE IF EXISTS cello_exercise;
+DROP TABLE IF EXISTS cello_tag;
+DROP TABLE IF EXISTS cello_exerciseinfo;
+DROP TABLE IF EXISTS cello_book;
 
-CREATE TABLE Book
-    (book_id INT PRIMARY KEY,
+CREATE TABLE cello_book
+    (id INT PRIMARY KEY,
     author VARCHAR(100),
     publish_date VARCHAR(10),
     title VARCHAR(300),
     link VARCHAR(2048));
 
-CREATE TABLE ExerciseInfo 
-    (exercise_id INT PRIMARY KEY,
+CREATE TABLE cello_exerciseinfo
+    (id INT PRIMARY KEY,
     side VARCHAR(15),
     page_and_exercise VARCHAR(300),
     tenor BOOLEAN,
     treble BOOLEAN,
-    book_id INT REFERENCES Book);
+    book_id INT REFERENCES cello_book);
 
-CREATE TABLE Tag 
-    (tag_id INT PRIMARY KEY,
+CREATE TABLE cello_tag 
+    (id INT PRIMARY KEY,
     tag_level INT,
     tag_name VARCHAR(100));
 
-CREATE TABLE Exercise
-    (exercise_id INT REFERENCES ExerciseInfo,
-    tag_id INT REFERENCES Tag,
-    PRIMARY KEY (exercise_id, tag_id));
+CREATE TABLE cello_exercise
+    (id INT PRIMARY KEY,
+    exercise_id INT REFERENCES cello_exerciseinfo,
+    tag_id INT REFERENCES cello_tag,
+    UNIQUE (exercise_id, tag_id));
 
 -- Load data from .csv files
-\COPY book FROM 'new_csv/book.csv' DELIMITER ',' CSV header;
-\COPY exerciseinfo FROM 'new_csv/exerciseinfo.csv' DELIMITER ',' CSV header;
-\COPY tag FROM 'new_csv/tag.csv' DELIMITER ',' CSV header;
-\COPY exercise FROM 'new_csv/exercise.csv' DELIMITER ',' CSV header;
+\COPY cello_book FROM 'new_csv/book.csv' DELIMITER ',' CSV header;
+\COPY cello_exerciseinfo FROM 'new_csv/exerciseinfo.csv' DELIMITER ',' CSV header;
+\COPY cello_tag FROM 'new_csv/tag.csv' DELIMITER ',' CSV header;
+\COPY cello_exercise FROM 'new_csv/exercise.csv' DELIMITER ',' CSV header;
 
