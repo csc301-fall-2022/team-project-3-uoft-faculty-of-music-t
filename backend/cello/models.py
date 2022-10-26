@@ -10,7 +10,7 @@ class Book(models.Model):
 
 class ExerciseInfo(models.Model):
     side = models.CharField(max_length=50)
-    page_and_exercise = models.CharField(max_length=100)
+    page_and_exercise = models.CharField(null=True, max_length=100)
     tenor = models.BooleanField()
     treble = models.BooleanField()
     book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
