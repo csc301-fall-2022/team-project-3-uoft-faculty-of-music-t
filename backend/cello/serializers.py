@@ -14,9 +14,11 @@ class ExerciseSerializer(serializers.ModelSerializer):
 
 
 class ExerciseInfoSerializer(serializers.ModelSerializer):
+    book = BookSerializer(source='book_id', many=False, read_only=True)
+
     class Meta:
         model = ExerciseInfo
-        fields = ('id', 'side', 'page_and_exercise', 'tenor', 'treble', 'book_id')
+        fields = ('id', 'side', 'page_and_exercise', 'tenor', 'treble', 'book_id', 'book')
 
     
 class TagSerializer(serializers.ModelSerializer):
