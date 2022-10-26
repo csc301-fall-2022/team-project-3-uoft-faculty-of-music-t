@@ -1,6 +1,4 @@
-from django.shortcuts import render
-
-# Create your views here.
+# API endpoints here begin with /api/tag
 from rest_framework import viewsets
 from ..serializers import TagSerializer
 from ..models import Tag

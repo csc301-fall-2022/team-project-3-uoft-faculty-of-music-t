@@ -1,6 +1,4 @@
-from django.shortcuts import render
-
-# Create your views here.
+# API endpoints begin with /api/book
 from rest_framework import viewsets
 from ..serializers import BookSerializer
 from ..models import Book

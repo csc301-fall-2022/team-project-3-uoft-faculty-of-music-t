@@ -1,6 +1,4 @@
-from django.shortcuts import render
-
-# Create your views here.
+# API endpoints here begin with /api/exerciseinfo
 from rest_framework import viewsets
 from ..serializers import ExerciseInfoSerializer
 from ..models import ExerciseInfo
