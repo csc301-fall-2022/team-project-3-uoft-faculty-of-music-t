@@ -1,7 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from cello import views
+from cello.views.book_view import BookView
+from cello.views.exercise_view import ExerciseView
+from cello.views.exerciseinfo_view import ExerciseInfoView
+from cello.views.tag_view import TagView
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -10,10 +13,10 @@ from rest_framework_simplejwt.views import (
 app_name = 'api'
 
 router = routers.DefaultRouter()
-router.register(r'exercise', views.ExerciseView, 'exercise')
-router.register(r'exerciseinfo', views.ExerciseInfoView, 'exerciseinfo')
-router.register(r'book', views.BookView, 'book')
-router.register(r'tag', views.TagView, 'tag')
+router.register(r'exercise', ExerciseView, 'exercise')
+router.register(r'exerciseinfo', ExerciseInfoView, 'exerciseinfo')
+router.register(r'book', BookView, 'book')
+router.register(r'tag', TagView, 'tag')
 
 urlpatterns = [
     path('', include(router.urls)),
