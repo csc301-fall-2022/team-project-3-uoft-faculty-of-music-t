@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from .serializers import BookSerializer, ExerciseSerializer, ExerciseInfoSerializer, TagSerializer
 from .models import Book, ExerciseInfo, Exercise, Tag
 
+
 class BookView(viewsets.ModelViewSet):
     serializer_class = BookSerializer
     queryset= Book.objects.all()
@@ -15,14 +16,10 @@ class ExerciseView(viewsets.ModelViewSet):
     queryset= Exercise.objects.all()
 
 
-class BookView(viewsets.ModelViewSet):
-    serializer_class = BookSerializer
-    queryset= Book.objects.all()
-
-
 class TagView(viewsets.ModelViewSet):
     serializer_class = TagSerializer
     queryset = Tag.objects.all()
+
 
 class ExerciseInfoView(viewsets.ModelViewSet):
     serializer_class = ExerciseInfoSerializer
