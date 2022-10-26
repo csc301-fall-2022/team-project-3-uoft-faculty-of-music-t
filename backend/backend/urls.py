@@ -15,21 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
-from cello import views
-
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-)
-
-router = routers.DefaultRouter()
-router.register(r'exercise', views.ExerciseView, 'exercise')
-router.register(r'exerciseinfo', views.ExerciseInfoView, 'exerciseinfo')
-router.register(r'book', views.BookView, 'book')
-router.register(r'tag', views.TagView, 'tag')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/', include(router.urls)),
+    path('api/', include('cello.urls', namespace='api')),
 ]

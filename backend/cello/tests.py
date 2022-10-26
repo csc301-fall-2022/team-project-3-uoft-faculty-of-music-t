@@ -29,14 +29,14 @@ class CelloTest(APITestCase):
             "date": "1990",
             "link": "https://www.book.com"
         }
-        response = self.client.post('/api/book/', new_book)
+        response = self.client.post(reverse("api:book-list"), new_book)
         self.assertEqual(response.status_code, 401)
 
     def test_authenticated_post(self):
         """
         Testing that an authenticated user can make a post request
         """
-        access_token = self.client.post('/api/token/', self.user_data).data['access']
+        access_token = self.client.post(reverse("api:token_obtain_pair"), self.user_data).data['access']
         self.client.credentials(HTTP_AUTHORIZATION="Bearer " + access_token)
         new_book = {
             "title": "Book 2",
@@ -44,7 +44,7 @@ class CelloTest(APITestCase):
             "date": "1990",
             "link": "https://www.book.com"
         }
-        response = self.client.post('/api/book/', new_book)
+        response = self.client.post(reverse("api:book-list"), new_book)
         print(response)
         self.assertEqual(response.status_code, 201)
 
@@ -52,7 +52,7 @@ class CelloTest(APITestCase):
         """
         Tests that we can retrieve a book with an unauthenticated user
         """
-        response = self.client.get('/api/book/')
+        response = self.client.get(reverse("api:book-list"))
         json_response = json.loads(json.dumps(response.data))[0]['id']
         self.assertEqual(response.status_code, 200)
         self.assertEqual(json_response, self.book.id)
