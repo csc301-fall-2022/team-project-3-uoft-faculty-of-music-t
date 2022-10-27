@@ -1,0 +1,21 @@
+.title-container {
+  width: 80%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .title-container {
+    width: 1000px;
+  }
+}
