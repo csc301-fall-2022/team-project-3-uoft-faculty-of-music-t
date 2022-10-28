@@ -2,12 +2,13 @@ import React from 'react'
 import "../App.css"
 import "./HomePage.css"
 import SearchBar from '../components/SearchBar'
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
     <div className="homePage">
         <div className="title-container">
-            <h1 className="title">Cello Exercise Index</h1>
+            <Link to="/" className="title-link"><h1 className="title">Cello Exercise Index</h1></Link>
         </div>
         <div className="homePage-main-container">
             <SearchBar />
