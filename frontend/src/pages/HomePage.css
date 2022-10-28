@@ -1,0 +1,74 @@
+.homePage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 800px;
+}
+
+.homePage-main-container {
+    width: 80%;
+}
+
+.content-list-container {
+    width: 100%;
+    background-color: #e7e7e7;
+    margin-top: 1.5rem;
+    min-height: 300px;
+    height: 80%;
+    display: flex;
+    border-radius: 0.5rem;
+}
+
+.content-list-container h2 {
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    font-family: 'Glory', sans-serif;
+}
+
+.content-list-container-divider {
+    background-color: black;
+    width: 0.25%;
+}
+
+.books-list-container {
+    width: 49.875%;
+    display: flex;
+    justify-content: center;
+}
+
+.browse-by-topic-list-container {
+    width: 49.875%;
+    display: flex;
+    justify-content: center;
+}
+
+.random-exercises-container {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.random-exercises-container h2 {
+    margin: 0;
+    font-family: 'Glory', sans-serif;
+}
+
+.random-exercises-list-container {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #e7e7e7;
+    width: 100%;
+    min-height: 100px;
+    border-radius: 0.5rem;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 1200px) {
+    .homePage-main-container {
+        width: 1000px;
+    }
+}
