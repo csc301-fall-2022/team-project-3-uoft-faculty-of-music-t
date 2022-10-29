@@ -18,10 +18,47 @@
  * Provide clear steps for using each feature described above
  * This section is critical to testing your application and must be done carefully and thoughtfully
  
- ## Development requirements
- * If a developer were to set this up on their machine or a remote server, what are the technical requirements (e.g. OS, libraries, etc.)?
- * Briefly describe instructions for setting up and running the application (think a true README).
+ # Development requirements
+You will need to have Node, npm and `python3` installed on your machine in order to run this project.
+
+Installation links:
+* Node/npm: https://nodejs.org/en/download/
+* Python: https://www.python.org/downloads/
+
+## NOTE: 
+- Will test this again after structure (possibly) changes for deployment and modify accordingly
+
+## Cloning the repository
+Clone the project from GitHub 
+```
+git clone https://github.com/csc301-fall-2022/team-project-3-uoft-faculty-of-music-t.git
+ ```
+`cd` into the project root directory
+```
+cd team-project-3-uoft-faculty-of-music-t
+```
+
+## Running the Django project
+Add the Django dependencies:
+```
+pip install django django-cors-headers djangorestframework djangorestframework-simplejwt
+```
+Run the server:
+```
+python backend/manage.py runserver
+```
  
+## Running the React project
+`cd` into the `frontend` directory:
+```
+cd frontend
+```
+Start the React project:
+```
+npm install
+npm start
+```
+
  ## Deployment and Github Workflow
 
 Describe your Git / GitHub workflow. Essentially, we want to understand how your team members shares a codebase, avoid conflicts and deploys the application.
