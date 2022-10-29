@@ -27,7 +27,7 @@ def extract_books():
 def create_book_csv(books):
     with open('new_csv/book.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['id', 'author', 'publish_date', 'title', 'link'])
+        writer.writerow(['id', 'author', 'date', 'title', 'link'])
         for book in books:
             writer.writerow([book.book_id, book.author, book.date, book.title, book.link])
 
@@ -122,7 +122,7 @@ def extract_tags_and_exercises():
 def create_tags(tags):
     with open('new_csv/tag.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['id', 'tag_level', 'tag_name'])
+        writer.writerow(['id', 'level', 'tag_name'])
         for tag in tags:
             writer.writerow([tag.tag_id, tag.level, tag.tag_name])
 
