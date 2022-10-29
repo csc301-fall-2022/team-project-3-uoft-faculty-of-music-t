@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from cello.views.author_view import AuthorView
 from cello.views.book_view import BookView
 from cello.views.exercise_view import ExerciseView
 from cello.views.exerciseinfo_view import ExerciseInfoView
@@ -17,6 +18,7 @@ router.register(r'exercise', ExerciseView, 'exercise')
 router.register(r'exerciseinfo', ExerciseInfoView, 'exerciseinfo')
 router.register(r'book', BookView, 'book')
 router.register(r'tag', TagView, 'tag')
+router.register(r'authors', AuthorView, 'authors')
 
 urlpatterns = [
     path('', include(router.urls)),
