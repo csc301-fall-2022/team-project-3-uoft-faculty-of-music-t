@@ -5,7 +5,8 @@ A picture of what our database schema looks like is in schema.png (subject to ch
 
 The python file has already been run and the generated files are now in new_csv.
 
-To run locally, just run the create_modified_csv.py file.
+# Deployment
+On deployment, follow the steps in cellodb.sql
 
-# TODO: 
-- Convert the newly generated .csv files to .sql files and create the database.
+# Using data locally
+You can import the dbexport.pgsql file to your local Postgres: https://www.a2hosting.ca/kb/developer-corner/postgresql/import-and-export-a-postgresql-database#Importing-a-PostgreSQL-database

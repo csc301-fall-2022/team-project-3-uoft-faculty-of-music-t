@@ -1,5 +1,5 @@
 -- On deployment, follow these steps exactly:
--- 1) DROP the tables below or Django won't migrate the id seqs properly
+-- 1) DROP the tables cello_book, cello_exerciseinfo, cello_tag, cello_exercise from Heroku Postgres (please make sure they are NOT in Heroku Postgres before we start the next steps or migrations will be painful) or Django won't migrate the id seqs properly
 -- 2) Migrate Django tables to Postgres
 -- 3) Run this sql file (cellodb.sql) on Heroku to insert the values (do this only ONCE or we'll need to clear the tables)
 -- 4) Run syncseq.sql on Heroku to sync the sequences
