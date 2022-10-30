@@ -61,13 +61,18 @@ npm start
 
  ## Deployment and Github Workflow
 
-Describe your Git / GitHub workflow. Essentially, we want to understand how your team members shares a codebase, avoid conflicts and deploys the application.
+We split into two teams - frontend and backend. We have a backend branch and a frontend branch. Each team member branches off their respective section (backend or frontend) and creates a branch for the feature that they are implementing. Upon completion of the feature, they create a pull request to merge it to the backend/frontend branch (whichever is applicable). After writing tests to ensure features are working properly, a pull request is then created to merge to main. Pull requests can be reviewed by any other team member - before merging, at least one team member must approve the commits before it is merged.
 
- * Be concise, yet precise. For example, "we use pull-requests" is not a precise statement since it leaves too many open questions - Pull-requests from where to where? Who reviews the pull-requests? Who is responsible for merging them? etc.
- * If applicable, specify any naming conventions or standards you decide to adopt.
+To avoid conflicts, roles were divided between team members as to ensure everyone has a separate role and will not be working on the same files. 
+
+We chose this workflow in order to ensure that conflicts did not occur with people working on the same parts of the project, and so that someone is able to test and look over the code before it merges with our main/frontend/backend branches.
+
+Python naming conventions were used for the backend side. On the frontend side, components are named using PascalCase (which is standard for React).
+Otherwise, for variables, camelCase is used (as is the convention for JavaScript).
+
+TODO: after deployment
  * Describe your overall deployment process from writing code to viewing a live applicatioon
  * What deployment tool(s) are you using and how
- * Don't forget to **briefly explain why** you chose this workflow or particular aspects of it!
 
  ## Licenses 
 
