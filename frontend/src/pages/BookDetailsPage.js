@@ -2,8 +2,11 @@ import React from 'react'
 import "../App.css"
 import "./BookDetailsPage.css"
 import { Link } from "react-router-dom";
+import ExerciseList from '../components/ExerciseList';
 
 const BookDetailsPage = () => {
+  // TODO: Load Exercises using api?
+  const exercises = [{name:"Exercise 1"}, {name:"Exercise 2"}, {name:"Exercise 3"}];
   return (
     <div className="bookDetailsPage">
         <div className="title-container">
@@ -19,9 +22,10 @@ const BookDetailsPage = () => {
                 </div>
             </div>
             <div className="bookDetails-exercises-container">
-                <h2 className="bookDetails-exercises-container-title">Exercises</h2>
+                <h2>Exercises</h2>
+                {/* <h2 className="bookDetails-exercises-container-title">Exercises</h2> */}
                 <div className="bookDetails-exercises-list-container">
-
+                    <ExerciseList exercises={exercises}/>
                 </div>
             </div>
         </div>

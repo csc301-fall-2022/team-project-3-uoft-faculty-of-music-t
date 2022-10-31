@@ -3,8 +3,11 @@ import "../App.css"
 import "./HomePage.css"
 import SearchBar from '../components/SearchBar'
 import { Link } from "react-router-dom";
+import BooksList from '../components/BooksList';
 
 const HomePage = () => {
+  // TODO: Link the books
+  const books = [{name:"Book1", author:"Me"}, {name:"Book2", author:"My Friend"}];  // TODO: Load books using api
   return (
     <div className="homePage">
         <div className="title-container">
@@ -15,6 +18,9 @@ const HomePage = () => {
             <div className="content-list-container">
                 <div className="books-list-container">
                     <h2>Books</h2>
+                    <div>
+                        <BooksList books={books}/>
+                    </div>
                 </div>
                 <div className="content-list-container-divider">
                 </div>

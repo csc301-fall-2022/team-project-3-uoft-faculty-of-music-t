@@ -34,8 +34,13 @@
 
 .books-list-container {
     width: 49.875%;
-    display: flex;
+    display: inline;
     justify-content: center;
+}
+
+.books-list-container h2 {
+    text-align: center;
+    font-family: 'Glory', sans-serif;
 }
 
 .browse-by-topic-list-container {

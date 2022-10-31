@@ -4,6 +4,7 @@ import "./ExerciseDetailsPage.css"
 import { Link } from "react-router-dom";
 
 const ExerciseDetailsPage = () => {
+
   return (
     <div className="exerciseDetailsPage">
         <div className="title-container">
@@ -18,7 +19,9 @@ const ExerciseDetailsPage = () => {
 
                 </div>
                 <div className="exerciseDetails-content-buttons">
-                    <button className="view-book-button">View the Book</button>
+                    <Link to='/bookDetails'>
+                        <button className="view-book-button">View the Book</button>
+                    </Link>
                     <button className="edit-exercise-button">Request to Edit This Exercise</button>
                 </div>
             </div>

@@ -1,0 +1,9 @@
+.exercise-container {
+    /* margin: 3px auto; */
+    height: 30px;
+    display: block;
+    align-items: center;
+    justify-content:space-between;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+}
