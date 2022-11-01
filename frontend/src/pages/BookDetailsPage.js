@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ExerciseList from '../components/ExerciseList';
 
 const BookDetailsPage = () => {
-  // TODO: Load Exercises using api?
+  // TODO: Load Exercises using api, this is mock data
   const exercises = [{name:"Exercise 1"}, {name:"Exercise 2"}, {name:"Exercise 3"}];
   return (
     <div className="bookDetailsPage">
@@ -15,7 +15,12 @@ const BookDetailsPage = () => {
         <div className="bookDetails-main-container">
             <div className="bookDetails-top-container">
                 <div className="bookDetails-content-container">
-                    <h2 className="bookDetails-content-container-title">Book Details</h2>
+                    <h2 className="bookDetails-content-container-title">
+                        Book Details
+                        <div>
+
+                        </div>
+                    </h2>
                 </div>
                 <div className="bookDetails-filter-container">
                     {/* TODO Add filter component here */}

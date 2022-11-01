@@ -7,7 +7,6 @@ import BooksList from '../components/BooksList';
 import TopicList from '../components/TopicList';
 
 const HomePage = () => {
-  // TODO: Link the books
   const books = [{name:"Book1", author:"Me"}, {name:"Book2", author:"My Friend"}];  // TODO: Load books using api
   const topics = [{name:"Agility"}, {name:"Arpeggios"}, {name:"Articulation"}, {name:"Balance"}, {name:"Bow Control"}, {name:"Bow Distribution"},]; // TODO: Load topics using api
 
