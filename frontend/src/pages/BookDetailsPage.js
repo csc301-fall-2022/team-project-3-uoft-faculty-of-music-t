@@ -1,10 +1,19 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import "../App.css"
 import "./BookDetailsPage.css"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ExerciseList from '../components/ExerciseList';
+import BookDetails from '../components/BookDetails';
+import { getBookDetails } from '../api/requests';
 
-const BookDetailsPage = () => {
+function BookDetailsPage() {
+  const location = useLocation();
+  const { id } = location.state;
+  const [bookDetails, setBookDetails] = useState({});
+  useEffect(() => {
+    getBookDetails(setBookDetails, id);
+  }, [id])
+
   // TODO: Load Exercises using api, this is mock data
   const exercises = [{book:{title:"BookName", author:"Bach", date:"1900"}, page_and_exercise:"pg. 10 Exercise 1"}];  // Import data here, remove the test data
   return (
@@ -18,7 +27,7 @@ const BookDetailsPage = () => {
                     <h2 className="bookDetails-content-container-title">
                         Book Details
                         <div>
-
+                          <BookDetails bookdet={bookDetails}/>
                         </div>
                     </h2>
                 </div>
