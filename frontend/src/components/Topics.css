@@ -1,0 +1,12 @@
+.topic-container {
+    margin: 5px auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+    width: 95%;
+    box-shadow: 0px 3px 10px rgb(100, 100, 100);
+    text-indent: 5px;
+}
