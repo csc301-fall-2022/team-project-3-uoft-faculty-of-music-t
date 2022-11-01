@@ -5,8 +5,8 @@ import ExerciseInfo from '../components/ExerciseInfo';
 import { Link } from "react-router-dom";
 
 const ExerciseDetailsPage = () => {
-  // TODO: Load Exercise details using api, this is mock data
-  const exercisedetails = [{name:"Exercise 1", lrside:"Left Side", level1:"Ornamentations", level2:"Trills", clef:["Tenor"]}];
+  // TODO: Load Exercise details using api, this is test data
+  const exercisedetails = [{book:{title:"BookName", author:"Bach", date:"1900", link:"https://imslp.org/wiki/Nouvelle_m%C3%A9thode_de_violoncelle_(Abbiate%2C_Louis)"}, page_and_exercise:"pg. 10 Exercise 1", side:"Right side", tenor:false, treble:false}];
 
   return (
     <div className="exerciseDetailsPage">
@@ -17,13 +17,10 @@ const ExerciseDetailsPage = () => {
             <div className="exerciseDetails-content-container">
                 <h2 className="exerciseDetails-content-title">
                     Exercise Details
-                    <div>
+                    <div className="exerciseDetails-content">
                         <ExerciseInfo exercisedetails={exercisedetails}/>
                     </div>
                 </h2>
-                <div className="exerciseDetails-content">
-
-                </div>
                 <div className="exerciseDetails-content-buttons">
                     <Link to='/bookDetails'>
                         <button className="view-book-button">View the Book</button>

@@ -6,7 +6,7 @@ import ExerciseList from '../components/ExerciseList';
 
 const BookDetailsPage = () => {
   // TODO: Load Exercises using api, this is mock data
-  const exercises = [{name:"Exercise 1"}, {name:"Exercise 2"}, {name:"Exercise 3"}];
+  const exercises = [{book:{title:"BookName", author:"Bach", date:"1900"}, page_and_exercise:"pg. 10 Exercise 1"}];  // Import data here, remove the test data
   return (
     <div className="bookDetailsPage">
         <div className="title-container">

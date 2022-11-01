@@ -6,7 +6,7 @@ export default function ExerciseList({ exercises }) {
   return (
     <div className='exercise-container'>
       {exercises.map((exercise) => {
-        return <Exercise key={exercise.key} exercise={exercise} />;  // TODO: id
+        return <Exercise key={exercise.id} exercise={exercise} />; 
       })}
     </div>
   )

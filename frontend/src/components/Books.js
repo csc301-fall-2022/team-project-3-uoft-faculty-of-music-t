@@ -7,9 +7,9 @@ export default function Books({ book }) {
     <div className='book-container'>
         {/* TODO: Get Book info from api */}
         <Link to="bookDetails"> 
-            <p>{book.name}</p>
+            <p>{book.title}</p>
         </Link>
-        <p>{book.author}</p>
+        <p>{book.author} ({book.date})</p>
     </div>
   )
 }

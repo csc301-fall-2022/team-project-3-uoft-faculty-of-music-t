@@ -1,6 +1,16 @@
 .exercisedet-container p{
     font-family: 'Glory', sans-serif;
     font-size: 70%;
-    padding: 8px;
-    font-weight: 100;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-indent: 20px;
+    font-weight:lighter;
+}
+
+a{
+    color:rgb(28, 28, 28)
+}
+
+a:hover{
+    color: #265abc;
 }
