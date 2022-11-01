@@ -28,20 +28,32 @@
 }
 
 .content-list-container-divider {
-    background-color: black;
+    background-color: rgb(80, 80, 80);
     width: 0.25%;
 }
 
 .books-list-container {
     width: 49.875%;
-    display: flex;
+    display: inline;
     justify-content: center;
+    background-color: #6d8193;
+}
+
+.books-list-container h2 {
+    text-align: center;
+    font-family: 'Glory', sans-serif;
+    color: white;
 }
 
 .browse-by-topic-list-container {
     width: 49.875%;
-    display: flex;
+    display: inline;
     justify-content: center;
+}
+
+.browse-by-topic-list-container h2 {
+    text-align: center;
+    font-family: 'Glory', sans-serif;
 }
 
 .random-exercises-container {
