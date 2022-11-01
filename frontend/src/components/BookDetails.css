@@ -1,9 +1,13 @@
+.bookdet-container{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .bookdet-container p{
     font-family: 'Glory', sans-serif;
     font-size: 70%;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-indent: 20px;
     font-weight:lighter;
 }
 
