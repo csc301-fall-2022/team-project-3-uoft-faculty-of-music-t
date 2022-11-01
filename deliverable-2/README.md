@@ -43,8 +43,9 @@ Add the Django dependencies:
 ```
 pip install django django-cors-headers djangorestframework djangorestframework-simplejwt
 ```
-Run the server:
+Migrate the database and run the server:
 ```
+python backend/manage.py migrate
 python backend/manage.py runserver
 ```
  
