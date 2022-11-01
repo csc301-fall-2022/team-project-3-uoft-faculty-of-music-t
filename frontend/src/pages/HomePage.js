@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "../App.css"
 import "./HomePage.css"
 import SearchBar from '../components/SearchBar'
 import { Link } from "react-router-dom";
 import BooksList from '../components/BooksList';
 import TopicList from '../components/TopicList';
+import { getAllBooks } from '../api/requests';
 
 const HomePage = () => {
-  // TODO: Load books using api
-  const books = [{id: 1, title:"Nouvelle Méthode de Violoncelle", author:"Abbiate, Louis", date:"1900", link: "https://imslp.org/wiki/Nouvelle_m%C3%A9thode_de_violoncelle_(Abbiate%2C_Louis)"}, {id: 2, title:"Operating Systems", author:"Jack Sun", date:"2022"}];  
+  const [books, setBooks] = useState([]);
+  useEffect(() => {
+    getAllBooks(setBooks);
+  }, [])
   // TODO: Load topics using api
-  const topics = [{tag_name:"University of Tears"}, {tag_name:"Arpeggios"}, {tag_name:"Articulation"}, {tag_name:"Balance"}, {tag_name:"Bow Control"}, {tag_name:"Bow Distribution"}]; 
+  const topics = [{tag_name:"University of Tears"}, {tag_name:"Arpeggios"}, {tag_name:"Articulation"}, {tag_name:"Balance"}, {tag_name:"Bow Control"}, {tag_name:"Bow Distribution"}];
 
   return (
     <div className="homePage">
