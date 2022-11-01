@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
 import BookDetailsPage from './pages/BookDetailsPage';
 import ExerciseDetailsPage from './pages/ExerciseDetailsPage';
-import Books from './components/Books';
+// import Books from './components/Books';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="search" element={<SearchPage />}></Route>
-        <Route path="bookDetails" element={<BookDetailsPage book={Books}/>}></Route>
+        <Route path="bookDetails" element={<BookDetailsPage />}></Route>
         <Route path="exerciseDetails" element={<ExerciseDetailsPage />}></Route>
       </Routes>
     </BrowserRouter>

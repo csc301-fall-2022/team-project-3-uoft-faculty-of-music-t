@@ -1,0 +1,16 @@
+.bookdet-container p{
+    font-family: 'Glory', sans-serif;
+    font-size: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-indent: 20px;
+    font-weight:lighter;
+}
+
+a{
+    color:rgb(28, 28, 28)
+}
+
+a:hover{
+    color: #265abc;
+}
