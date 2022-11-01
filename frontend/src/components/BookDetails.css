@@ -1,13 +1,13 @@
-.exercisedet-container{
+.bookdet-container{
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.exercisedet-container p{
+.bookdet-container p{
     font-family: 'Glory', sans-serif;
     font-size: 70%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-weight:lighter;
 }
 

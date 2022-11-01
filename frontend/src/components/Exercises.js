@@ -6,10 +6,10 @@ export default function Exercises({ exercise }) {
   return (
     <div className='exercise-container'>
         {/* TODO: Get Book info from api */}
-        {/* Assign exercise based on book? */}
         <Link to="/exerciseDetails">
-            <p>{exercise.name}</p>
+            <p>{exercise.book.title} ({exercise.page_and_exercise})</p>
         </Link>
+        <p>{exercise.book.author} ({exercise.book.date})</p>
     </div>
   )
 }

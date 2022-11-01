@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
 import BookDetailsPage from './pages/BookDetailsPage';
 import ExerciseDetailsPage from './pages/ExerciseDetailsPage';
+// import Books from './components/Books';
 
 function App() {
   return (
