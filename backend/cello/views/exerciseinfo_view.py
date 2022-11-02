@@ -7,5 +7,5 @@ from ..models import ExerciseInfo
 
 class ExerciseInfoView(viewsets.ModelViewSet):
     serializer_class = ExerciseInfoSerializer
-    queryset= ExerciseInfo.objects.all()
+    queryset= ExerciseInfo.objects.all().order_by('id')
     pagination_class = StandardResultsSetPagination
