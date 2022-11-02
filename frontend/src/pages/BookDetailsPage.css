@@ -30,6 +30,11 @@
     margin: 0;
 }
 
+.bookDetails-content {
+    flex: 1;
+    margin-bottom: 50px;
+}
+
 .bookDetails-filter-container {
     width: 60%;
     min-width: 400px;

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import "../App.css"
 import "./BookDetailsPage.css"
 import { Link, useLocation } from "react-router-dom";
+import BookInfo from '../components/BookInfo';
 import ExerciseList from '../components/ExerciseList';
 import BookDetails from '../components/BookDetails';
 import { getBookDetails } from '../api/requests';
@@ -16,6 +17,7 @@ function BookDetailsPage() {
 
   // TODO: Load Exercises using api, this is mock data
   const exercises = [{book:{title:"BookName", author:"Bach", date:"1900"}, page_and_exercise:"pg. 10 Exercise 1"}];  // Import data here, remove the test data
+  // const bookdetails = [{id:1, title:"Title 1", author:["Starker, Janos and George Bekefi"], date:"1900", link:"https://www.google.com"}];
   return (
     <div className="bookDetailsPage">
         <div className="title-container">
@@ -26,8 +28,8 @@ function BookDetailsPage() {
                 <div className="bookDetails-content-container">
                     <h2 className="bookDetails-content-container-title">
                         Book Details
-                        <div>
-                          <BookDetails bookdet={bookDetails}/>
+                        <div className='bookDetails-content'>
+                            <BookInfo bookdetails={[bookDetails]}/>
                         </div>
                     </h2>
                 </div>
