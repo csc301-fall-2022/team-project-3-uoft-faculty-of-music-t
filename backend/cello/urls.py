@@ -23,7 +23,7 @@ router.register(r'authors', AuthorView, 'authors')
 urlpatterns = [
     path('', include(router.urls)),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('tag/exercise/<int:exercise_id>', TagByExerciseView.as_view({'get': 'list'}), name='tag-by-exercise'),
-    path('tag/level/<int:level_num>',TagByLevelView.as_view({'get': 'list'}), name='tag-by-level'),
-    path('exerciseinfo/book/<int:book_id>', ExerciseInfoByBookView.as_view({'get': 'list'}), name='exercise-by-book'),
+    path('tag/exercise/<int:exercise_id>/', TagByExerciseView.as_view({'get': 'list'}), name='tag-by-exercise'),
+    path('tag/level/<int:level_num>/',TagByLevelView.as_view({'get': 'list'}), name='tag-by-level'),
+    path('exerciseinfo/book/<int:book_id>/', ExerciseInfoByBookView.as_view({'get': 'list'}), name='exercise-by-book'),
 ]
