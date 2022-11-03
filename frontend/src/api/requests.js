@@ -19,3 +19,21 @@ export function getBookDetails(setBookDetails, id) {
       setBookDetails(res.data);
     });
 }
+
+/** requests and sets list of exercises according to the passed in setter*/
+export function getAllExercises(setExercises) {
+    axios
+    .get(server_url + "api/exerciseinfo/")
+    .then((res) => {
+      setExercises(res.data.results);
+    });
+}
+
+/** requests and sets exercise details according to the passed in setter and exercise id*/
+export function getExerciseDetails(setExerciseDetails, id) {
+    axios
+    .get( `${server_url}api/exerciseinfo/${id}/` )
+    .then((res) => {
+      setExerciseDetails(res.data);
+    });
+}
