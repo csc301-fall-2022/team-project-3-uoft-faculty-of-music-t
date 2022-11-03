@@ -15,7 +15,7 @@ function BookDetailsPage() {
   }, [id])
 
   // TODO: Load Exercises using api, this is mock data
-  const exercises = [{book:{title:"BookName", author:"Bach", date:"1900"}, page_and_exercise:"pg. 10 Exercise 1"}];  //
+  const exercises = [{book:{title:"BookName", author:"Bach", date:"1900"}, page_and_exercise:"pg. 10 Exercise 1"}];
   return (
     <div className="bookDetailsPage">
         <div className="title-container">
