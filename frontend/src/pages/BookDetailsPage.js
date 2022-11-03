@@ -4,18 +4,23 @@ import "./BookDetailsPage.css"
 import { Link, useLocation } from "react-router-dom";
 import BookInfo from '../components/BookInfo';
 import ExerciseList from '../components/ExerciseList';
-import { getBookDetails } from '../api/requests';
+import { getBookDetails, getExerciseByBook } from '../api/requests';
 
 function BookDetailsPage() {
   const location = useLocation();
   const { id } = location.state;
   const [bookDetails, setBookDetails] = useState({});
+
   useEffect(() => {
     getBookDetails(setBookDetails, id);
   }, [id])
 
-  // TODO: Load Exercises using api, this is mock data
-  const exercises = [{book:{title:"Exercise Name", author:"Bach", date:"1900"}, page_and_exercise:"pg. 10 Exercise 1"}];
+  const [exercises, setExercises] = useState([])
+
+  useEffect(() => {
+    getExerciseByBook(setExercises, id);
+  }, [id])
+
   return (
     <div className="bookDetailsPage">
         <div className="title-container">
