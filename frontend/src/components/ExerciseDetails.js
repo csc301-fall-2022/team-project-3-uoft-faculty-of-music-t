@@ -3,20 +3,28 @@ import './ExerciseDetails.css';
 // import { Link } from 'react-router-dom';
 
 export default function ExerciseDetails({ exercisedet }) {
+  const handleButtonClick = (e) => {
+    e.preventDefault()
+    window.location.href=exercisedet.book.link
+  }
+
   return (
     <div className='exercisedet-container'>
-      <p>Exercise Page and Name: {exercisedet.page_and_exercise}</p>
-      <p>Side: {exercisedet.side}</p>
-      <p>Book Name: {exercisedet.book.title}</p>
-      <p>Author: {exercisedet.book.author}</p>
-      <p>Date: {exercisedet.book.date}</p>
-      {exercisedet.tenor && <p>Tenor: Yes</p>}
-      {!exercisedet.tenor && <p>Tenor: No</p>}
-      {exercisedet.treble && <p>Treble: Yes</p>}
-      {!exercisedet.treble && <p>Treble: No</p>}
-      <p>
-        <a href={exercisedet.book.link}>Link to book</a>
-      </p>
+      <div className="exercisedet-container-labels">
+        <p><span>Exercise Page and Name: </span> {exercisedet.page_and_exercise}</p>
+        <p><span>Side: </span>{exercisedet.side}</p>
+        <p><span>Book Name: </span>{exercisedet.book.title}</p>
+        <p><span>Author: </span>{exercisedet.book.author}</p>
+        <p><span>Date: </span>{exercisedet.book.date}</p>
+        {exercisedet.tenor && <p>Tenor: Yes</p>}
+        {!exercisedet.tenor && <p>Tenor: No</p>}
+        {exercisedet.treble && <p>Treble: Yes</p>}
+        {!exercisedet.treble && <p>Treble: No</p>}
+      </div>
+      <div className="exerciseDetails-content-buttons">
+          <button className="view-book-button" onClick={e => handleButtonClick(e)}>View the Book</button>
+          <button className="edit-exercise-button">Request to Edit This Exercise</button>
+      </div>
     </div>
   )
 }

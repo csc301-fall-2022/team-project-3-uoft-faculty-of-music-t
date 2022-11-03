@@ -19,6 +19,7 @@
     height: 80%;
     display: flex;
     border-radius: 0.5rem;
+    max-height: 500px;
 }
 
 .content-list-container h2 {
@@ -50,6 +51,7 @@
     width: 29.875%;
     display: inline;
     justify-content: center;
+    overflow: auto;
 }
 
 .browse-by-topic-list-container h2 {

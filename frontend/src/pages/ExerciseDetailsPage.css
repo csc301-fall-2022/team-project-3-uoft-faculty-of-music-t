@@ -13,7 +13,7 @@
 
 .exerciseDetails-content-container {
     width: 35%;
-    height: 360px;
+    min-width: 300px;
     background-color: #e7e7e7;
     padding: 20px;
     display: flex;
@@ -26,41 +26,6 @@
 
 .exerciseDetails-content {
     flex: 1;
-    margin-bottom: 50px;
-}
-
-.exerciseDetails-content-buttons {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.view-book-button, .edit-exercise-button {
-    height: 40px;
-    font-family: 'Glory', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 0.2rem;
-    color:white;
-    padding: 10px;
-    border: 0px;
-}
-
-.view-book-button {
-    background-color: #56ABFA;
-}
-
-.view-book-button:hover {
-    background-color: #7ebefa;
-    cursor: pointer;
-}
-
-.edit-exercise-button {
-    background-color: #366592;
-}
-
-.edit-exercise-button:hover {
-    background-color: #426c92;
-    cursor: pointer;
 }
 
 /* Media Queries */

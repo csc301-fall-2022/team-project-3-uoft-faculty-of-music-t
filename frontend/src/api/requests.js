@@ -37,3 +37,11 @@ export function getExerciseDetails(setExerciseDetails, id) {
       setExerciseDetails(res.data);
     });
 }
+
+export function getAllTags(setTopics) {
+  axios
+  .get( `${server_url}api/tag/` )
+  .then((res) => {
+    setTopics(res.data.results);
+  });
+}
