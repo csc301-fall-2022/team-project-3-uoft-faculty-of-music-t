@@ -6,7 +6,7 @@ from ..models import Exercise, Tag
 
 class TagView(viewsets.ModelViewSet):
     serializer_class = TagSerializer
-    queryset = Tag.objects.all()
+    queryset = Tag.objects.all().order_by('id')
     pagination_class = StandardResultsSetPagination
 
         
@@ -26,6 +26,6 @@ class TagByLevelView(viewsets.ModelViewSet):
 
     def get_queryset(self):
         level_num = self.kwargs['level_num']
-        queryset = Tag.objects.filter(level=level_num)
+        queryset = Tag.objects.filter(level=level_num).order_by('id')
         return queryset
     

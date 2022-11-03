@@ -7,6 +7,6 @@ from cello.pagination import StandardResultsSetPagination
 
 class BookView(viewsets.ModelViewSet):
     serializer_class = BookSerializer
-    queryset= Book.objects.all()
+    queryset= Book.objects.all().order_by('id')
     pagination_class = StandardResultsSetPagination
     
