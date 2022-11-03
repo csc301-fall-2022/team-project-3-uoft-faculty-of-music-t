@@ -1,0 +1,36 @@
+.exerciseDetailsPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 800px;
+}
+
+.exerciseDetails-main-container {
+    width: 80%;
+}
+
+.exerciseDetails-content-container {
+    width: 35%;
+    min-width: 300px;
+    background-color: #e7e7e7;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.exerciseDetails-content-title {
+    margin: 0;
+}
+
+.exerciseDetails-content {
+    flex: 1;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 1200px) {
+    .exerciseDetails-main-container {
+        width: 1000px;
+    }
+}
