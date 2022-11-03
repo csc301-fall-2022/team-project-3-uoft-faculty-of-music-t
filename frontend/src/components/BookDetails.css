@@ -1,14 +1,16 @@
-.bookdet-container{
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
 .bookdet-container p{
     font-family: 'Glory', sans-serif;
-    font-size: 70%;
+    font-size: 1rem;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-weight:lighter;
+    font-weight: 400;
+}
+
+.bookdet-container span {
+    font-family: 'Glory', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color:rgb(56, 56, 56)
 }
 
 a{
@@ -17,4 +19,18 @@ a{
 
 a:hover{
     color: #265abc;
+}
+
+.view-book-button {
+    background-color: #56ABFA;
+}
+
+.view-book-button a {
+    text-decoration: none;
+    color: black;
+}
+
+.view-book-button:hover {
+    background-color: #7ebefa;
+    cursor: pointer;
 }

@@ -5,15 +5,15 @@ import SearchBar from '../components/SearchBar'
 import { Link } from "react-router-dom";
 import BooksList from '../components/BooksList';
 import TopicList from '../components/TopicList';
-import { getAllBooks } from '../api/requests';
+import { getAllBooks, getAllTags } from '../api/requests';
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
+  const [topics, setTopics] = useState([]);
   useEffect(() => {
     getAllBooks(setBooks);
+    getAllTags(setTopics)
   }, [])
-  // TODO: Load topics using api
-  const topics = [{tag_name:"University of Tears"}, {tag_name:"Arpeggios"}, {tag_name:"Articulation"}, {tag_name:"Balance"}, {tag_name:"Bow Control"}, {tag_name:"Bow Distribution"}];
 
   return (
     <div className="homePage">
@@ -25,17 +25,13 @@ const HomePage = () => {
             <div className="content-list-container">
                 <div className="books-list-container">
                     <h2>Books</h2>
-                    <div>
-                        <BooksList books={books}/>
-                    </div>
+                    <BooksList books={books}/>
                 </div>
-                {/* <div className="content-list-container-divider">
-                </div> */}
+                <div className="content-list-container-divider">
+                </div>
                 <div className="browse-by-topic-list-container">
                     <h2>Browse By Topic</h2>
-                    <div>
-                        <TopicList topics={topics}/>
-                    </div>
+                    <TopicList topics={topics}/>
                 </div>
             </div>
             <div className="random-exercises-container">

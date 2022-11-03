@@ -1,11 +1,21 @@
 .exercise-container {
     /* margin: 3px auto; */
     margin: 5px auto;
-    height: 30px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    min-height: 30px;
     display: flex;
     align-items: center;
     justify-content:space-between;
     background-color: rgb(243, 243, 243);
     border-radius: 5px;
     width: 95%;
+}
+
+.exercise-container p {
+    margin: 0;
+}
+
+.author-date-labels {
+    text-align: right
 }

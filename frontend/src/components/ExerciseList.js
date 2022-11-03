@@ -1,10 +1,10 @@
 import React from 'react';
-import './Exercises.css';
-import Exercise from './Exercises';
+import './ExerciseList.css';
+import Exercise from './Exercise';
 
 export default function ExerciseList({ exercises }) {
   return (
-    <div className='exercise-container'>
+    <div className='exercise-list-container'>
       {exercises.map((exercise) => {
         return <Exercise key={exercise.id} exercise={exercise} />; 
       })}
