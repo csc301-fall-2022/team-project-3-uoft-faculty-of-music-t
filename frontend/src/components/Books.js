@@ -6,7 +6,7 @@ export default function Books({ book }) {
   return (
     <div className='book-container'>
         {/* TODO: Get Book info from api */}
-        <Link to="bookDetails"> 
+        <Link to="bookDetails" state={{ id: book.id }}> 
             <p>{book.title}</p>
         </Link>
         <p>{book.author} ({book.date})</p>
