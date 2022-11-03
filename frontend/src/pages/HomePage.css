@@ -33,8 +33,9 @@
 }
 
 .books-list-container {
-    width: 49.875%;
+    width: 69.875%;
     display: inline;
+    overflow: auto;
     justify-content: center;
     background-color: #6d8193;
 }
@@ -46,7 +47,7 @@
 }
 
 .browse-by-topic-list-container {
-    width: 49.875%;
+    width: 29.875%;
     display: inline;
     justify-content: center;
 }
