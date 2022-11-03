@@ -166,5 +166,10 @@ SIMPLE_JWT = {
 # Configure database
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'https://cello-exercise-index.herokuapp.com/'
+]
+
 # Configure Django app for Heroku
 django_on_heroku.settings(locals())
