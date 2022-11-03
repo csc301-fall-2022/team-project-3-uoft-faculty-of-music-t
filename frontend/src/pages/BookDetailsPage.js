@@ -4,7 +4,6 @@ import "./BookDetailsPage.css"
 import { Link, useLocation } from "react-router-dom";
 import BookInfo from '../components/BookInfo';
 import ExerciseList from '../components/ExerciseList';
-import BookDetails from '../components/BookDetails';
 import { getBookDetails } from '../api/requests';
 
 function BookDetailsPage() {
@@ -16,8 +15,7 @@ function BookDetailsPage() {
   }, [id])
 
   // TODO: Load Exercises using api, this is mock data
-  const exercises = [{book:{title:"BookName", author:"Bach", date:"1900"}, page_and_exercise:"pg. 10 Exercise 1"}];  // Import data here, remove the test data
-  // const bookdetails = [{id:1, title:"Title 1", author:["Starker, Janos and George Bekefi"], date:"1900", link:"https://www.google.com"}];
+  const exercises = [{book:{title:"BookName", author:"Bach", date:"1900"}, page_and_exercise:"pg. 10 Exercise 1"}];  //
   return (
     <div className="bookDetailsPage">
         <div className="title-container">
