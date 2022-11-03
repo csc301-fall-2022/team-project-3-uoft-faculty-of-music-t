@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from datetime import timedelta
 from pathlib import Path
+import dj_database_url
+import django_on_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -154,6 +156,8 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15)
 }
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000'
-]
+# Configure database
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+# Configure Django app for Heroku
+django_on_heroku.settings(locals())
