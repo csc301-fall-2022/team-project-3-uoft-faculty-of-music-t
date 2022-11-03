@@ -45,3 +45,12 @@ export function getAllTags(setTopics) {
     setTopics(res.data.results);
   });
 }
+
+/** requests and sets exercises according to the passed in setter and book id */
+export function getExerciseByBook(setExercises, id) {
+  axios
+    .get( `${server_url}api/exerciseinfo/book/${id}/` )
+    .then((res) => {
+      setExercises(res.data.results);
+    });
+}
