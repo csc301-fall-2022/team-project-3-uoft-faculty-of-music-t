@@ -42,11 +42,32 @@ List any **process-related** (i.e. team organization and how you work) changes y
 
 
 ## Product - Review
+#### Link to the demo to our partner
+
+https://utoronto.zoom.us/rec/share/EgK3sl34FRGzx96Bk_6MEmxtSfYs9Y-7Xm6uN2ZpkgBCodI0QqhSVhpyriSPdCHJ.GKh9LCoGfviQpLbE?startTime=1667488139000
+Password: +^8b0N#XqT
+
 
 #### Q4. How was your product demo?
- * How did you prepare your demo?
- * What did you manage to demo to your partner?
- * Did your partner accept the features?
- * Were there change requests?
- * What did you learn from the demo from either a process or product perspective?
- * *This section will be marked very leniently so keep it brief and just make sure the points are addressed*
+
+We have done our product demo on our regular meeting time on November 3 on Zoom. With the agreement from the partner, we've recorded our demo and included the link of recording above. 
+
+In this demo, we've managed to show the following features:
+- Main page of displaying the list of all books and "browse by topic" section
+- Book details page
+  - Basic information about books
+  - list of exercises on these books (each item shows the title of book & exercise, page numbers, and author)
+  - navigating to the page where the user can buy a book
+- Exercise details page
+  - information about books (page, tenor, etc.)
+- Search page
+
+During the demo, our partner commented that it is good to see the required features she was asking during the deliverable 1. But there were a list of requests of improving the product for the next deliverable:
+- On the book details page, we can just display the page number and the list of relevant tags that each exercise has. And we can remove the author & title. 
+- On the exercise detail page, we can display more information about the exercise, such as level, tags, and other information that are written on the spreadsheet that the partner gave us.
+- On the search page, we again need to think about the important information that users actually want to see. (like what this exercise is about)
+- We can later add "link to creator's information" section to show the credits of partners and our team members for development. 
+
+
+Overall, it was meaningful to get an active feedback in the middle of development process in which we can quickly find the solution and make changes. Furthermore, this demo especially lets us have a time to think about what are the important information that users want to see. 
+
