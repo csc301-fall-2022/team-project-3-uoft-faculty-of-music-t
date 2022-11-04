@@ -1,4 +1,4 @@
-# YOUR PRODUCT/TEAM NAME
+# Cello Exercise Index / TBD
 
 > _Note:_ This document is intended to be relatively short. Be concise and precise. Assume the reader has no prior knowledge of your application and is non-technical. 
 
@@ -71,9 +71,7 @@ We chose this workflow in order to ensure that conflicts did not occur with peop
 Python naming conventions were used for the backend side. On the frontend side, components are named using PascalCase (which is standard for React).
 Otherwise, for variables, camelCase is used (as is the convention for JavaScript).
 
-TODO: after deployment
- * Describe your overall deployment process from writing code to viewing a live applicatioon
- * What deployment tool(s) are you using and how
+Currently, we have pushed our production branch to Heroku. As of yet, we are not using any deployment tools, however for the next deliverable we are planning to use Github Actions for continuous deployment to deploy automatically to Heroku whenever we push to the main branch.
 
  ## Licenses 
 
