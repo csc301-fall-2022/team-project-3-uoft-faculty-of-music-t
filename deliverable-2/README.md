@@ -14,6 +14,9 @@
  * Provide a breakdown or detail for each feature that is most appropriate for your application
  * This section will be used to assess the value of the features built
 
+The user can search different exercises by filtering through different tags, and navigating through different books. Each book has a link to a page from a different website that provides the full version of the book online. The details for the books and the exercises are present in their pages.
+
+Some features built in backend are not reachable from the frontend. For example, filtering tags by level and exercise id's, and filtering exercises by authors, books, and tags combined. 
 ## Instructions
  * Clear instructions for how to use the application from the end-user's perspective
  * How do you access it? Are accounts pre-created or does a user register? Where do you start? etc. 
