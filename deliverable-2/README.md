@@ -61,7 +61,7 @@ python backend/manage.py runserver
 ```
  
 ## Running the React project
-`cd` into the `frontend` directory:
+In another terminal, `cd` into the `frontend` directory:
 ```
 cd frontend
 ```
