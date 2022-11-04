@@ -29,11 +29,6 @@
 
 List **process-related** (i.e. team organization and how you work) decisions that, in retrospect, were not as successful as you thought they would be.
 
- * 2 - 4 decisions.
- * Ordered from most to least important.
- * Explain why (i.e. give a supporting argument) you consider a decision to be unsuccessful
- * Feel free to refer/link to process artifact(s).
-
 * Scheduling
   * We struggled with keeping up with the deadlines we set. They were realistic in terms of setting them based on difficulty, but people became busy with midterms and assignments and it delayed the back-end portion, which needed to be done before the front-end people could work. Although we did get everything done in time it put more pressure on people who had to wait for other people to finish.
 
