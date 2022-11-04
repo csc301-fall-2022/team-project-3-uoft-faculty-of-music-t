@@ -22,7 +22,7 @@
   * We've decided to create an API documentation, and this led to make the Frontend team easily call requests to retrieve information on their side. Furthermore, providing the example of retrieved data helped the Frontend team know about how to use it to display what they want. So, this has been one of the successful communication method between Frontend and Backend team. 
 
 * Creating the design early
-  * By formulating the desings earlier (in deliverable 1) for the website in Figma, the Frontend team didn't need to spend much time on figuring out how the website look like in terms of where components will be placed and what would be the main styles (font, color, etc.). As we created a pretty detailed Figma mockup of all of the different pages in out website, we all had a clear vision of what the final product should look like and it was a useful reference for the frontend team. And this allowed the frontend team to focus more on actual coding in deliverable 2 like building the necessary components, integrating api calls and the website layout in general. Plus, as we already got an approval from the client on the design, we were confident about what we were building. 
+  * By formulating the desings earlier (in deliverable 1) for the website in Figma, the Frontend team didn't need to spend much time on figuring out how the website look like in terms of where components will be placed and what would be the main styles (font, color, etc.). As we created a pretty detailed Figma mockup of all of the different pages in out website, we all had a clear vision of what the final product should look like and it was a useful reference for the frontend team. And this allowed the frontend team to focus more on actual coding in deliverable 2 like building the necessary components, integrating api calls and the website layout in general. Plus, as we already got an approval from the client on the design, we were confident about what we were building. Figma: https://www.figma.com/file/BcjEF5YitgXXXUJx7p4tHs/CSC301-Cello-Index-Website?node-id=0%3A1
 
 
 #### Q2. Decisions that did not turn out as well as we hoped
@@ -39,9 +39,11 @@ List **process-related** (i.e. team organization and how you work) decisions tha
 
 List any **process-related** (i.e. team organization and how you work) changes you are planning to make (if there are any)
 
- * Ordered from most to least important.
- * Explain why you are making a change.
+ * Work Distribution
+  * In Deliverable 2, getting the database set up with relevant api calls was of most importance so more people were assigned to the backend team (4 people). As we now have the database implemented, with many of the necessary api calls, we will now need more people to work on the frontend for deliverable 3. There is still a lot of work for the frontend, as we have to implement filtering, searching and lazy loading features. To distribute this work fairly, we think that adding another person to the frontend team will help the team as it will ease the load for each member. 
 
+ * Task Management
+  * For the next deliverables, we would like to utilize the Trello board more. So far, we have been documenting the tasks in our trello board but we haven't been marking the tasks as done when we have finished it. We have been communicating on Discord to keep track of what has or has not been completed, but as messages can be drowned out by other messages, we think that it would be better to have a main, reliable one-stop shop for task management which would be our Trello board. Therefore, we will prioritize making sure that we mark tasks as done in Trello as soon as we have completed it so that other members can know what the progress of tasks are easily and conveniently.
 
 ## Product - Review
 #### Link to the demo to our partner
