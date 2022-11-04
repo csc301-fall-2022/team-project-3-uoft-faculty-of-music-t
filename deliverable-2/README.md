@@ -39,9 +39,6 @@ Installation links:
 * Node/npm: https://nodejs.org/en/download/
 * Python: https://www.python.org/downloads/
 
-## NOTE: 
-- Will test this again after structure (possibly) changes for deployment and modify accordingly
-
 ## Cloning the repository
 Clone the project from GitHub 
 ```
