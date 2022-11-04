@@ -1,6 +1,8 @@
 # Cello Exercise Index / TBD
 
-> _Note:_ This document is intended to be relatively short. Be concise and precise. Assume the reader has no prior knowledge of your application and is non-technical. 
+## Links
+ * Deployed application: https://cello-exercise-index.herokuapp.com/
+ * Link for the recording of demo can be found in iteration.md
 
 ## Description 
  * Provide a high-level description of your application and it's value from an end-user's perspective
