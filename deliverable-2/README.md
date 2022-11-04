@@ -80,8 +80,6 @@ Currently, we have pushed our production branch to Heroku. As of yet, we are not
 
  ## Licenses 
 
- Keep this section as brief as possible. You may read this [Github article](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) for a start.
-
- * What type of license will you apply to your codebase?
- * What affect does it have on the development and use of your codebase?
- * Why did you or your partner make this choice?
+ * We will apply the MIT license to our codebase.
+ * The MIT license permits both commercial and private uses, distribution, and modification of our codebase as long as the original license is included. It only requires the preservation of copyright and license notices. There is also a limitation of liability and has no warranty provided.
+ * We proposed three choices (MIT, Apache 2.0, GPLv3) to the partner during our meeting. Since the partner wants the project to accessible as possible and open to future expansions, we dicide to use the MIT license, which is the most permissive one among the three options.
