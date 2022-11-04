@@ -22,7 +22,7 @@
   * We've decided to create an API documentation, and this led to make the Frontend team easily call requests to retrieve information on their side. Furthermore, providing the example of retrieved data helped the Frontend team know about how to use it to display what they want. So, this has been one of the successful communication method between Frontend and Backend team. 
 
 * Creating the design early
-  * By designing the webpages earlier, the Frontend team didn't need to spend much time on figuring how to do structuralizing and styling the website. And this led them focus more on working for components and API calls. 
+  * By formulating the desings earlier (in deliverable 1) for the website in Figma, the Frontend team didn't need to spend much time on figuring out how the website look like in terms of where components will be placed and what would be the main styles (font, color, etc.). As we created a pretty detailed Figma mockup of all of the different pages in out website, we all had a clear vision of what the final product should look like and it was a useful reference for the frontend team. And this allowed the frontend team to focus more on actual coding in deliverable 2 like building the necessary components, integrating api calls and the website layout in general. Plus, as we already got an approval from the client on the design, we were confident about what we were building. 
 
 
 #### Q2. Decisions that did not turn out as well as we hoped
