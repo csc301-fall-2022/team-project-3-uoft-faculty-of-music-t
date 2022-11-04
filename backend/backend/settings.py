@@ -12,9 +12,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from datetime import timedelta
 from pathlib import Path
+import dj_database_url
+import django_on_heroku
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -59,7 +62,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,6 +136,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -154,6 +163,13 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15)
 }
 
+# Configure database
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'https://cello-exercise-index.herokuapp.com'
 ]
+
+# Configure Django app for Heroku
+django_on_heroku.settings(locals())
