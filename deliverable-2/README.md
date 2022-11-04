@@ -18,10 +18,13 @@ The user can search different exercises by filtering through different tags, and
 
 Some features built in backend are not reachable from the frontend. For example, filtering tags by level and exercise id's, and filtering exercises by authors, books, and tags combined. 
 ## Instructions
- * Clear instructions for how to use the application from the end-user's perspective
- * How do you access it? Are accounts pre-created or does a user register? Where do you start? etc. 
- * Provide clear steps for using each feature described above
- * This section is critical to testing your application and must be done carefully and thoughtfully
+Anyone can access the deployed web app at https://cello-exercise-index.herokuapp.com
+
+An account is not required to access the information on the Index. On the homepage, the user is greeted with a list of exercise books, as well as a list of specific topics and techniques to practice.
+
+Upon clicking on each book, the user will be taken to a separate page that contains more information about the book, including a link to an external website, imslp.org, where the user can access a pdf of the book. Under the book details are a list of exercises in the book, shown with page and exercise numbers.
+
+Clicking on each exercise shows a separate page with details for the exercise and a link to access the pdf of the book.
  
  # Development requirements
 You will need to have Node, npm and `python3` installed on your machine in order to run this project.
