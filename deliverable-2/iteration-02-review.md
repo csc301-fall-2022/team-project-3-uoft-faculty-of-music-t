@@ -7,21 +7,23 @@
 
 ## Iteration XX - Review & Retrospect
 
- * When: FILL IN THE DATE WHEN YOU ACTUALLY HAD YOUR REVIEW MEETING
- * Where: PHYSICAL LOCATION AND/OR ONLINE
+ * When: November 3 (Thursday), During Tutorial
+ * Where: Zoom
 
 ## Process - Reflection
 
 
 #### Q1. Decisions that turned out well
 
-List **process-related** (i.e. team organization and how you work) decisions that, in retrospect, turned out to be successful.
+* Discord
+  * Having discord channel has been one of the best decisions we've made. Through the channel, every member was able to actively send and discuss about works. It also has been used to send a reminder about the meeting, and its voice channel has been used for our regular team meeting method. Furthermore, it was great to see active participation rate to the regular team meeting from every member. Lastly, different channels inside the group chat helped us keep the flow of conversation on one topic. 
 
+* API documentation
+  * We've decided to create an API documentation, and this led to make the Frontend team easily call requests to retrieve information on their side. Furthermore, providing the example of retrieved data helped the Frontend team know about how to use it to display what they want. So, this has been one of the successful communication method between Frontend and Backend team. 
 
- * 2 - 4 decisions.
- * Ordered from most to least important.
- * Explain why (i.e. give a supporting argument) you consider a decision to be successful.
- * Feel free to refer/link to process artifact(s).
+* Creating the design early
+  * By designing the webpages earlier, the Frontend team didn't need to spend much time on figuring how to do structuralizing and styling the website. And this led them focus more on working for components and API calls. 
+
 
 #### Q2. Decisions that did not turn out as well as we hoped
 
