@@ -34,6 +34,14 @@ List **process-related** (i.e. team organization and how you work) decisions tha
  * Explain why (i.e. give a supporting argument) you consider a decision to be unsuccessful
  * Feel free to refer/link to process artifact(s).
 
+* Scheduling
+  * We struggled with keeping up with the deadlines we set. They were realistic in terms of setting them based on difficulty, but people became busy with midterms and assignments and it delayed the back-end portion, which needed to be done before the front-end people could work. Although we did get everything done in time it put more pressure on people who had to wait for other people to finish.
+
+* Trello board
+  * We had set up a trello board to keep track of how far people had gotten on their tasks. One reason why this did not turn out well was because we did not use the trello board that much. We had a google doc that had the tasks that needed to be done and allowed people to checkmark what they had done, which caused the trello board to become neglected. We also didn’t always check what we had done. We used discord as well to say when we finished a task, which left it a bit more disorganized in terms of seeing what had to be done.
+
+
+
 
 #### Q3. Planned changes
 
