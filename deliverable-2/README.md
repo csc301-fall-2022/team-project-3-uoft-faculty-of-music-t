@@ -5,9 +5,6 @@
  * Link for the recording of demo can be found in iteration.md
 
 ## Description 
- * Provide a high-level description of your application and it's value from an end-user's perspective
- * What is the problem you're trying to solve?
- * Is there any context required to understand **why** the application solves this problem?
 
 According to the partner, “methods for teaching and learning cello techniques are still an extremely archaic form of apprenticeship”. This means that students need to find an experienced teacher in a 1-on-1 setting, where a teacher would pass on the exercise materials they have. What the partner wants to do is reduce the bias in lessons a teacher would give and allow students to look for exercises freely on their own, rather than through a teacher which would be more expensive as they have to pay to learn from a teacher. For individual exercises, the intention behind it and what it is supposed to practice is usually only in the mind of a teacher as many exercises lack labels as to what they are for. 
 
@@ -21,13 +18,11 @@ The partner has provided a copy of exercises and the intention behind them which
 
 
 ## Key Features
- * Described the key features in the application that the user can access
- * Provide a breakdown or detail for each feature that is most appropriate for your application
- * This section will be used to assess the value of the features built
 
-The user can search different exercises by filtering through different tags, and navigating through different books. Each book has a link to a page from a different website that provides the full version of the book online. The details for the books and the exercises are present in their pages.
+In this application, there are four main different features. The user can search for different exercises by filtering through different tags, and navigating through different books. Each book has a link to a page from a different website that provides the full version of the book online. The details for the books and the exercises are present in their pages. Furthermore, we are going to have a feature of displaying random exercises and sending a request to edit the particular exercise for the high interactivity from the users.
 
-Some features built in backend are not reachable from the frontend. For example, filtering tags by level and exercise id's, and filtering exercises by authors, books, and tags combined. 
+In this deliverable, we've implemented features for searching and displaying list of books/exercises and the corresponding detail pages. Some features built in backend are not reachable from the frontend yet. For example, filtering tags by level and exercise id's, and filtering exercises by authors, books, and tags combined. 
+
 ## Instructions
 Anyone can access the deployed web app at https://cello-exercise-index.herokuapp.com
 
