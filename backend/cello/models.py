@@ -25,3 +25,7 @@ class Exercise(models.Model):
     exercise_id = models.ForeignKey(ExerciseInfo, on_delete=models.CASCADE)
     tag_id = models.ForeignKey(Tag, on_delete=models.CASCADE)
 
+
+class Subtag(models.Model):
+    parent_id = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='parent_id')
+    child_id = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='child_id')
