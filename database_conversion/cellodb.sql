@@ -5,8 +5,8 @@
 -- 4) Run syncseq.sql on Heroku to sync the sequences
 
 -- Insert data from .csv files
-\COPY cello_book FROM 'new_csv/book.csv' DELIMITER ',' CSV header;
-\COPY cello_exerciseinfo FROM 'new_csv/exerciseinfo.csv' DELIMITER ',' CSV header;
-\COPY cello_tag FROM 'new_csv/tag.csv' DELIMITER ',' CSV header;
-\COPY cello_exercise FROM 'new_csv/exercise.csv' DELIMITER ',' CSV header;
-
+-- \COPY cello_book FROM 'new_csv/book.csv' DELIMITER ',' CSV header;
+-- \COPY cello_exerciseinfo FROM 'new_csv/exerciseinfo.csv' DELIMITER ',' CSV header;
+-- \COPY cello_tag FROM 'new_csv/tag.csv' DELIMITER ',' CSV header;
+-- \COPY cello_exercise FROM 'new_csv/exercise.csv' DELIMITER ',' CSV header;
+\COPY cello_subtag FROM 'new_csv/subtag.csv' DELIMITER ',' CSV header;
