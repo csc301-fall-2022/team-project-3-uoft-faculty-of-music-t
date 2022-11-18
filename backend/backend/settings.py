@@ -147,9 +147,9 @@ SIMPLE_JWT = {
 
 
 DATABASES = {}
-# Comment the following line out if going
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, default='sqlite:///db.sqlite3')
 
+# Uncomment the following DATABASE lines below if using Postgres
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
