@@ -10,3 +10,7 @@
 -- \COPY cello_tag FROM 'new_csv/tag.csv' DELIMITER ',' CSV header;
 -- \COPY cello_exercise FROM 'new_csv/exercise.csv' DELIMITER ',' CSV header;
 \COPY cello_subtag FROM 'new_csv/subtag.csv' DELIMITER ',' CSV header;
+
+-- To support the new ManyToMany models:
+ALTER TABLE cello_exercise RENAME exercise_id_id TO exerciseinfo_id;
+ALTER TABLE cello_exercise RENAME tag_id_id TO tag_id;
