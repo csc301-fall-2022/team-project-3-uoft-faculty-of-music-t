@@ -1,0 +1,56 @@
+.exercisedet-container span {
+    font-family: 'Glory', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color:rgb(56, 56, 56)
+}
+
+.exercisedet-container p{
+    font-family: 'Glory', sans-serif;
+    font-size: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight:lighter;
+}
+
+a{
+    color:rgb(28, 28, 28)
+}
+
+a:hover{
+    color: #265abc;
+}
+
+.exerciseDetails-content-buttons {
+    display: flex;
+}
+
+.view-book-button, .edit-exercise-button {
+    min-height: 40px;
+    font-family: 'Glory', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.2rem;
+    color:white;
+    padding: 10px;
+    border: 0px;
+}
+
+.view-book-button {
+    background-color: #56ABFA;
+    margin-right: 1rem;
+}
+
+.view-book-button:hover {
+    background-color: #7ebefa;
+    cursor: pointer;
+}
+
+.edit-exercise-button {
+    background-color: #366592;
+}
+
+.edit-exercise-button:hover {
+    background-color: #426c92;
+    cursor: pointer;
+}

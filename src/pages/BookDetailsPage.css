@@ -1,0 +1,70 @@
+.bookDetailsPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 800px;
+}
+
+.bookDetails-main-container {
+    width: 80%;
+}
+
+.bookDetails-top-container {
+    display:flex;
+    justify-content: space-between;
+}
+
+.bookDetails-content-container {
+    width: 30%;
+    min-width: 250px;
+    background-color: #e7e7e7;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bookDetails-content-container-title {
+    margin: 0;
+}
+
+.bookDetails-content {
+    flex: 1;
+}
+
+.bookDetails-filter-container {
+    width: 60%;
+    min-width: 400px;
+    margin-left: 2rem;
+}
+
+.bookDetails-exercises-container {
+    width: 100% -20px;
+    background-color: #e7e7e7;
+    margin-top: 1.5rem;
+    min-height: 300px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    padding: 20px;
+    overflow: auto;
+}
+
+.bookDetails-exercises-container h2 {
+    font-family: 'Glory', sans-serif;
+}
+
+.bookDetails-exercises-list-container {
+    display: inline;
+    justify-content: center;
+}
+
+
+/* Media Queries */
+@media only screen and (min-width: 1200px) {
+    .bookDetails-main-container {
+        width: 1000px;
+    }
+}

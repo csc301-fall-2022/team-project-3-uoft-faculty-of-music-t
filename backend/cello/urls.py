@@ -4,7 +4,7 @@ from rest_framework import routers
 from cello.views.author_view import AuthorView
 from cello.views.book_view import BookView
 from cello.views.exercise_view import ExerciseView
-from cello.views.exerciseinfo_view import ExerciseInfoView
+from cello.views.exerciseinfo_view import ExerciseInfoView, ExerciseInfoByBookView
 from cello.views.tag_view import TagView, TagByExerciseView, TagByLevelView
 
 from rest_framework_simplejwt.views import (
