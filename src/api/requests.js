@@ -49,7 +49,7 @@ export function getAllTags(setTopics) {
 /** requests and sets exercises according to the passed in setter and book id */
 export function getExerciseByBook(setExercises, id) {
   axios
-    .get( `${server_url}api/exerciseinfo/book/${id}/` )
+    .get( `${server_url}api/exerciseinfo/?book_id=${id}/` )
     .then((res) => {
       setExercises(res.data.results);
     });
