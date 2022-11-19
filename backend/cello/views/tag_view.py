@@ -2,7 +2,7 @@
 from rest_framework import viewsets
 from cello.pagination import StandardResultsSetPagination
 from ..serializers import TagSerializer
-from ..models import Exercise, Tag
+from ..models import Tag, ExerciseInfo
 
 class TagView(viewsets.ModelViewSet):
     serializer_class = TagSerializer
@@ -15,7 +15,7 @@ class TagByExerciseView(viewsets.ModelViewSet):
     serializer_class = TagSerializer
 
     def get_queryset(self):
-        tags = Exercise.objects.filter(exercise_id=self.kwargs['exercise_id']).values('tag_id',)
+        tags = ExerciseInfo.objects.filter(exercise_id=self.kwargs['exercise_id']).values('tag_id',)
         queryset = Tag.objects.filter(id__in=tags)
         return queryset
 
