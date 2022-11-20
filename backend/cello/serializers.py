@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Book, ExerciseInfo, Tag
+from .models import Book, ExerciseInfo, Tag, Subtag
 
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,3 +20,11 @@ class ExerciseInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ExerciseInfo
         fields = ('id', 'side', 'page_and_exercise', 'tenor', 'treble', 'book_id', 'book', 'tag')
+
+
+class SubtagSerializer(serializers.ModelSerializer):
+    tag = TagSerializer(source='child_id')
+
+    class Meta:
+        model = Subtag
+        fields = ('tag',)
