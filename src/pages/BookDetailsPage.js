@@ -4,6 +4,7 @@ import "./BookDetailsPage.css"
 import { Link, useLocation } from "react-router-dom";
 import BookInfo from '../components/BookInfo';
 import ExerciseList from '../components/ExerciseList';
+import FilterBar from "../components/FilterBar"
 import { getBookDetails, getExerciseByBook } from '../api/requests';
 
 function BookDetailsPage() {
@@ -37,7 +38,7 @@ function BookDetailsPage() {
                     </h2>
                 </div>
                 <div className="bookDetails-filter-container">
-                    {/* TODO Add filter component here */}
+                    <FilterBar/>
                 </div>
             </div>
             <div className="bookDetails-exercises-container">
