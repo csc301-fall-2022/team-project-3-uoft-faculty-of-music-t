@@ -15,8 +15,8 @@ class Migration(migrations.Migration):
             name='Subtag',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('child_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='child_id', to='cello.tag')),
                 ('parent_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='parent_id', to='cello.tag')),
+                ('child_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='child_id', to='cello.tag')),
             ],
         ),
     ]

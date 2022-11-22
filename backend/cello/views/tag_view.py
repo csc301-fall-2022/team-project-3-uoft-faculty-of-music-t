@@ -1,8 +1,8 @@
 # API endpoints here begin with /api/tag
 from rest_framework import viewsets
 from cello.pagination import StandardResultsSetPagination
-from ..serializers import TagSerializer
-from ..models import Tag, ExerciseInfo
+from ..serializers import TagSerializer, SubtagSerializer
+from ..models import Tag, ExerciseInfo, Subtag
 
 class TagView(viewsets.ModelViewSet):
     serializer_class = TagSerializer
@@ -28,4 +28,14 @@ class TagByLevelView(viewsets.ModelViewSet):
         level_num = self.kwargs['level_num']
         queryset = Tag.objects.filter(level=level_num).order_by('id')
         return queryset
-    
+
+# /api/tag/subtag/<tag_id>
+# Gets all the subtags of <tag_id>
+class SubtagView(viewsets.ModelViewSet):
+    serializer_class = SubtagSerializer
+    pagination_class = StandardResultsSetPagination
+
+    def get_queryset(self):
+        tag_id = self.kwargs['tag_id']
+        queryset = Subtag.objects.filter(parent_id=tag_id)
+        return queryset
