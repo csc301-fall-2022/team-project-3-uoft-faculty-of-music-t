@@ -25,3 +25,12 @@ class ExerciseInfo(models.Model):
 class Subtag(models.Model):
     parent_id = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='parent_id')
     child_id = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name='child_id')
+
+
+class EditExerciseRequest(models.Model):
+    exercise_id = models.ForeignKey(ExerciseInfo, on_delete=models.CASCADE)
+    new_side = models.CharField(max_length=50)
+    new_page_and_exercise = models.CharField(null=True, max_length=100)
+    new_tenor = models.BooleanField()
+    new_treble = models.BooleanField()
+    new_book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
