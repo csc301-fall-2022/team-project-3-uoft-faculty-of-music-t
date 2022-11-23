@@ -68,7 +68,7 @@ select {
     height: 20px;
 }
 
-.apply-filters-button-container {
+.filter-buttons-container {
     display: flex;
     justify-content: right;
     align-items: flex-end;
@@ -84,10 +84,28 @@ select {
     color:white;
     padding: 10px;
     border: 0px;
-    background-color: #56ABFA;;
+    background-color: #56ABFA;
 }
 
 .apply-filters-button:hover {
     background-color: #7ebefa;
+    cursor: pointer;
+}
+
+.clear-filters-button {
+    min-height: 40px;
+    font-size: 1rem;
+    font-family: 'Glory', sans-serif;
+    border-radius: 0.2rem;
+    font-weight: 600;
+    color:white;
+    padding: 10px;
+    border: 0px;
+    background-color: #f76046;
+    margin-left: 1rem;
+}
+
+.clear-filters-button:hover {
+    background-color: #f88571;
     cursor: pointer;
 }

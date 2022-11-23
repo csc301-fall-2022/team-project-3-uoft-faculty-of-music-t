@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./FilterBar.css";
 import { getTagsByLevel, getSubTagsByTag } from "../api/requests";
 
-const FilterBar = ({setSelectedTags}) => {
+const FilterBar = ({ setSelectedTags }) => {
   const level1TagSelectRef = useRef();
   const level2TagSelectRef = useRef();
   const level3TagSelectRef = useRef();
@@ -12,6 +12,7 @@ const FilterBar = ({setSelectedTags}) => {
   const [categoryInLevel1, setCategoryInlevel1] = useState("-1");
   const [categoryInLevel2, setCategoryInlevel2] = useState("-1");
   const [categoryInLevel3, setCategoryInlevel3] = useState("-1");
+  const [filtersApplied, setFiltersApplied] = useState(false);
 
   // DEFAULT
   useEffect(() => {
@@ -28,8 +29,8 @@ const FilterBar = ({setSelectedTags}) => {
     if (tagId === "-1") {
       setLevel2Tags([]);
       setLevel3Tags([]);
-      setCategoryInlevel2("-1")
-      setCategoryInlevel3("-1")
+      setCategoryInlevel2("-1");
+      setCategoryInlevel3("-1");
       return;
     }
 
@@ -45,7 +46,7 @@ const FilterBar = ({setSelectedTags}) => {
     setCategoryInlevel2(tagId);
     if (tagId === "-1") {
       setLevel3Tags([]);
-      setCategoryInlevel3("-1")
+      setCategoryInlevel3("-1");
       return;
     }
 
@@ -61,19 +62,36 @@ const FilterBar = ({setSelectedTags}) => {
   };
 
   const handleApplyFiltersButtonClick = (e) => {
-    let tags = {}
+    let tags = {};
     if (categoryInLevel1 !== "-1") {
-        tags["tag1"] = categoryInLevel1
+      tags["tag1"] = categoryInLevel1;
     }
     if (categoryInLevel2 !== "-1") {
-        tags["tag2"] = categoryInLevel2
+      tags["tag2"] = categoryInLevel2;
     }
     if (categoryInLevel3 !== "-1") {
-        tags["tag3"] = categoryInLevel3
+      tags["tag3"] = categoryInLevel3;
     }
 
-    setSelectedTags(tags)
-  }
+    if (Object.keys(tags).length === 0) {
+      setFiltersApplied(false);
+    } else {
+      setFiltersApplied(true);
+    }
+
+    setSelectedTags(tags);
+  };
+
+  const handleClearFiltersButtonClick = () => {
+    setFiltersApplied(false);
+    level1TagSelectRef.current.value = "-1"
+    setLevel2Tags([]);
+    setLevel3Tags([]);
+    setCategoryInlevel1("-1");
+    setCategoryInlevel2("-1");
+    setCategoryInlevel3("-1");
+    setSelectedTags({});
+  };
 
   return (
     <div className="filter-bar-container">
@@ -159,8 +177,21 @@ const FilterBar = ({setSelectedTags}) => {
           </div>
         </div>
       </div>
-      <div className="apply-filters-button-container">
-        <button className="apply-filters-button" onClick={(e) => handleApplyFiltersButtonClick(e)}>Apply Filters</button>
+      <div className="filter-buttons-container">
+        <button
+          className="apply-filters-button"
+          onClick={(e) => handleApplyFiltersButtonClick(e)}
+        >
+          Apply Filters
+        </button>
+        {filtersApplied && (
+          <button
+            className="clear-filters-button"
+            onClick={(e) => handleClearFiltersButtonClick(e)}
+          >
+            Clear Filters
+          </button>
+        )}
       </div>
     </div>
   );
