@@ -16,8 +16,17 @@
     display: flex;
 }
 
-.side-inputs-container, .tag-levels-inputs-container, .clef-inputs-container {
+select {
+    font-family: 'Glory', sans-serif;
+}
+
+.side-inputs-container, .clef-inputs-container {
     width: 30%;
+    min-width: 160px;
+}
+
+.tag-levels-inputs-container {
+    width: 40%;
     min-width: 160px;
 }
 

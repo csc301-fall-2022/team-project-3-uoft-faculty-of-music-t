@@ -46,6 +46,26 @@ export function getAllTags(setTopics) {
   });
 }
 
+export function getTagsByLevel(level) {
+  return new Promise((resolve, reject) => {
+    axios
+    .get(`${server_url}api/tag/level/${level}`)
+    .then((res) => {
+      resolve(res.data.results)
+    })
+  })
+}
+
+export function getSubTagsByTag(id) {
+  return new Promise((resolve, reject) => {
+    axios
+    .get(`${server_url}api/tag/subtag/${id}`)
+    .then((res) => {
+      resolve(res.data.results)
+    })
+  })
+}
+
 /** requests and sets exercises according to the passed in setter and book id */
 export function getExerciseByBook(setExercises, id) {
   axios
