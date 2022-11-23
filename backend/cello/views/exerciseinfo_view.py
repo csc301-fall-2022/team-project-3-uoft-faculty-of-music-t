@@ -40,7 +40,12 @@ class ExerciseInfoView(viewsets.ModelViewSet):
         queryset = ExerciseInfo.objects.filter(id__in=exercises, book_id__in=books)
 
         if side:
-            queryset = queryset.filter(side__in=side)
+            if 'left' in side:
+                queryset = queryset.filter(side='Left Side')
+            if 'right' in side:
+                queryset = queryset.filter(side='Right Side')
+            if 'other' in side:
+                queryset = queryset.filter(side='Other')
 
         if clef:
             if 'tenor' in clef:
