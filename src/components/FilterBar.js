@@ -2,16 +2,16 @@ import React, { useState, useEffect, useRef } from "react";
 import "./FilterBar.css";
 import { getTagsByLevel, getSubTagsByTag } from "../api/requests";
 
-const FilterBar = () => {
+const FilterBar = ({setSelectedTags}) => {
   const level1TagSelectRef = useRef();
   const level2TagSelectRef = useRef();
   const level3TagSelectRef = useRef();
   const [level1Tags, setLevel1Tags] = useState([]);
   const [level2Tags, setLevel2Tags] = useState([]);
   const [level3Tags, setLevel3Tags] = useState([]);
-  const [categoryInLevel1, setCategoryInlevel1] = useState("");
-  const [categoryInLevel2, setCategoryInlevel2] = useState("");
-  const [categoryInLevel3, setCategoryInlevel3] = useState("");
+  const [categoryInLevel1, setCategoryInlevel1] = useState("-1");
+  const [categoryInLevel2, setCategoryInlevel2] = useState("-1");
+  const [categoryInLevel3, setCategoryInlevel3] = useState("-1");
 
   // DEFAULT
   useEffect(() => {
@@ -24,12 +24,14 @@ const FilterBar = () => {
   const handleCategory1SelectChange = (e) => {
     e.preventDefault();
     const tagId = level1TagSelectRef.current.value;
+    setCategoryInlevel1(tagId);
     if (tagId === "-1") {
       setLevel2Tags([]);
       setLevel3Tags([]);
+      setCategoryInlevel2("-1")
+      setCategoryInlevel3("-1")
       return;
     }
-    setCategoryInlevel1(tagId);
 
     getSubTagsByTag(tagId).then((tags) => {
       tags.unshift({ tag: {} });
@@ -40,11 +42,12 @@ const FilterBar = () => {
   const handleCategory2SelectChange = (e) => {
     e.preventDefault();
     const tagId = level2TagSelectRef.current.value;
+    setCategoryInlevel2(tagId);
     if (tagId === "-1") {
       setLevel3Tags([]);
+      setCategoryInlevel3("-1")
       return;
     }
-    setCategoryInlevel2(tagId);
 
     getSubTagsByTag(tagId).then((tags) => {
       tags.unshift({ tag: {} });
@@ -56,6 +59,21 @@ const FilterBar = () => {
     e.preventDefault();
     setCategoryInlevel3(level3TagSelectRef.current.value);
   };
+
+  const handleApplyFiltersButtonClick = (e) => {
+    let tags = {}
+    if (categoryInLevel1 !== "-1") {
+        tags["tag1"] = categoryInLevel1
+    }
+    if (categoryInLevel2 !== "-1") {
+        tags["tag2"] = categoryInLevel2
+    }
+    if (categoryInLevel3 !== "-1") {
+        tags["tag3"] = categoryInLevel3
+    }
+
+    setSelectedTags(tags)
+  }
 
   return (
     <div className="filter-bar-container">
@@ -142,7 +160,7 @@ const FilterBar = () => {
         </div>
       </div>
       <div className="apply-filters-button-container">
-        <button className="apply-filters-button">Apply Filters</button>
+        <button className="apply-filters-button" onClick={(e) => handleApplyFiltersButtonClick(e)}>Apply Filters</button>
       </div>
     </div>
   );

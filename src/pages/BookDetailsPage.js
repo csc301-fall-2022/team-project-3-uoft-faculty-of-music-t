@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import BookInfo from '../components/BookInfo';
 import ExerciseList from '../components/ExerciseList';
 import FilterBar from "../components/FilterBar"
-import { getBookDetails, getExerciseByBook } from '../api/requests';
+import { getBookDetails, getExerciseByBook, getExerciseByTags } from '../api/requests';
 
 function BookDetailsPage() {
   const location = useLocation();
@@ -17,10 +17,19 @@ function BookDetailsPage() {
   }, [id])
 
   const [exercises, setExercises] = useState([])
+  const [selectedTags, setSelectedTags] = useState({})
 
   useEffect(() => {
     getExerciseByBook(setExercises, id);
   }, [id])
+
+  useEffect(() => {
+    if (Object.keys(selectedTags).length === 0) {
+        getExerciseByBook(setExercises, id);
+    } else {
+        getExerciseByTags(setExercises, selectedTags, id)
+    }
+  }, [selectedTags])
 
   return (
     <div className="bookDetailsPage">
@@ -38,7 +47,7 @@ function BookDetailsPage() {
                     </h2>
                 </div>
                 <div className="bookDetails-filter-container">
-                    <FilterBar/>
+                    <FilterBar setSelectedTags={setSelectedTags}/>
                 </div>
             </div>
             <div className="bookDetails-exercises-container">
