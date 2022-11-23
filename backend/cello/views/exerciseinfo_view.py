@@ -8,7 +8,8 @@ from django.db.models import Q
 from drf_yasg.utils import swagger_auto_schema
 from .documentation import exercise_filter_parameters
 
-
+# http://127.0.0.1:8000/api/exerciseinfo/?&tag_id=18&author=Bukinik,%20Mikhail&book_id=27
+# http://127.0.0.1:8000/api/exerciseinfo/?&tag_id=18&tag_id=12&author=Bukinik,%20Mikhail&book_id=27&book_id=18&author=Raynal,%20Adrien
 class ExerciseInfoView(viewsets.ModelViewSet):
     serializer_class = ExerciseInfoSerializer
     pagination_class = StandardResultsSetPagination
