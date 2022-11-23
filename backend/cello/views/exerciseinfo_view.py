@@ -20,10 +20,12 @@ class ExerciseInfoView(viewsets.ModelViewSet):
         clef = self.request.query_params.getlist('clef')
         search = self.request.query_params.get('search')
 
+        exercises = ExerciseInfo.objects.all()
+        
         if tag_id:
-            exercises = ExerciseInfo.objects.filter(tags__in=tag_id)
-        else:
-            exercises = ExerciseInfo.objects.all()
+            for tag in tag_id:
+                exercises = ExerciseInfo.objects.filter(tags=tag)
+
         if author:
             if book_id:
                 books = Book.objects.filter(Q(id__in=book_id) | Q(author__in=author))
