@@ -6,7 +6,8 @@ from ..models import ExerciseInfo, Book, Tag
 from collections import defaultdict
 from django.db.models import Q
 
-
+# http://127.0.0.1:8000/api/exerciseinfo/?&tag_id=18&author=Bukinik,%20Mikhail&book_id=27
+# http://127.0.0.1:8000/api/exerciseinfo/?&tag_id=18&tag_id=12&author=Bukinik,%20Mikhail&book_id=27&book_id=18&author=Raynal,%20Adrien
 class ExerciseInfoView(viewsets.ModelViewSet):
     serializer_class = ExerciseInfoSerializer
     pagination_class = StandardResultsSetPagination
@@ -25,7 +26,7 @@ class ExerciseInfoView(viewsets.ModelViewSet):
         if tag_id:
             for tag in tag_id:
                 exercises = ExerciseInfo.objects.filter(tags=tag)
-
+                
         if author:
             if book_id:
                 books = Book.objects.filter(Q(id__in=book_id) | Q(author__in=author))
