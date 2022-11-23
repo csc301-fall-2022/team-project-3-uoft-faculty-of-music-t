@@ -50,7 +50,7 @@ export function getAllTags(setTopics) {
 export function getTagsByLevel(level) {
   return new Promise((resolve, reject) => {
     axios
-    .get(`${server_url}api/tag/level/${level}`)
+    .get(`${server_url}api/tag/level/${level}/`)
     .then((res) => {
       resolve(res.data.results)
     })
@@ -60,7 +60,7 @@ export function getTagsByLevel(level) {
 export function getSubTagsByTag(id) {
   return new Promise((resolve, reject) => {
     axios
-    .get(`${server_url}api/tag/subtag/${id}`)
+    .get(`${server_url}api/tag/subtag/${id}/`)
     .then((res) => {
       resolve(res.data.results)
     })
