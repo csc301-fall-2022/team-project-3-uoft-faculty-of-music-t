@@ -5,11 +5,21 @@ from ..serializers import ExerciseInfoSerializer
 from ..models import ExerciseInfo, Book, Tag
 from collections import defaultdict
 from django.db.models import Q
+from drf_yasg.utils import swagger_auto_schema
+from .documentation import exercise_filter_parameters
 
 
 class ExerciseInfoView(viewsets.ModelViewSet):
     serializer_class = ExerciseInfoSerializer
     pagination_class = StandardResultsSetPagination
+
+    @swagger_auto_schema(manual_parameters=exercise_filter_parameters, operation_id="Get exercises", operation_description="Returns all exercise that matches filter/search parameters (paginated).")
+    def list(self, request, *args, **kwargs):
+        return super().list(self, request, *args, **kwargs)
+
+    @swagger_auto_schema(operation_id="Get exercise information", operation_description="Get the information for exercise with id")
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(self, request, *args, **kwargs)
 
     def get_queryset(self):
 
