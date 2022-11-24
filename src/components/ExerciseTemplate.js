@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ExerciseTemplate.css";
+import TagList from "./TagList";
+import { getAllTags } from "../api/requests";
 
 // require the argument
 const ExerciseTemplate = ({ exercisedet }) => {
+  // TODO: update the useState() in the checkbox & selectbox
   const [detail, setDetail] = useState(exercisedet);
-  console.log(exercisedet.tag);
-  const listTags = exercisedet.tag.map((item) => <li>{item["tag_name"]}</li>);
+  const [tags, setTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState(exercisedet.tag);
+
+  useEffect(() => {
+    getAllTags(setTags);
+  }, []);
 
   return (
     <div className="template-main-container">
@@ -72,9 +79,22 @@ const ExerciseTemplate = ({ exercisedet }) => {
             <label for="others">Others</label>
           </div>
         </div>
-        {/* After tags */}
         <div className="exercise-levels">
-          <label className="label_left">Levels</label>
+          <label className="label_left">Tags</label>
+          <div className="select-box">
+            {/* List of available tags */}
+            <TagList tags={selectedTags}></TagList>
+            <select name="tags" multiple>
+              {/* popup that let them click Ctrl or Command to multiple options */}
+              {tags.map((tag) => {
+                return (
+                  <option value={tag["tag_name"]}>{tag["tag_name"]}</option>
+                );
+              })}
+            </select>
+            {/* option onclick => add to the list of tags (update setSelectedTags) */}
+            <button></button>
+          </div>
         </div>
         <div className="exercise-clef">
           <label className="label_left">Clef</label>
@@ -98,11 +118,6 @@ const ExerciseTemplate = ({ exercisedet }) => {
             ></input>
             <label for="treble">Treble</label>
           </div>
-        </div>
-        <div className="exercise-tags">
-          <label className="label_left">Tag</label>
-          <ul className="list-tags">{listTags}</ul>
-          <input type="text" placeholder="New tag?"></input>
         </div>
       </form>
     </div>

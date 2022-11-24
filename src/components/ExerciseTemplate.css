@@ -8,9 +8,9 @@
 .exercise-levels,
 .exercise-clef,
 .exercise-tags {
-  margin: 10px;
+  margin: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 /* label = inline element */
@@ -41,6 +41,6 @@ input {
   display: inline;
 } */
 .list-tags {
-  width: 60%;
+  width: 100%;
   display: inline;
 }
