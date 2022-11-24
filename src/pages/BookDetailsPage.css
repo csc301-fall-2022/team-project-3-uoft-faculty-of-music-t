@@ -61,6 +61,32 @@
     justify-content: center;
 }
 
+.pagination-container {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-container a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #1E3765;
+    color: #1E3765;
+    cursor: pointer;
+}
+
+.pagination-container a:hover {
+    color: white;
+    background-color: #1E3765;
+}
+
+.active-container a {
+    color: white;
+    background-color: #1E3765;
+}
 
 /* Media Queries */
 @media only screen and (min-width: 1200px) {

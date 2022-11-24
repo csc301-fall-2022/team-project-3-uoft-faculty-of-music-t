@@ -5,11 +5,13 @@ import { Link, useLocation } from "react-router-dom";
 import BookInfo from '../components/BookInfo';
 import ExerciseList from '../components/ExerciseList';
 import { getBookDetails, getExerciseByBook } from '../api/requests';
+import ReactPaginate from 'react-paginate';
 
 function BookDetailsPage() {
   const location = useLocation();
   const { id } = location.state;
   const [bookDetails, setBookDetails] = useState({});
+  const [pageNumber, setPageNumber] = useState(0); 
 
   useEffect(() => {
     getBookDetails(setBookDetails, id);
@@ -20,6 +22,17 @@ function BookDetailsPage() {
   useEffect(() => {
     getExerciseByBook(setExercises, id);
   }, [id])
+
+  const exercisePerPage = 10;  // number of exercises per page
+  const pagesVisited = pageNumber * exercisePerPage;  // use this slice the exercises
+
+  const displayExercises = exercises.slice(pagesVisited,pagesVisited + exercisePerPage) // decide exercises to be load on each page
+
+  const pageCount = Math.ceil(exercises.length / exercisePerPage);  // Calculate how many pages are needed
+
+  const changePage = ({selected}) => {
+    setPageNumber(selected)  // Change page 
+  };
 
   return (
     <div className="bookDetailsPage">
@@ -42,9 +55,17 @@ function BookDetailsPage() {
             </div>
             <div className="bookDetails-exercises-container">
                 <h2>Exercises</h2>
-                {/* <h2 className="bookDetails-exercises-container-title">Exercises</h2> */}
                 <div className="bookDetails-exercises-list-container">
-                    <ExerciseList exercises={exercises}/>
+                    {/* <ExerciseList exercises={exercises}/> */}
+                    <ExerciseList exercises={displayExercises}/>
+                    <ReactPaginate
+                        previousLabel={"Previous"} 
+                        nextLabel={"Next"}
+                        pageCount={pageCount}
+                        onPageChange={changePage}
+                        containerClassName={"pagination-container"}
+                        activeClassName={"active-container"}
+                    />
                 </div>
             </div>
         </div>
