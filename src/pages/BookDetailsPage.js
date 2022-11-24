@@ -56,7 +56,6 @@ function BookDetailsPage() {
             <div className="bookDetails-exercises-container">
                 <h2>Exercises</h2>
                 <div className="bookDetails-exercises-list-container">
-                    {/* <ExerciseList exercises={exercises}/> */}
                     <ExerciseList exercises={displayExercises}/>
                     <ReactPaginate
                         previousLabel={"Previous"} 
