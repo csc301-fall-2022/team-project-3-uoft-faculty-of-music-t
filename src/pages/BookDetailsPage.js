@@ -26,7 +26,7 @@ function BookDetailsPage() {
   const exercisePerPage = 10;  // number of exercises per page
   const pagesVisited = pageNumber * exercisePerPage;  // use this slice the exercises
 
-  const displayExercises = exercises.slice(pagesVisited,pagesVisited + exercisePerPage) // decide exercises to be load on each page
+  const displayExercises = exercises.slice(pagesVisited, pagesVisited + exercisePerPage) // decide exercises to be load on each page
 
   const pageCount = Math.ceil(exercises.length / exercisePerPage);  // Calculate how many pages are needed
 
