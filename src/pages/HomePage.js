@@ -17,15 +17,24 @@ const HomePage = () => {
   }, [])
 
   const [pageNumber, setPageNumber] = useState(0);
+  const [topicPageNumber, setTopicPageNumber] = useState(0);
   const bookPerPage = 10;  // number of books per page.
+  const topicPerPage = 10;  // number of topics per page.
   const pagesVisited = pageNumber * bookPerPage;
+  const topicPagesVisited = topicPageNumber * topicPerPage;
 
   const displayBooks = books.slice(pagesVisited, pagesVisited + bookPerPage);
+  const displayTopics = topics.slice(topicPagesVisited, topicPagesVisited + topicPerPage);
 
   const pageCount = Math.ceil(books.length / bookPerPage);
+  const topicPageCount = Math.ceil(topics.length / topicPerPage);
 
   const changePage = ({selected}) => {
     setPageNumber(selected)
+  };
+
+  const changeTopicPage = ({selected}) => {
+    setTopicPageNumber(selected)
   };
 
   return (
@@ -38,7 +47,6 @@ const HomePage = () => {
             <div className="content-list-container">
                 <div className="books-list-container">
                     <h2>Books</h2>
-                    {/* <BooksList books={books}/> */}
                     <BooksList books={displayBooks}/>
                     <ReactPaginate
                         pageCount={pageCount}
@@ -51,7 +59,13 @@ const HomePage = () => {
                 </div>
                 <div className="browse-by-topic-list-container">
                     <h2>Browse By Topic</h2>
-                    <TopicList topics={topics}/>
+                    <TopicList topics={displayTopics}/>
+                    <ReactPaginate
+                        pageCount={topicPageCount}
+                        onPageChange={changeTopicPage}
+                        containerClassName={"topic-pagination-container"}
+                        activeClassName={"topic-active-container"}
+                    />
                 </div>
             </div>
             <div className="random-exercises-container">
