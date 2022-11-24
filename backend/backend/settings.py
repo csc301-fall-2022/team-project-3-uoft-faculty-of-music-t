@@ -78,28 +78,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'celloexercises',
-#         'USER': 'admin',
-#         'PASSWORD': 'password',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -164,7 +142,24 @@ SIMPLE_JWT = {
 }
 
 # Configure database
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# Database
+# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, default='sqlite:///db.sqlite3')
+
+# Uncomment the following DATABASE lines below if using Postgres
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'celloexercises',
+#         'USER': 'admin',
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
