@@ -9,7 +9,8 @@
 .exercise-clef,
 .exercise-tags {
   margin: 10px;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 /* label = inline element */
@@ -33,5 +34,13 @@ input {
 }
 
 .checkbox-side {
+  display: inline-block;
+}
+
+/* .exercise-tags {
+  display: inline;
+} */
+.list-tags {
+  width: 60%;
   display: inline;
 }

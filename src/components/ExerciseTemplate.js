@@ -4,6 +4,9 @@ import "./ExerciseTemplate.css";
 // require the argument
 const ExerciseTemplate = ({ exercisedet }) => {
   const [detail, setDetail] = useState(exercisedet);
+  console.log(exercisedet.tag);
+  const listTags = exercisedet.tag.map((item) => <li>{item["tag_name"]}</li>);
+
   return (
     <div className="template-main-container">
       <form className="template-form">
@@ -98,7 +101,8 @@ const ExerciseTemplate = ({ exercisedet }) => {
         </div>
         <div className="exercise-tags">
           <label className="label_left">Tag</label>
-          {/* List of tags */}
+          <ul className="list-tags">{listTags}</ul>
+          <input type="text" placeholder="New tag?"></input>
         </div>
       </form>
     </div>
