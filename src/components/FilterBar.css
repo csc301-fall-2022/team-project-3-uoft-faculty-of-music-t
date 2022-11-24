@@ -1,0 +1,111 @@
+.filter-bar-container {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background-color: rgb(245, 244, 244);
+    border-radius: .5rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-title {
+    margin: 0;
+}
+
+.inputs-container {
+    display: flex;
+}
+
+select {
+    font-family: 'Glory', sans-serif;
+}
+
+.side-inputs-container, .clef-inputs-container {
+    width: 30%;
+    min-width: 160px;
+}
+
+.tag-levels-inputs-container {
+    width: 40%;
+    min-width: 160px;
+}
+
+.clef-inputs-container {
+    margin-left: 1rem;
+}
+
+.side-inputs-container-input-label-container, .clef-inputs-container-input-label-container {
+    display: flex;
+    margin-bottom: 0.6rem;
+    align-items: center;
+}
+
+.side-inputs-container-input-label-container input, .clef-inputs-container-input-label-container input {
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.side-inputs-container-input-label-container p, .clef-inputs-container-input-label-container p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.tag-levels-inputs-container-select-label-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+}
+
+.tag-levels-inputs-container-select-label-container p {
+    margin: 0;
+}
+
+.tag-levels-inputs-container-select-label-container select {
+    width: 70%;
+    height: 20px;
+}
+
+.filter-buttons-container {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.apply-filters-button {
+    min-height: 40px;
+    font-size: 1rem;
+    font-family: 'Glory', sans-serif;
+    border-radius: 0.2rem;
+    font-weight: 600;
+    color:white;
+    padding: 10px;
+    border: 0px;
+    background-color: #56ABFA;
+}
+
+.apply-filters-button:hover {
+    background-color: #7ebefa;
+    cursor: pointer;
+}
+
+.clear-filters-button {
+    min-height: 40px;
+    font-size: 1rem;
+    font-family: 'Glory', sans-serif;
+    border-radius: 0.2rem;
+    font-weight: 600;
+    color:white;
+    padding: 10px;
+    border: 0px;
+    background-color: #f76046;
+    margin-left: 1rem;
+}
+
+.clear-filters-button:hover {
+    background-color: #f88571;
+    cursor: pointer;
+}
