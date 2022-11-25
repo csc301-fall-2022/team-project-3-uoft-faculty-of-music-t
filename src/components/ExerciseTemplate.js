@@ -9,10 +9,17 @@ const ExerciseTemplate = ({ exercisedet }) => {
   const [detail, setDetail] = useState(exercisedet);
   const [tags, setTags] = useState([]);
   const [selectedTags, setSelectedTags] = useState(exercisedet.tag);
+  const [choice, setChoice] = useState("Neck Positions Only");
 
   useEffect(() => {
     getAllTags(setTags);
   }, []);
+
+  const updateTags = (e) => {
+    e.preventDefault();
+    const newTag = tags.find((tag) => tag["tag_name"] === choice);
+    setSelectedTags(selectedTags.concat([newTag]));
+  };
 
   return (
     <div className="template-main-container">
@@ -82,18 +89,26 @@ const ExerciseTemplate = ({ exercisedet }) => {
         <div className="exercise-levels">
           <label className="label_left">Tags</label>
           <div className="select-box">
-            {/* List of available tags */}
-            <TagList tags={selectedTags}></TagList>
-            <select name="tags" multiple>
-              {/* popup that let them click Ctrl or Command to multiple options */}
-              {tags.map((tag) => {
+            <TagList
+              tags={selectedTags}
+              setSelectedTags={setSelectedTags}
+            ></TagList>
+            <select
+              name="tags"
+              value={choice}
+              onChange={(e) => setChoice(e.target.value)}
+            >
+              {tags.map((tag, index) => {
                 return (
-                  <option value={tag["tag_name"]}>{tag["tag_name"]}</option>
+                  <option key={index} value={tag["tag_name"]}>
+                    {tag["tag_name"]}
+                  </option>
                 );
               })}
             </select>
-            {/* option onclick => add to the list of tags (update setSelectedTags) */}
-            <button></button>
+            <button id="add-button" onClick={updateTags}>
+              add
+            </button>
           </div>
         </div>
         <div className="exercise-clef">

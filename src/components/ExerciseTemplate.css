@@ -33,14 +33,38 @@ input {
   vertical-align: middle;
 }
 
+input[type="checkbox"]:checked {
+  filter: hue-rotate(130deg);
+}
+
 .checkbox-side {
   display: inline-block;
 }
 
-/* .exercise-tags {
-  display: inline;
-} */
-.list-tags {
+/* .select-box {
   width: 100%;
-  display: inline;
+  display: inline-block;
+} */
+
+select {
+  font-family: "Glory", sans-serif;
+  margin-top: 1.2rem;
+  margin-right: 1rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 30px;
+}
+
+#add-button {
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  cursor: pointer;
+  background-color: rgb(244, 115, 135);
+  color: white;
+}
+
+#add-button:hover {
+  background-color: rgb(202, 44, 68);
 }
