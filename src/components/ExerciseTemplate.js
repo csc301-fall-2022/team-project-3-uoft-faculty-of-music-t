@@ -3,13 +3,22 @@ import "./ExerciseTemplate.css";
 import TagList from "./TagList";
 import { getAllTags } from "../api/requests";
 
-// require the argument
 const ExerciseTemplate = ({ exercisedet }) => {
-  // TODO: update the useState() in the checkbox & selectbox
   const [detail, setDetail] = useState(exercisedet);
   const [tags, setTags] = useState([]);
   const [selectedTags, setSelectedTags] = useState(exercisedet.tag);
   const [choice, setChoice] = useState("Neck Positions Only");
+  const [leftSide, setLeftSide] = useState(
+    detail.side === "Left Side" ? true : false
+  );
+  const [rightSide, setRightSide] = useState(
+    detail.side === "Right Side" ? true : false
+  );
+  const [otherSide, setOtherSide] = useState(
+    detail.side === "Others" ? true : false
+  );
+  const [tenor, setTenor] = useState(detail.tenor);
+  const [treble, setTreble] = useState(detail.treble);
 
   useEffect(() => {
     getAllTags(setTags);
@@ -18,7 +27,19 @@ const ExerciseTemplate = ({ exercisedet }) => {
   const updateTags = (e) => {
     e.preventDefault();
     const newTag = tags.find((tag) => tag["tag_name"] === choice);
-    setSelectedTags(selectedTags.concat([newTag]));
+    // Prevent adding already existing tag
+    // console.log(newTag);
+    // console.log(selectedTags);
+    // console.log(
+    //   selectedTags.findIndex((tag) => tag["tag_name"] === newTag["tag_name"])
+    // );
+    if (
+      selectedTags.findIndex(
+        (tag) => tag["tag_name"] === newTag["tag_name"]
+      ) === -1
+    ) {
+      setSelectedTags(selectedTags.concat([newTag]));
+    }
   };
 
   return (
@@ -61,7 +82,8 @@ const ExerciseTemplate = ({ exercisedet }) => {
               type="checkbox"
               id="left"
               name="left"
-              checked={detail.side === "Left Side" ? "checked" : ""}
+              checked={leftSide}
+              onChange={(e) => setLeftSide(e.target.checked)}
             ></input>
             <label for="left">Left</label>
           </div>
@@ -71,7 +93,8 @@ const ExerciseTemplate = ({ exercisedet }) => {
               type="checkbox"
               id="right"
               name="right"
-              checked={detail.side === "Right Side" ? "checked" : ""}
+              checked={rightSide}
+              onChange={(e) => setRightSide(e.target.checked)}
             ></input>
             <label for="right">Right</label>
           </div>
@@ -81,7 +104,8 @@ const ExerciseTemplate = ({ exercisedet }) => {
               type="checkbox"
               id="others"
               name="others"
-              checked={detail.side === "Others" ? "checked" : ""}
+              checked={otherSide}
+              onChange={(e) => setOtherSide(e.target.checked)}
             ></input>
             <label for="others">Others</label>
           </div>
@@ -119,7 +143,8 @@ const ExerciseTemplate = ({ exercisedet }) => {
               type="checkbox"
               id="tenor"
               name="tenor"
-              checked={detail.tenor === true ? "checked" : ""}
+              checked={tenor}
+              onChange={(e) => setTenor(e.target.checked)}
             ></input>
             <label for="tenor">Tenor</label>
           </div>
@@ -129,7 +154,8 @@ const ExerciseTemplate = ({ exercisedet }) => {
               type="checkbox"
               id="treble"
               name="treble"
-              checked={detail.treble === true ? "checked" : ""}
+              checked={treble}
+              onChange={(e) => setTreble(e.target.checked)}
             ></input>
             <label for="treble">Treble</label>
           </div>

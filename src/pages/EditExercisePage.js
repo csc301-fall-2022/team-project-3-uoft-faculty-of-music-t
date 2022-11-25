@@ -6,9 +6,9 @@ import { Link, useLocation } from "react-router-dom";
 
 const EditExercisePage = () => {
   const location = useLocation();
-
   const exercisedet = location.state.exercisedet;
   console.log(exercisedet);
+  // TODO: Have a separate state that represents new request & pass this state to ExerciseTemplate
 
   return (
     <div className="editExercisePage">

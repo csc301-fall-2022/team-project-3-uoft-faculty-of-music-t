@@ -8,7 +8,6 @@ export default function TagList({ tags, setSelectedTags }) {
       0,
       e.target.innerHTML.indexOf(" ✖️")
     );
-    console.log(targetValue);
     setSelectedTags(tags.filter((tag) => tag["tag_name"] !== targetValue));
   };
   return (
