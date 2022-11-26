@@ -4,7 +4,6 @@ import "./BookDetailsPage.css"
 import { Link, useLocation } from "react-router-dom";
 import BookInfo from '../components/BookInfo';
 import ExerciseList from '../components/ExerciseList';
-import { getBookDetails, getExerciseByBook } from '../api/requests';
 import FilterBar from "../components/FilterBar"
 import { getBookDetails, getExerciseByBook, getExerciseByTags } from '../api/requests';
 import ReactPaginate from 'react-paginate';
@@ -22,9 +21,9 @@ function BookDetailsPage() {
   const [exercises, setExercises] = useState([])
   const [selectedTags, setSelectedTags] = useState({})
 
-//  useEffect(() => {
-//    getExerciseByBook(setExercises, id);
-//  }, [id])
+  useEffect(() => {
+    getExerciseByBook(setExercises, id);
+  }, [id])
   
   useEffect(() => {
     if (Object.keys(selectedTags).length === 0) {
