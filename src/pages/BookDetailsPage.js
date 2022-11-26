@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import BookInfo from '../components/BookInfo';
 import ExerciseList from '../components/ExerciseList';
 import FilterBar from "../components/FilterBar"
-import { getBookDetails, getExerciseByBook, getExerciseByTags } from '../api/requests';
+import { getBookDetails, getExerciseByBook, getExerciseByFiltersOrSearch } from '../api/requests';
 
 function BookDetailsPage() {
   const location = useLocation();
@@ -18,18 +18,20 @@ function BookDetailsPage() {
 
   const [exercises, setExercises] = useState([])
   const [selectedTags, setSelectedTags] = useState({})
+  const [selectedClefs, setSelectedClefs] = useState([])
+  const [selectedSides, setSelectedSides] = useState([])
 
   useEffect(() => {
     getExerciseByBook(setExercises, id);
   }, [id])
 
   useEffect(() => {
-    if (Object.keys(selectedTags).length === 0) {
+    if (Object.keys(selectedTags).length === 0 && selectedClefs.length === 0 && selectedSides.length === 0) {
         getExerciseByBook(setExercises, id);
     } else {
-        getExerciseByTags(setExercises, selectedTags, id)
+        getExerciseByFiltersOrSearch(setExercises, selectedTags, null, selectedSides, selectedClefs, id)
     }
-  }, [selectedTags])
+  }, [selectedTags, selectedClefs, selectedSides])
 
   return (
     <div className="bookDetailsPage">
@@ -47,12 +49,11 @@ function BookDetailsPage() {
                     </h2>
                 </div>
                 <div className="bookDetails-filter-container">
-                    <FilterBar setSelectedTags={setSelectedTags}/>
+                    <FilterBar setSelectedTags={setSelectedTags} setSelectedClefs={setSelectedClefs} setSelectedSides={setSelectedSides}/>
                 </div>
             </div>
             <div className="bookDetails-exercises-container">
                 <h2>Exercises</h2>
-                {/* <h2 className="bookDetails-exercises-container-title">Exercises</h2> */}
                 <div className="bookDetails-exercises-list-container">
                     <ExerciseList exercises={exercises}/>
                 </div>

@@ -5,11 +5,14 @@ import SearchBar from '../components/SearchBar'
 import SearchBarWithFilter from '../components/SearchBarWithFilter'
 import { Link } from "react-router-dom";
 import ExerciseList from '../components/ExerciseList';
-import { getAllExercises, getExerciseByTags } from '../api/requests';
+import { getAllExercises, getExerciseByFiltersOrSearch } from '../api/requests';
 
 const SearchPage = () => {
   const [exercises, setExercises] = useState([])
+  const [searchString, setSearchString] = useState("")
   const [selectedTags, setSelectedTags] = useState({})
+  const [selectedClefs, setSelectedClefs] = useState({})
+  const [selectedSides, setSelectedSides] = useState({})
 
   useEffect(() => {
     getAllExercises(setExercises);
@@ -19,7 +22,7 @@ const SearchPage = () => {
     if (Object.keys(selectedTags).length === 0) {
       getAllExercises(setExercises);
     } else {
-      getExerciseByTags(setExercises, selectedTags);
+      getExerciseByFiltersOrSearch(setExercises, selectedTags, searchString, selectedSides, selectedClefs)
     }
   }, [selectedTags])
 
@@ -29,7 +32,7 @@ const SearchPage = () => {
             <Link to="/" className="title-link"><h1 className="title">Cello Exercise Index</h1></Link>
         </div>
         <div className="searchPage-main-container">
-            <SearchBarWithFilter setSelectedTags={setSelectedTags}/>
+            <SearchBarWithFilter setSelectedTags={setSelectedTags} setSearchString={setSearchString} setSelectedClefs={setSelectedClefs} setSelectedSides={setSelectedSides}/>
             <div className="content-list-container">
               <ExerciseList exercises={exercises}/>
             </div>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass, faChevronDown} from '@fortawesome/free-solid-svg-icons'
 import FilterBar from './FilterBar'
 
-const SearchBarWithFilter = ({setSelectedTags}) => {
+const SearchBarWithFilter = ({setSelectedTags, setSearchString, setSelectedClefs, setSelectedSides}) => {
   const [filterBarEnabled, setFilterBarEnabled] = useState(false)
   const [overrideBackgroundColor, setOverrideBackgroundColor] = useState("white")
 
@@ -22,7 +22,7 @@ const SearchBarWithFilter = ({setSelectedTags}) => {
       </div>
       {filterBarEnabled && (
         <div className="search-filter-bar-filter-component-container">
-          <FilterBar setSelectedTags={setSelectedTags} overrideBackgroundColor={overrideBackgroundColor}/>
+          <FilterBar setSelectedTags={setSelectedTags} setSelectedClefs={setSelectedClefs} setSelectedSides={setSelectedSides} overrideBackgroundColor={overrideBackgroundColor}/>
         </div>
       )}
     </div>
