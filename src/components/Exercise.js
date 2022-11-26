@@ -25,7 +25,7 @@ export default function Exercise({ exercise }) {
         <Link to="/exerciseDetails" state={{exercise: exercise}}>
             <p>{exercise.book.title} ({exercise.page_and_exercise})</p>
         </Link>
-        <p className="exercise-tags">{tagsAsString}</p>
+        <p className="exercise-tags-list">{tagsAsString}</p>
     </div>
   )
 }

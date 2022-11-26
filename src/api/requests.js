@@ -47,24 +47,16 @@ export function getTagsByLevel(level) {
 
 export function getSubTagsByTag(id) {
   return new Promise((resolve, reject) => {
-<<<<<<< HEAD
     axios
     .get(`${server_url}api/tag/subtag/${id}`)
     .then((res) => {
       resolve(res.data.results)
     })
   })
-=======
-    axios.get(`${server_url}api/tag/subtag/${id}/`).then((res) => {
-      resolve(res.data.results);
-    });
-  });
->>>>>>> main
 }
 
 /** requests and sets exercises according to the passed in setter and book id */
 export function getExerciseByBook(setExercises, id) {
-<<<<<<< HEAD
   axios
     .get( `${server_url}api/exerciseinfo/?book_id=${id}` )
     .then((res) => {
@@ -77,27 +69,9 @@ export function getExerciseByFiltersOrSearch(setExercises, tags, searchString, s
   for (const tag in tags) {
     if (paramsEndpoint === "") {
       paramsEndpoint += "?tag_id=" + tags[tag]
-=======
-  axios.get(`${server_url}api/exerciseinfo/?book_id=${id}`).then((res) => {
-    setExercises(res.data.results);
-  });
-}
-
-export function getExerciseByTags(setExercises, tags, bookId) {
-  if (Object.keys(tags).length === 0) {
-    return;
-  }
-
-  let i = 0;
-  let paramsEndpoint = "";
-  for (const tag in tags) {
-    if (i === 0) {
-      paramsEndpoint += "?tag_id=" + tags[tag];
->>>>>>> main
     } else {
       paramsEndpoint += "&tag_id=" + tags[tag];
     }
-<<<<<<< HEAD
   }
 
   if (searchString) {
@@ -132,16 +106,3 @@ export function getExerciseByTags(setExercises, tags, bookId) {
       setExercises(res.data.results);
     });
 }
-=======
-    i += 1;
-  }
-
-  if (bookId !== "") {
-    paramsEndpoint += "&book_id=" + bookId;
-  }
-
-  axios.get(`${server_url}api/exerciseinfo/${paramsEndpoint}/`).then((res) => {
-    setExercises(res.data.results);
-  });
-}
->>>>>>> main

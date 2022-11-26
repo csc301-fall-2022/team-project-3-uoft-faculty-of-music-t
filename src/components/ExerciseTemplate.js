@@ -118,6 +118,7 @@ const ExerciseTemplate = ({ exercisedet }) => {
               setSelectedTags={setSelectedTags}
             ></TagList>
             <select
+              className="select-box-select"
               name="tags"
               value={choice}
               onChange={(e) => setChoice(e.target.value)}

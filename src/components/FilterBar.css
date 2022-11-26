@@ -16,7 +16,7 @@
     display: flex;
 }
 
-select {
+.tag-levels-inputs-container-select{
     font-family: 'Glory', sans-serif;
 }
 

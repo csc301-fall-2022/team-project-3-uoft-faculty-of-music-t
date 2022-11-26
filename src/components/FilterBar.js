@@ -167,6 +167,7 @@ const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overri
           <div className="tag-levels-inputs-container-select-label-container">
             <p>Category 1</p>
             <select
+              className="tag-levels-inputs-container-select"
               ref={level1TagSelectRef}
               onChange={(e) => handleCategory1SelectChange(e)}
             >
@@ -183,6 +184,7 @@ const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overri
             <div className="tag-levels-inputs-container-select-label-container">
               <p>Category 2</p>
               <select
+                className="tag-levels-inputs-container-select"
                 ref={level2TagSelectRef}
                 onChange={(e) => handleCategory2SelectChange(e)}
               >
@@ -203,6 +205,7 @@ const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overri
             <div className="tag-levels-inputs-container-select-label-container">
               <p>Category 3</p>
               <select
+                className="tag-levels-inputs-container-select"
                 ref={level3TagSelectRef}
                 onChange={(e) => handleCategory3SelectChange(e)}
               >
