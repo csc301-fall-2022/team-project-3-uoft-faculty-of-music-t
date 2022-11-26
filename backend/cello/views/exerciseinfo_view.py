@@ -31,12 +31,9 @@ class ExerciseInfoView(viewsets.ModelViewSet):
         clef = self.request.query_params.getlist('clef')
         search = self.request.query_params.get('search')
 
+
         exercises = ExerciseInfo.objects.all()
-        
-        if tag_id:
-            for tag in tag_id:
-                exercises = exercises.filter(tags=tag)
-                
+
         if author:
             if book_id:
                 books = Book.objects.filter(Q(id__in=book_id) | Q(author__in=author))
@@ -47,23 +44,6 @@ class ExerciseInfoView(viewsets.ModelViewSet):
                 books = Book.objects.filter(id__in=book_id)
             else:
                 books = Book.objects.all()
-
-        queryset = ExerciseInfo.objects.filter(id__in=exercises, book_id__in=books)
-
-        if side:
-            sides_to_filter = []
-
-            if 'left' in side:
-                sides_to_filter.append('Left Side')
-            if 'right' in side:
-                sides_to_filter.append('Right Side')
-            if 'other' in side:
-                sides_to_filter.append('Other')
-
-            queryset.filter(side__in=sides_to_filter)
-
-        if clef:
-            queryset.filter(side__in=clef)
 
         # Searches to find a match for the search term within author, tag name, exercise name, and book name
         if search:
@@ -77,5 +57,31 @@ class ExerciseInfoView(viewsets.ModelViewSet):
             tag_matches = Tag.objects.filter(tag_name__icontains=search)
             queryset = queryset.filter(Q(book_id__in=book_title_matches) | Q(book_id__in=author_matches) | \
                 Q(tags__in=tag_matches) | Q(id__in=exercise_title_match))
+        else:
+            queryset = ExerciseInfo.objects.filter(id__in=exercises, book_id__in=books)
+        
+        if tag_id:
+            for tag in tag_id:
+                queryset = queryset.filter(tags=tag)
+
+        if side:
+            sides = []
+
+            if 'left' in side:
+                sides.append("Left Side")
+            if 'right' in side:
+                sides.append("Right Side")
+            if 'other' in side:
+                sides.append("Other")
+
+            queryset = queryset.filter(side__in=sides)
+
+        if clef:
+            if 'treble' in clef and 'tenor' in clef:
+                queryset = queryset.filter(Q(treble=True) | Q(tenor=True))
+            elif 'treble' in clef:
+                queryset = queryset.filter(treble=True)
+            elif 'tenor' in clef:
+                queryset = queryset.filter(tenor=True)       
 
         return queryset
