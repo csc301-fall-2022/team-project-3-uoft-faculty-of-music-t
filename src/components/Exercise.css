@@ -16,6 +16,13 @@
     margin: 0;
 }
 
+.exercise-tags {
+    text-align: right;
+    width: 30%;
+    overflow-wrap: break-word;
+    font-weight: bold;
+}
+
 .author-date-labels {
     text-align: right
 }

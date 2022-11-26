@@ -5,6 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 import BookInfo from '../components/BookInfo';
 import ExerciseList from '../components/ExerciseList';
 import { getBookDetails, getExerciseByBook } from '../api/requests';
+import FilterBar from "../components/FilterBar"
+import { getBookDetails, getExerciseByBook, getExerciseByTags } from '../api/requests';
 import ReactPaginate from 'react-paginate';
 
 function BookDetailsPage() {
@@ -18,10 +20,19 @@ function BookDetailsPage() {
   }, [id])
 
   const [exercises, setExercises] = useState([])
+  const [selectedTags, setSelectedTags] = useState({})
 
+//  useEffect(() => {
+//    getExerciseByBook(setExercises, id);
+//  }, [id])
+  
   useEffect(() => {
-    getExerciseByBook(setExercises, id);
-  }, [id])
+    if (Object.keys(selectedTags).length === 0) {
+        getExerciseByBook(setExercises, id);
+    } else {
+        getExerciseByTags(setExercises, selectedTags, id)
+    }
+  }, [selectedTags])  
 
   const exercisePerPage = 10;  // number of exercises per page
   const pagesVisited = pageNumber * exercisePerPage;  // use this slice the exercises
@@ -50,7 +61,7 @@ function BookDetailsPage() {
                     </h2>
                 </div>
                 <div className="bookDetails-filter-container">
-                    {/* TODO Add filter component here */}
+                    <FilterBar setSelectedTags={setSelectedTags}/>
                 </div>
             </div>
             <div className="bookDetails-exercises-container">
