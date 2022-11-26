@@ -76,20 +76,36 @@ export function getExerciseByBook(setExercises, id) {
     });
 }
 
-export function getExerciseByTags(setExercises, tags, bookId) {
-  if (Object.keys(tags).length === 0) {
-    return
-  }
-
-  let i = 0
+export function getExerciseByFiltersOrSearch(setExercises, tags, searchString, sides, clefs, bookId) {
   let paramsEndpoint = ""
   for (const tag in tags) {
-    if (i === 0) {
+    if (paramsEndpoint === "") {
       paramsEndpoint += "?tag_id=" + tags[tag]
     } else {
       paramsEndpoint += "&tag_id=" + tags[tag]
     }
-    i += 1
+  }
+
+  if (searchString) {
+    if (paramsEndpoint === "") {
+      paramsEndpoint = "?search=" + searchString
+    }
+  }
+
+  for (const side of sides) {
+    if (paramsEndpoint === "") {
+      paramsEndpoint += "?side=" + side
+    } else {
+      paramsEndpoint += "&side=" + side
+    }
+  }
+
+  for (const clef of clefs) {
+    if (paramsEndpoint === "") {
+      paramsEndpoint += "?clef=" + clef
+    } else {
+      paramsEndpoint += "&clef=" + clef
+    }
   }
 
   if (bookId) {
