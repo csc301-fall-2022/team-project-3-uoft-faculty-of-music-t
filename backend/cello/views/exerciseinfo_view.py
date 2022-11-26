@@ -55,17 +55,23 @@ class ExerciseInfoView(viewsets.ModelViewSet):
                 exercises = exercises.filter(tags=tag)
 
         if side:
+            sides = []
+
             if 'left' in side:
-                queryset = queryset.filter(side="Left Side")
+                sides.append("Left Side")
             if 'right' in side:
-                queryset = queryset.filter(side="Right Side")
+                sides.append("Right Side")
             if 'other' in side:
-                queryset = queryset.filter(side="Other")
+                sides.append("Other")
+
+            queryset = queryset.filter(side__in=sides)
 
         if clef:
-            if 'treble' in clef:
+            if 'treble' in clef and 'tenor' in clef:
+                queryset = queryset.filter(Q(treble=True) | Q(tenor=True))
+            elif 'treble' in clef:
                 queryset = queryset.filter(treble=True)
-            if 'tenor' in clef:
-                queryset = queryset.filter(tenor=True)
+            elif 'tenor' in clef:
+                queryset = queryset.filter(tenor=True)       
 
         return queryset
