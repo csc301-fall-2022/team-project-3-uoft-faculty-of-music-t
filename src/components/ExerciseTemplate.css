@@ -21,7 +21,7 @@
   width: 30%;
 }
 
-input {
+.edit-input {
   width: 60%;
   padding: 3px 5px 3px 5px;
   font-family: "Glory", sans-serif;
