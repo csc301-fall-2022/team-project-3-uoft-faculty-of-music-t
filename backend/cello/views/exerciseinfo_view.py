@@ -34,6 +34,8 @@ class ExerciseInfoView(viewsets.ModelViewSet):
                 books = Book.objects.filter(id__in=book_id)
             else:
                 books = Book.objects.all()
+        
+        queryset = ExerciseInfo.objects.filter(id__in=exercises, book_id__in=books)
 
         # Searches to find a match for the search term within author, tag name, exercise name, and book name
         if search:
@@ -47,8 +49,6 @@ class ExerciseInfoView(viewsets.ModelViewSet):
             tag_matches = Tag.objects.filter(tag_name__icontains=search)
             queryset = queryset.filter(Q(book_id__in=book_title_matches) | Q(book_id__in=author_matches) | \
                 Q(tags__in=tag_matches) | Q(id__in=exercise_title_match))
-        else:
-            queryset = ExerciseInfo.objects.filter(id__in=exercises, book_id__in=books)
         
         if tag_id:
             for tag in tag_id:
