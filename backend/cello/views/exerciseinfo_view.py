@@ -36,7 +36,7 @@ class ExerciseInfoView(viewsets.ModelViewSet):
         if tag_id:
             for tag in tag_id:
                 exercises = ExerciseInfo.objects.filter(tags=tag)
-
+                
         if author:
             if book_id:
                 books = Book.objects.filter(Q(id__in=book_id) | Q(author__in=author))
