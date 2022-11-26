@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const server_url = "https://cello-exercise-index.herokuapp.com/"
 
-
 /** requests and sets list of books according to the passed in setter*/
 export function getAllBooks(setBooks) {
     axios
@@ -70,7 +69,7 @@ export function getSubTagsByTag(id) {
 /** requests and sets exercises according to the passed in setter and book id */
 export function getExerciseByBook(setExercises, id) {
   axios
-    .get( `${server_url}api/exerciseinfo?book_id=${id}` )
+    .get( `${server_url}api/exerciseinfo/?book_id=${id}/` )
     .then((res) => {
       setExercises(res.data.results);
     });
@@ -97,7 +96,7 @@ export function getExerciseByTags(setExercises, tags, bookId) {
   }
 
   axios
-    .get( `${server_url}api/exerciseinfo${paramsEndpoint}` )
+    .get( `${server_url}api/exerciseinfo/${paramsEndpoint}/` )
     .then((res) => {
       setExercises(res.data.results);
     });
