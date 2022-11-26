@@ -52,7 +52,7 @@ class ExerciseInfoView(viewsets.ModelViewSet):
         
         if tag_id:
             for tag in tag_id:
-                exercises = exercises.filter(tags=tag)
+                queryset = queryset.filter(tags=tag)
 
         if side:
             sides = []
