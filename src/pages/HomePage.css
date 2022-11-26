@@ -82,7 +82,7 @@
 }
 
 .hp-pagination-container {
-    /* width: 80%; */
+    width: 90%;
     height: 20px;
     list-style: none;
     display: flex;
