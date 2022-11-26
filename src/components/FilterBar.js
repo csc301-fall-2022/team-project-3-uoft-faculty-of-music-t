@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./FilterBar.css";
 import { getTagsByLevel, getSubTagsByTag } from "../api/requests";
 
-const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overrideBackgroundColor }) => {
+const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overrideBackgroundColor, currSearchString, setSearchString }) => {
   const level1TagSelectRef = useRef();
   const level2TagSelectRef = useRef();
   const level3TagSelectRef = useRef();
@@ -123,6 +123,7 @@ const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overri
     setSelectedTags(tags);
     setSelectedSides(sides);
     setSelectedClefs(clefs)
+    setSearchString(currSearchString)
   };
 
   const handleClearFiltersButtonClick = () => {
