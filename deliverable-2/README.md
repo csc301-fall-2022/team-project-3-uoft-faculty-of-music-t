@@ -52,23 +52,24 @@ cd team-project-3-uoft-faculty-of-music-t
 ## Running the Django project
 Add the Django dependencies:
 ```
-pip install django django-cors-headers djangorestframework djangorestframework-simplejwt
-```
-Migrate the database and run the server:
-```
-python backend/manage.py migrate
-python backend/manage.py runserver
+pip install -r requirements.txt
 ```
  
-## Running the React project
+## Setting up the React project
 In another terminal, `cd` into the `frontend` directory:
 ```
 cd frontend
 ```
-Start the React project:
+Install the required node packages and build the project:
 ```
 npm install
-npm start
+npm run build
+```
+
+Migrate the database and run the server:
+```
+python backend/manage.py migrate
+python backend/manage.py runserver
 ```
 
  ## Deployment and Github Workflow
