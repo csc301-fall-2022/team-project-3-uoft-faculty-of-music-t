@@ -25,7 +25,7 @@ class ExerciseInfoView(viewsets.ModelViewSet):
         
         if tag_id:
             for tag in tag_id:
-                exercises = ExerciseInfo.objects.filter(tags=tag)
+                exercises = exercises.filter(tags=tag)
                 
         if author:
             if book_id:
@@ -41,18 +41,19 @@ class ExerciseInfoView(viewsets.ModelViewSet):
         queryset = ExerciseInfo.objects.filter(id__in=exercises, book_id__in=books)
 
         if side:
+            sides_to_filter = []
+
             if 'left' in side:
-                queryset = queryset.filter(side='Left Side')
+                sides_to_filter.append('Left Side')
             if 'right' in side:
-                queryset = queryset.filter(side='Right Side')
+                sides_to_filter.append('Right Side')
             if 'other' in side:
-                queryset = queryset.filter(side='Other')
+                sides_to_filter.append('Other')
+
+            queryset.filter(side__in=sides_to_filter)
 
         if clef:
-            if 'tenor' in clef:
-                queryset = queryset.filter(tenor=True)
-            if 'treble' in clef:
-                queryset = queryset.filter(treble=True)
+            queryset.filter(side__in=clef)
 
         # Searches to find a match for the search term within author, tag name, exercise name, and book name
         if search:
