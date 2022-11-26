@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./FilterBar.css";
 import { getTagsByLevel, getSubTagsByTag } from "../api/requests";
 
-const FilterBar = ({ setSelectedTags }) => {
+const FilterBar = ({ setSelectedTags, overrideBackgroundColor }) => {
   const level1TagSelectRef = useRef();
   const level2TagSelectRef = useRef();
   const level3TagSelectRef = useRef();
@@ -94,7 +94,7 @@ const FilterBar = ({ setSelectedTags }) => {
   };
 
   return (
-    <div className="filter-bar-container">
+    <div className="filter-bar-container" style={{backgroundColor: overrideBackgroundColor}}>
       <h2 className="filter-title">Filter</h2>
       <div className="inputs-container">
         <div className="side-inputs-container">
