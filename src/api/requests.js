@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const server_url = "https://cello-exercise-index.herokuapp.com/";
-const server_url = "http://127.0.0.1:8000/";
+const server_url = "https://cello-exercise-index.herokuapp.com/";
 
 /** requests and sets list of books according to the passed in setter*/
 export function getAllBooks(setBooks) {
