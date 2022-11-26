@@ -11,20 +11,20 @@ const SearchPage = () => {
   const [exercises, setExercises] = useState([])
   const [searchString, setSearchString] = useState("")
   const [selectedTags, setSelectedTags] = useState({})
-  const [selectedClefs, setSelectedClefs] = useState({})
-  const [selectedSides, setSelectedSides] = useState({})
+  const [selectedClefs, setSelectedClefs] = useState([])
+  const [selectedSides, setSelectedSides] = useState([])
 
   useEffect(() => {
     getAllExercises(setExercises);
   }, [])
 
   useEffect(() => {
-    if (Object.keys(selectedTags).length === 0) {
+    if (Object.keys(selectedTags).length === 0 && selectedClefs.length === 0 && selectedSides.length === 0 && searchString === "") {
       getAllExercises(setExercises);
     } else {
       getExerciseByFiltersOrSearch(setExercises, selectedTags, searchString, selectedSides, selectedClefs)
     }
-  }, [selectedTags])
+  }, [selectedTags, searchString, selectedSides, selectedClefs])
 
   return (
     <div className="searchPage">
