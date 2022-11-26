@@ -3,11 +3,20 @@ from rest_framework import viewsets
 from cello.pagination import StandardResultsSetPagination
 from ..serializers import TagSerializer, SubtagSerializer
 from ..models import Tag, ExerciseInfo, Subtag
+from drf_yasg.utils import swagger_auto_schema
 
 class TagView(viewsets.ModelViewSet):
     serializer_class = TagSerializer
     queryset = Tag.objects.all().order_by('id')
     pagination_class = StandardResultsSetPagination
+
+    @swagger_auto_schema(operation_id="Get all tags", operation_description="Get all tags (paginated)")
+    def list(self, request, *args, **kwargs):
+        return super().list(self, request, *args, **kwargs)
+
+    @swagger_auto_schema(operation_id="Get tag", operation_description="Get information for a tag with id")
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(self, request, *args, **kwargs)
 
         
 # /api/tag/exercise/<exercise_id>
@@ -19,10 +28,18 @@ class TagByExerciseView(viewsets.ModelViewSet):
         queryset = Tag.objects.filter(id__in=tags)
         return queryset
 
+    @swagger_auto_schema(operation_id="Get tags by exercise", operation_description="Get all tags associated with exercise id")
+    def list(self, request, *args, **kwargs):
+        return super().list(self, request, *args, **kwargs)
+
 # /api/tag/level/<level_num>
 class TagByLevelView(viewsets.ModelViewSet):
     serializer_class = TagSerializer
     pagination_class = StandardResultsSetPagination
+
+    @swagger_auto_schema(operation_id="Get tags by level number", operation_description="Get all tags that have level number level_num (paginated)")
+    def list(self, request, *args, **kwargs):
+        return super().list(self, request, *args, **kwargs)
 
     def get_queryset(self):
         level_num = self.kwargs['level_num']
@@ -34,6 +51,10 @@ class TagByLevelView(viewsets.ModelViewSet):
 class SubtagView(viewsets.ModelViewSet):
     serializer_class = SubtagSerializer
     pagination_class = StandardResultsSetPagination
+
+    @swagger_auto_schema(operation_id="Get subtags", operation_description="Get all subtags of tag with id (paginated)")
+    def list(self, request, *args, **kwargs):
+        return super().list(self, request, *args, **kwargs)
 
     def get_queryset(self):
         tag_id = self.kwargs['tag_id']
