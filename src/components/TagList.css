@@ -1,0 +1,41 @@
+.tags-container {
+  max-width: 600px;
+}
+
+.tag-icon1,
+.tag-icon2,
+.tag-icon3 {
+  border: none;
+  border-radius: 10px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: "Glory", sans-serif;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  padding: 3px 7px 3px 7px;
+}
+
+.tag-icon1 {
+  background-color: rgb(244, 115, 135);
+}
+
+.tag-icon1:hover {
+  background-color: rgb(195, 31, 55);
+}
+
+.tag-icon2 {
+  background-color: rgb(244, 179, 115);
+}
+
+.tag-icon2:hover {
+  background-color: rgb(238, 146, 55);
+}
+
+.tag-icon3 {
+  background-color: rgb(12, 184, 150);
+}
+
+.tag-icon3:hover {
+  background-color: rgb(8, 143, 116);
+}

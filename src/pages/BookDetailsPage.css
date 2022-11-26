@@ -1,6 +1,5 @@
 .bookDetailsPage {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,6 +8,7 @@
 
 .bookDetails-main-container {
     width: 80%;
+    margin-bottom: 1rem;
 }
 
 .bookDetails-top-container {
@@ -23,6 +23,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    border-radius: .5rem;
 }
 
 .bookDetails-content-container-title {
@@ -34,9 +35,10 @@
 }
 
 .bookDetails-filter-container {
-    width: 60%;
-    min-width: 400px;
-    margin-left: 2rem;
+    margin-left: 1rem;
+    width: 62.5%; 
+    min-width: 450px;
+    height: auto;
 }
 
 .bookDetails-exercises-container {
@@ -45,7 +47,7 @@
     margin-top: 1.5rem;
     margin-bottom: 5rem;
     min-height: 300px;
-    height: 55%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     border-radius: .5rem;
