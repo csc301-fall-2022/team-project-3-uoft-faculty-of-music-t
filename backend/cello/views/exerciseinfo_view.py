@@ -1,4 +1,5 @@
 # API endpoints here begin with /api/exerciseinfo
+from random import random
 from rest_framework import viewsets
 from cello.pagination import StandardResultsSetPagination
 from ..serializers import ExerciseInfoSerializer
@@ -7,6 +8,7 @@ from collections import defaultdict
 from django.db.models import Q
 from drf_yasg.utils import swagger_auto_schema
 from .documentation import exercise_filter_parameters
+from rest_framework.generics import ListAPIView
 
 # http://127.0.0.1:8000/api/exerciseinfo/?&tag_id=18&author=Bukinik,%20Mikhail&book_id=27
 # http://127.0.0.1:8000/api/exerciseinfo/?&tag_id=18&tag_id=12&author=Bukinik,%20Mikhail&book_id=27&book_id=18&author=Raynal,%20Adrien
@@ -85,3 +87,18 @@ class ExerciseInfoView(viewsets.ModelViewSet):
                 queryset = queryset.filter(tenor=True)       
 
         return queryset
+
+class ExerciseRandomView(ListAPIView):
+
+    serializer_class = ExerciseInfoSerializer
+    pagination_class = StandardResultsSetPagination
+
+    @swagger_auto_schema(operation_id="Get random exercises", operation_description="Returns paginated list of exercises in a random order.")
+    def list(self, request, *args, **kwargs):
+        return super().list(self, request, *args, **kwargs)
+
+    def get_queryset(self):
+
+        return ExerciseInfo.objects.all().order_by('?')
+
+

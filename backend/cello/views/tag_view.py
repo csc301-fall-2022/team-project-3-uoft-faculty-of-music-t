@@ -4,6 +4,7 @@ from cello.pagination import StandardResultsSetPagination
 from ..serializers import TagSerializer, SubtagSerializer
 from ..models import Tag, ExerciseInfo, Subtag
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework.generics import ListAPIView
 
 class TagView(viewsets.ModelViewSet):
     serializer_class = TagSerializer
@@ -60,3 +61,16 @@ class SubtagView(viewsets.ModelViewSet):
         tag_id = self.kwargs['tag_id']
         queryset = Subtag.objects.filter(parent_id=tag_id)
         return queryset
+
+class ExerciseRandomView(ListAPIView):
+
+    serializer_class = TagSerializer
+    pagination_class = StandardResultsSetPagination
+
+    @swagger_auto_schema(operation_id="Get random tags", operation_description="Returns paginated list of tags in a random order")
+    def list(self, request, *args, **kwargs):
+        return super().list(self, request, *args, **kwargs)
+
+    def get_queryset(self):
+
+        return Tag.objects.all().order_by('?')
