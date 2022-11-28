@@ -5,7 +5,7 @@ import SearchPage from "./pages/SearchPage";
 import BookDetailsPage from "./pages/BookDetailsPage";
 import ExerciseDetailsPage from "./pages/ExerciseDetailsPage";
 import EditExercisePage from "./pages/EditExercisePage";
-// import Books from './components/Books';
+
 
 function App() {
   return (
