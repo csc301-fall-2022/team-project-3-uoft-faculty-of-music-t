@@ -48,6 +48,7 @@ const ExerciseTemplate = ({ exercisedet }) => {
         <div className="exercise-title">
           <label className="label_left">Exercise Title & Page</label>
           <input
+            className="edit-input"
             type="text"
             value={detail.page_and_exercise}
             onChange={(e) => {
@@ -61,6 +62,7 @@ const ExerciseTemplate = ({ exercisedet }) => {
         <div className="exercise-link">
           <label className="label_left">Link</label>
           <input
+            className="edit-input"
             type="text"
             value={detail.book.link}
             onChange={(e) => {
