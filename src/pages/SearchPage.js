@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import ExerciseList from "../components/ExerciseList";
 import { getAllExercises, getExerciseByFiltersOrSearch } from "../api/requests";
 import { useLocation } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 const SearchPage = () => {
   const location = useLocation();
@@ -28,7 +29,7 @@ const SearchPage = () => {
     ) {
       getAllExercises(setExercises);
     } else {
-      setExercises([]) // Flush out existing exercises in array <- for bug where exercises were still shown even though returned data was empty
+      setExercises([]); // Flush out existing exercises in array <- for bug where exercises were still shown even though returned data was empty
       getExerciseByFiltersOrSearch(
         setExercises,
         selectedTags,
@@ -38,6 +39,21 @@ const SearchPage = () => {
       );
     }
   }, [selectedTags, searchString, selectedSides, selectedClefs]);
+
+  const [exPageNumber, setPageNumber] = useState(0);
+  const exPerPage = 10; // number of searched exercise per page.
+  const exPageVisited = exPageNumber * exPerPage;
+
+  const displaySearchExercises = exercises.slice(
+    exPageVisited,
+    exPageVisited + exPerPage
+  );
+
+  const exPageCount = Math.ceil(exercises.length / exPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   return (
     <div className="searchPage">
@@ -54,8 +70,14 @@ const SearchPage = () => {
           setSelectedSides={setSelectedSides}
           defaultSearchString={location.state.searchString}
         />
-        <div className="content-list-container">
-          <ExerciseList exercises={exercises} />
+        <div className="sp-content-list-container">
+          <ExerciseList exercises={displaySearchExercises} />
+          <ReactPaginate
+            pageCount={exPageCount}
+            onPageChange={changePage}
+            containerClassName={"sp-pagination-container"}
+            activeClassName={"sp-active-container"}
+          />
         </div>
       </div>
     </div>
