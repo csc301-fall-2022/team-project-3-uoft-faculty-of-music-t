@@ -1,5 +1,4 @@
 # API endpoints here begin with /api/exerciseinfo
-from random import random
 from rest_framework import viewsets
 from cello.pagination import StandardResultsSetPagination
 from ..serializers import ExerciseInfoSerializer
