@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import "./SearchPage.css";
-import SearchBar from "../components/SearchBar";
 import SearchBarWithFilter from "../components/SearchBarWithFilter";
 import { Link } from "react-router-dom";
 import ExerciseList from "../components/ExerciseList";
@@ -18,11 +17,9 @@ const SearchPage = () => {
 
   useEffect(() => {
     getAllExercises(setExercises);
-    // setSearchString(location.state.searchString)
   }, []);
 
   useEffect(() => {
-    console.log(searchString);
     if (
       Object.keys(selectedTags).length === 0 &&
       selectedClefs.length === 0 &&
@@ -31,6 +28,7 @@ const SearchPage = () => {
     ) {
       getAllExercises(setExercises);
     } else {
+      setExercises([]) // Flush out existing exercises in array <- for bug where exercises were still shown even though returned data was empty
       getExerciseByFiltersOrSearch(
         setExercises,
         selectedTags,
