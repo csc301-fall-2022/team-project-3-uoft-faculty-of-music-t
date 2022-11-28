@@ -15,8 +15,6 @@
     width: 100%;
     background-color: #e7e7e7;
     margin-top: 1.5rem;
-    min-height: 300px;
-    height: 80%;
     border-radius: .5rem;
     padding: 10px;
     overflow: auto;
@@ -25,6 +23,7 @@
 .sp-pagination-container {
     width: 90%;
     height: 40px;
+    margin-top: 1.5rem;
     list-style: none;
     display: flex;
     justify-content: center;
