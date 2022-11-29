@@ -2,13 +2,12 @@ import React from "react";
 import "../App.css";
 import "./EditExercisePage.css";
 import ExerciseTemplate from "../components/ExerciseTemplate";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const EditExercisePage = () => {
   const location = useLocation();
   const exercisedet = location.state.exercisedet;
-  console.log(exercisedet);
-  // TODO: Have a separate state that represents new request & pass this state to ExerciseTemplate
+  // console.log(exercisedet);
 
   return (
     <div className="editExercisePage">
@@ -28,7 +27,13 @@ const EditExercisePage = () => {
         </div>
         <div className="editExercise-buttons">
           <button className="request-btn">Request the Edit</button>
-          <button className="back-btn">Back</button>
+          <Link
+            className="back-btn"
+            to="/exerciseDetails"
+            state={{ exercise: exercisedet }}
+          >
+            <p>Back</p>
+          </Link>
         </div>
       </div>
     </div>
