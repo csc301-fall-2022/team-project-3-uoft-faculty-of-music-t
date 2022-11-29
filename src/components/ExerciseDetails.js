@@ -11,8 +11,6 @@ export default function ExerciseDetails({ exercisedet }) {
 
   const navigate = useNavigate();
 
-  console.log(exercisedet);
-
   return (
     <div className="exercisedet-container">
       <div className="exercisedet-container-labels">
