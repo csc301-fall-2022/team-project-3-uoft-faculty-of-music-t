@@ -1,7 +1,7 @@
 .filter-bar-container {
     width: calc(100% - 40px);
     height: calc(100% - 40px);
-    background-color: rgb(245, 244, 244);
+    background-color: #e7e7e7;
     border-radius: .5rem;
     padding: 20px;
     display: flex;
@@ -16,7 +16,7 @@
     display: flex;
 }
 
-select {
+.tag-levels-inputs-container-select{
     font-family: 'Glory', sans-serif;
 }
 
