@@ -26,6 +26,7 @@ const ExerciseTemplate = ({ exercisedet }) => {
 
   const updateTags = (e) => {
     e.preventDefault();
+    // console.log(choice);
     const newTag = tags.find((tag) => tag["tag_name"] === choice);
     // Prevent adding already existing tag
     // console.log(newTag);
