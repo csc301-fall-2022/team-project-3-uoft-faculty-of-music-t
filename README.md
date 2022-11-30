@@ -41,7 +41,7 @@ python backend/manage.py migrate
 ```
 
 # Usage
-Run the Django server:
+After the setup, run the Django server:
 ```
 python backend/manage.py runserver
 ```
