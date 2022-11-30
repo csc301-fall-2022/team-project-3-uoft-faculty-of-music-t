@@ -35,7 +35,7 @@ npm install
 npm run build
 ```
 
-Migrate the Django database and run the server:
+Migrate the Django migrations to your database:
 ```
 python backend/manage.py migrate
 ```
