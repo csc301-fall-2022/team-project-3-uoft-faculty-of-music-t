@@ -66,4 +66,13 @@ The code for the frontend is located in the `src` directory. React Router is use
 
 To get a local copy of the database, you can import the Postgres dump https://github.com/csc301-fall-2022/team-project-3-uoft-faculty-of-music-t/blob/database-conversion/database_conversion/dbexport.pgsql located in the `database-conversion` branch to your local Postgres server.
 
+# Deployment
 
+There is currently a Github Actions workflow that deploys to Heroku automatically when pushing to the main branch.
+
+# Tests
+
+There are unit tests that can be run with
+```
+python backend/manage.py test
+```
