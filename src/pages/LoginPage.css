@@ -1,0 +1,51 @@
+.loginPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 800px;
+}
+
+.loginPage-main-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    border-radius: 0.5rem;
+}
+
+.login-title-container {
+    width: 60%;
+    min-height: 300px;
+    background-color: white;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 5rem;
+}
+
+.login-field-container {
+    width: 100%;
+    min-height: 300px;
+    background-color: #386bc9;
+    display: flex;
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.lp-title {
+    width: 50px;
+    font-size: 2rem;
+}
+
+.lp-title:hover {
+    cursor: pointer;
+    color: rgb(107, 107, 107);
+}
+
+.login-button {
+    background-color: #1e3a6d;
+    color: white;
+}
