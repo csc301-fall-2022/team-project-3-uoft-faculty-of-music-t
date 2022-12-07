@@ -7,7 +7,7 @@ import ExerciseDetailsPage from "./pages/ExerciseDetailsPage";
 import EditExercisePage from "./pages/EditExercisePage";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
-
+import RequestDetailPage from "./pages/RequestDetailPage";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Route path="editExercise" element={<EditExercisePage />}></Route>
         <Route path="login" element={<LoginPage />}></Route>
         <Route path="admin" element={<AdminPage />}></Route>
+        <Route path="requested" element={<RequestDetailPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
