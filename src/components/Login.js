@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Login.css';
 //TODO: import axios from ...
 
 const Login = () => {
@@ -28,9 +29,9 @@ const Login = () => {
             {success ? (
                 <div>
                     <h1>You are logged in!</h1>
-                    <h2>
-                        <Link to="/admin">Go to the admin page</Link>
-                    </h2>
+                    <div className="go-to-admin">
+                        <Link to="/admin" className="admin-link">Go to the admin page</Link>
+                    </div>
                 </div>
             ) : (
         <div>

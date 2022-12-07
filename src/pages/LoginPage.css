@@ -74,6 +74,7 @@
     background-color:#1e3a6d;
     color: white;
     border-radius: 0.5rem;
+    box-shadow: 1px 1px 1px #1e3a6d;
 }
 
 .login-button:hover {

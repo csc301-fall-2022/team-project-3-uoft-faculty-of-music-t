@@ -17,14 +17,14 @@
     margin-bottom: 0.5rem;
   }
 
-.admin-main-container {
+/* .admin-main-container {
     width: 70%;
     height: 70%;
     justify-content: center;
     display: flex;
-}
+} */
 
-.admin-tab-container {
+/* .admin-tab-container {
     width: 30%;
     display: flex;
     background-color: rgb(31, 58, 114);
@@ -37,7 +37,7 @@
     justify-content: center;
     background-color: rgb(206, 206, 206);
     border-radius: 0.5rem;
-}
+} */
 
 .admin-welcome {
     font-weight: bold;

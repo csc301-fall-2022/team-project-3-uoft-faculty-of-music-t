@@ -60,6 +60,11 @@ const HomePage = () => {
         <Link to="/" className="title-link">
           <h1 className="title">Cello Exercise Index</h1>
         </Link>
+        <div className="home-login-container">
+        <Link to='/login' className="home-login">
+          <h1>Login</h1>
+        </Link>
+      </div>
       </div>
       <div className="homePage-main-container">
         <SearchBar setSearchString={setSearchString} />
