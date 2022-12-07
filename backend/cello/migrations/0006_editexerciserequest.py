@@ -15,8 +15,12 @@ class Migration(migrations.Migration):
             name='EditExerciseRequest',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('new_side', models.CharField(max_length=50)),
+                ('left_side', models.BooleanField()),
+                ('right_side', models.BooleanField()),
+                ('other_side', models.BooleanField()),
                 ('new_page_and_exercise', models.CharField(max_length=100, null=True)),
+                ('link', models.CharField(max_length=150, null=True)),
+                ('tags', models.TextField()),  # we have to convert list of tags to a string
                 ('new_tenor', models.BooleanField()),
                 ('new_treble', models.BooleanField()),
                 ('exercise_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cello.exerciseinfo')),
