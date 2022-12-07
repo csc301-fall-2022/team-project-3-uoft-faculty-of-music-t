@@ -1,5 +1,6 @@
 import "../App.css"
 import "./LoginPage.css"
+import Login from "../components/Login"
 import { Link } from "react-router-dom"
 import React from 'react'
 
@@ -13,7 +14,7 @@ function LoginPage() {
                 </Link>
             </div>
             <div className="login-field-container">
-                Login Fields
+                <Login />
             </div>
         </div>
     </div>
