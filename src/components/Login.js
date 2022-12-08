@@ -30,7 +30,7 @@ const Login = () => {
                 <div>
                     <h1>You are logged in!</h1>
                     <div className="go-to-admin">
-                        <Link to="/admin" className="admin-link">Go to the admin page</Link>
+                        <Link to="/requested" className="admin-link">Go to the admin page</Link>
                     </div>
                 </div>
             ) : (

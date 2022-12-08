@@ -34,7 +34,7 @@ export default function Exercise({ exercise, excludeBookTitle, requested }) {
   } else if (requested) {
     return (
       <div className="exercise-container">
-        <Link to="/requested" state={{ exercise: exercise }}>
+        <Link to="/requestDetail" state={{ exercise: exercise }}>
           <p>
             {exercise.book.title} ({exercise.page_and_exercise})
           </p>
