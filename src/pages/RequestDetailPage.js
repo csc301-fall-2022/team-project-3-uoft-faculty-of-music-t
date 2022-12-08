@@ -18,7 +18,7 @@ const RequestDetailPage = () => {
         <div className="requestDetail-content-container">
           <h2 className="requestDetail-content-title">Detail about Request</h2>
           <div className="requestDetail-content">
-            <RequestedExercise></RequestedExercise>
+            <RequestedExercise reqExercise={location.state.exercise}></RequestedExercise>
           </div>
         </div>
         <div className="requestDetail-buttons">

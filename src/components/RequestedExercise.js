@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./RequestedExercise.css";
 
-const RequestedExercise = () => {
+const RequestedExercise = ({ reqExercise }) => {
   return (
     <div className="template-main-container">
       <form className="template-form">

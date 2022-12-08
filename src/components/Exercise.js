@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Exercise.css";
 import { Link } from "react-router-dom";
 
-export default function Exercise({ exercise, excludeBookTitle }) {
+export default function Exercise({ exercise, excludeBookTitle, requested }) {
   const [tagsAsString, setTagsAsString] = useState("");
 
   useEffect(() => {
@@ -26,6 +26,17 @@ export default function Exercise({ exercise, excludeBookTitle }) {
         <Link to="/exerciseDetails" state={{ exercise: exercise }}>
           <p>
             {exercise.page_and_exercise}
+          </p>
+        </Link>
+        <p className="exercise-tags-list">{tagsAsString}</p>
+      </div>
+    );
+  } else if (requested) {
+    return (
+      <div className="exercise-container">
+        <Link to="/requested" state={{ exercise: exercise }}>
+          <p>
+            {exercise.book.title} ({exercise.page_and_exercise})
           </p>
         </Link>
         <p className="exercise-tags-list">{tagsAsString}</p>

@@ -36,11 +36,11 @@ const Login = () => {
             ) : (
         <div>
             <form className='login-form' onSubmit={handleSubmit}>
-                <label htmlFor='email'>Email:</label>
+                <label htmlFor='username'>Username:</label>
                 <input
                     className="login-input"
                     type="text"
-                    id="email"
+                    id="username"
                     ref={userRef}
                     autoComplete="off"
                     onChange={(e) => setUser(e.target.value)}
