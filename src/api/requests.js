@@ -1,6 +1,21 @@
 import axios from "axios";
 
-const server_url = "https://cello-exercise-index.herokuapp.com/"
+const server_url = "http://127.0.0.1:8000/";
+
+/** log into the system */
+export function adminLogin(loginInfo, setSuccess) {
+  axios
+    .post(`${server_url}api/token/`, loginInfo)
+    .then((response) => {
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      setSuccess(true);
+    })
+    .catch((err) => {
+      console.log(err);
+      setSuccess(false);
+    });
+}
 
 /** requests and sets list of books according to the passed in setter*/
 export function getAllBooks(setBooks) {
@@ -47,27 +62,37 @@ export function getTagsByLevel(level) {
 export function getSubTagsByTag(id) {
   return new Promise((resolve, reject) => {
     axios
-    .get(`${server_url}api/tag/subtag/${id}/`, {headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
-    .then((res) => {
-      resolve(res.data.results)
-    })
-  })
+      .get(`${server_url}api/tag/subtag/${id}/`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        resolve(res.data.results);
+      });
+  });
 }
 
 /** requests and sets exercises according to the passed in setter and book id */
 export function getExerciseByBook(setExercises, id) {
-  axios
-    .get( `${server_url}api/exerciseinfo/?book_id=${id}` )
-    .then((res) => {
-      setExercises(res.data.results);
-    });
+  axios.get(`${server_url}api/exerciseinfo/?book_id=${id}`).then((res) => {
+    setExercises(res.data.results);
+  });
 }
 
-export function getExerciseByFiltersOrSearch(setExercises, tags, searchString, sides, clefs, bookId) {
-  let paramsEndpoint = ""
+export function getExerciseByFiltersOrSearch(
+  setExercises,
+  tags,
+  searchString,
+  sides,
+  clefs,
+  bookId
+) {
+  let paramsEndpoint = "";
   for (const tag in tags) {
     if (paramsEndpoint === "") {
-      paramsEndpoint += "?tag_id=" + tags[tag]
+      paramsEndpoint += "?tag_id=" + tags[tag];
     } else {
       paramsEndpoint += "&tag_id=" + tags[tag];
     }
@@ -75,35 +100,33 @@ export function getExerciseByFiltersOrSearch(setExercises, tags, searchString, s
 
   if (searchString) {
     if (paramsEndpoint === "") {
-      paramsEndpoint = "?search=" + searchString
+      paramsEndpoint = "?search=" + searchString;
     } else {
-      paramsEndpoint += "&search=" + searchString
+      paramsEndpoint += "&search=" + searchString;
     }
   }
 
   for (const side of sides) {
     if (paramsEndpoint === "") {
-      paramsEndpoint += "?side=" + side
+      paramsEndpoint += "?side=" + side;
     } else {
-      paramsEndpoint += "&side=" + side
+      paramsEndpoint += "&side=" + side;
     }
   }
 
   for (const clef of clefs) {
     if (paramsEndpoint === "") {
-      paramsEndpoint += "?clef=" + clef
+      paramsEndpoint += "?clef=" + clef;
     } else {
-      paramsEndpoint += "&clef=" + clef
+      paramsEndpoint += "&clef=" + clef;
     }
   }
 
   if (bookId) {
-    paramsEndpoint += "&book_id=" + bookId 
+    paramsEndpoint += "&book_id=" + bookId;
   }
 
-  axios
-    .get( `${server_url}api/exerciseinfo/${paramsEndpoint}` )
-    .then((res) => {
-      setExercises(res.data.results);
-    });
+  axios.get(`${server_url}api/exerciseinfo/${paramsEndpoint}`).then((res) => {
+    setExercises(res.data.results);
+  });
 }
