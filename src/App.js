@@ -6,7 +6,7 @@ import BookDetailsPage from "./pages/BookDetailsPage";
 import ExerciseDetailsPage from "./pages/ExerciseDetailsPage";
 import EditExercisePage from "./pages/EditExercisePage";
 import LoginPage from "./pages/LoginPage";
-import AdminPage from "./pages/AdminPage";
+import RequestsPage from "./pages/RequestsPage";
 import RequestDetailPage from "./pages/RequestDetailPage";
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
         <Route path="exerciseDetails" element={<ExerciseDetailsPage />}></Route>
         <Route path="editExercise" element={<EditExercisePage />}></Route>
         <Route path="login" element={<LoginPage />}></Route>
-        <Route path="admin" element={<AdminPage />}></Route>
-        <Route path="requested" element={<RequestDetailPage />}></Route>
+        <Route path="requested" element={<RequestsPage />}></Route>
+        <Route path="requestDetail" element={<RequestDetailPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
