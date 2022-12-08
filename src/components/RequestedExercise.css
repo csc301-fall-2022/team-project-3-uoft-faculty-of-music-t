@@ -1,70 +1,27 @@
-.template-main-container {
+.detail-main-container {
   width: 100%;
 }
 
-.exercise-title,
-.exercise-side,
-.exercise-link,
-.exercise-levels,
-.exercise-clef,
-.exercise-tags {
+.reqexercise-title,
+.reqexercise-side,
+.reqexercise-link,
+.reqexercise-levels,
+.reqexercise-clef,
+.reqexercise-tags {
   margin: 20px;
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 /* label = inline element */
-.label_left {
+.req_label_left {
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 500;
-  width: 30%;
 }
 
-.edit-input {
-  width: 60%;
-  padding: 3px 5px 3px 5px;
-  font-family: "Glory", sans-serif;
-  font-size: 1rem;
-}
-
-.checkbox-input {
-  width: 20px;
-  vertical-align: middle;
-}
-
-.checkbox-input[type="checkbox"]:checked {
-  filter: hue-rotate(130deg);
-}
-
-.checkbox-side {
+.req_text {
   display: inline-block;
-}
-
-/* .select-box {
-  width: 100%;
-  display: inline-block;
-} */
-
-.select-box-select {
-  font-family: "Glory", sans-serif;
-  margin-top: 1.2rem;
-  margin-right: 1rem;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 30px;
-}
-
-#add-button {
-  border: none;
-  border-radius: 5px;
-  height: 30px;
-  width: 50px;
-  cursor: pointer;
-  background-color: rgb(244, 115, 135);
-  color: white;
-}
-
-#add-button:hover {
-  background-color: rgb(202, 44, 68);
+  margin-left: 20px;
 }

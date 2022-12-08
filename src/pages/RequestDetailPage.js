@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import "./RequestDetailPage.css";
 import RequestedExercise from "../components/RequestedExercise";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { getExerciseDetails } from "../api/requests";
 
 const RequestDetailPage = () => {
   const location = useLocation();
+  const [original, setOriginal] = useState({});
+
+  useEffect(() => {
+    getExerciseDetails(setOriginal, location.state.exercise.id);
+  }, []);
 
   return (
     <div className="requestDetailPage">
@@ -16,15 +22,25 @@ const RequestDetailPage = () => {
       </div>
       <div className="requestDetail-main-container">
         <div className="requestDetail-content-container">
-          <h2 className="requestDetail-content-title">Detail about Request</h2>
+          <h2 className="requestDetail-content-title">
+            Original Exercise Detail
+          </h2>
           <div className="requestDetail-content">
-            <RequestedExercise reqExercise={location.state.exercise}></RequestedExercise>
+            <RequestedExercise reqExercise={original}></RequestedExercise>
           </div>
         </div>
-        <div className="requestDetail-buttons">
-          <button className="approve-btn">Approve</button>
-          <button className="decline-btn">Decline</button>
+        <div className="requestDetail-content-container">
+          <h2 className="requestDetail-content-title">Request Detail</h2>
+          <div className="requestDetail-content">
+            <RequestedExercise
+              reqExercise={location.state.exercise}
+            ></RequestedExercise>
+          </div>
         </div>
+      </div>
+      <div className="requestDetail-buttons">
+        <button className="approve-btn">Approve</button>
+        <button className="decline-btn">Decline</button>
       </div>
     </div>
   );
