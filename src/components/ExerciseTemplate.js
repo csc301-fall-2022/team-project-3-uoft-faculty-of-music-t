@@ -8,15 +8,7 @@ const ExerciseTemplate = ({ exercisedet }) => {
   const [tags, setTags] = useState([]);
   const [selectedTags, setSelectedTags] = useState(exercisedet.tag);
   const [choice, setChoice] = useState("Neck Positions Only");
-  const [leftSide, setLeftSide] = useState(
-    detail.side === "Left Side" ? true : false
-  );
-  const [rightSide, setRightSide] = useState(
-    detail.side === "Right Side" ? true : false
-  );
-  const [otherSide, setOtherSide] = useState(
-    detail.side === "Others" ? true : false
-  );
+  const [side, setSide] = useState(detail.side);
   const [tenor, setTenor] = useState(detail.tenor);
   const [treble, setTreble] = useState(detail.treble);
 
@@ -79,38 +71,17 @@ const ExerciseTemplate = ({ exercisedet }) => {
         </div>
         <div className="exercise-side">
           <label className="label_left">Side</label>
-          <div className="checkbox-side">
-            <input
-              className="checkbox-input"
-              type="checkbox"
-              id="left"
-              name="left"
-              checked={leftSide}
-              onChange={(e) => setLeftSide(e.target.checked)}
-            ></input>
-            <label for="left">Left</label>
-          </div>
-          <div className="checkbox-side">
-            <input
-              className="checkbox-input"
-              type="checkbox"
-              id="right"
-              name="right"
-              checked={rightSide}
-              onChange={(e) => setRightSide(e.target.checked)}
-            ></input>
-            <label for="right">Right</label>
-          </div>
-          <div className="checkbox-side">
-            <input
-              className="checkbox-input"
-              type="checkbox"
-              id="others"
-              name="others"
-              checked={otherSide}
-              onChange={(e) => setOtherSide(e.target.checked)}
-            ></input>
-            <label for="others">Others</label>
+          <div className="select-box">
+            <select
+              className="select-box-select"
+              name="sides"
+              value={side}
+              onChange={(e) => setSide(e.target.value)}
+            >
+              <option value="Left Side">Left Side</option>
+              <option value="Right Side">Right Side</option>
+              <option value="Others">Others</option>
+            </select>
           </div>
         </div>
         <div className="exercise-levels">
