@@ -21,22 +21,28 @@ const RequestDetailPage = () => {
         </Link>
       </div>
       <div className="requestDetail-main-container">
-        <div className="requestDetail-content-container">
-          <h2 className="requestDetail-content-title">
-            Original Exercise Detail
-          </h2>
-          <div className="requestDetail-content">
-            <RequestedExercise reqExercise={original}></RequestedExercise>
-          </div>
-        </div>
-        <div className="requestDetail-content-container">
-          <h2 className="requestDetail-content-title">Request Detail</h2>
-          <div className="requestDetail-content">
-            <RequestedExercise
-              reqExercise={location.state.exercise}
-            ></RequestedExercise>
-          </div>
-        </div>
+        {original ? (
+          <>
+            <div className="requestDetail-content-container">
+              <h2 className="requestDetail-content-title">
+                Original Exercise Detail
+              </h2>
+              <div className="requestDetail-content">
+                <RequestedExercise reqExercise={original}></RequestedExercise>
+              </div>
+            </div>
+            <div className="requestDetail-content-container">
+              <h2 className="requestDetail-content-title">Request Detail</h2>
+              <div className="requestDetail-content">
+                <RequestedExercise
+                  reqExercise={location.state.exercise}
+                ></RequestedExercise>
+              </div>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="requestDetail-buttons">
         <button className="approve-btn">Approve</button>

@@ -10,6 +10,7 @@ export function adminLogin(loginInfo, setSuccess) {
       const token = response.data.token;
       localStorage.setItem("token", token);
       setSuccess(true);
+      // setAuth something...
     })
     .catch((err) => {
       console.log(err);
