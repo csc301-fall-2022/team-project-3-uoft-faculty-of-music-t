@@ -17,7 +17,7 @@
 }
 
 .exercise-tags-list {
-    text-align: right;
+    text-align: left;
     width: 30%;
     overflow-wrap: break-word;
     font-weight: bold;
