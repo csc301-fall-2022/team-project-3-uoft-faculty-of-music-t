@@ -136,7 +136,7 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15)
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60)
 }
 
 # Configure database
