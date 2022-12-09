@@ -70,8 +70,6 @@ class EditExerciseRequestView(viewsets.ModelViewSet):
 @api_view(['POST'])
 @permission_classes([IsAdminUser])
 def edit(request, request_id):
-
-    print(request_id)
     # get the edit request with id = request_id
     edit_request = EditExerciseRequest.objects.get(id=request_id)
 
@@ -97,23 +95,9 @@ def edit(request, request_id):
     return Response({"message": "Approved exercise request."})
 
 
-class RejectEditExerciseRequestModel(viewsets.ModelViewSet):
-    serializer_class = EditExerciseRequestSerializer
-    pagination_class = StandardResultsSetPagination
-
-    def get_queryset(self):
-        request_id = self.kwargs['request_id']
-        queryset = EditExerciseRequest.objects.get(id=request_id)
-        return queryset
-
-    @api_view(['POST'])
-    def delete_request(self):
-        request_id = self.kwargs['request_id']
-        edit_request = EditExerciseRequestView.objects.get(id=request_id)
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def reject(request, request_id):
+        edit_request = EditExerciseRequest.objects.get(id=request_id)
         edit_request.delete()
-
-    @swagger_auto_schema(operation_id="Reject edit exercise request",
-                         operation_description="Reject edit exercise request with id")
-    def list(self, request, *args, **kwargs):
-        return super().list(self, request, *args, **kwargs)
 
