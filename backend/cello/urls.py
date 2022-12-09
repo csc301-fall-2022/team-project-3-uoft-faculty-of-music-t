@@ -8,7 +8,7 @@ from cello.views.tag_view import TagView, TagByExerciseView, TagByLevelView, Sub
 from cello.views.exercise_request import EditExerciseRequestView, edit, reject
 
 from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
+    TokenObtainPairView, TokenRefreshView
 )
 
 app_name = 'api'
@@ -23,6 +23,7 @@ router.register(r'requested', EditExerciseRequestView, 'requested')
 urlpatterns = [
     path('', include(router.urls)),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('tag/exercise/<int:exercise_id>/', TagByExerciseView.as_view({'get': 'list'}),
          name='tag-by-exercise'),
     path('tag/level/<int:level_num>/', TagByLevelView.as_view({'get': 'list'}),
