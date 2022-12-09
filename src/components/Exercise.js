@@ -24,10 +24,8 @@ export default function Exercise({ exercise, excludeBookTitle }) {
     return (
       <div className="exercise-container">
         <p className="exercise-tags-list">{tagsAsString}</p>
-        <Link to="/exerciseDetails" state={{ exercise: exercise }}>
-          <p className="exercise-page-and-exercise">
-            {exercise.page_and_exercise}
-          </p>
+        <Link to="/exerciseDetails" state={{ exercise: exercise }} className="exercise-page-and-exercise">
+          {exercise.page_and_exercise}
         </Link>
       </div>
     );
