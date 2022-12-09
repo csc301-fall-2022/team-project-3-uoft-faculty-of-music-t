@@ -16,7 +16,7 @@ from django.shortcuts import get_object_or_404
 class EditExerciseRequestView(viewsets.ModelViewSet):
     serializer_class = EditExerciseRequestSerializer
     pagination_class = StandardResultsSetPagination
-    queryset = EditExerciseRequest.objects.all()
+    queryset = EditExerciseRequest.objects.filter(status=0)
     permission_classes = [AllowAny]
 
     @swagger_auto_schema(operation_id="Create an exercise request", operation_description="Create an exercise request.")
@@ -42,12 +42,14 @@ class EditExerciseRequestView(viewsets.ModelViewSet):
         tenor = True if 'new_tenor' in keys else False
         treble = True if 'new_tenor' in keys else False
 
+        # Create a new pending request
         new_requested = EditExerciseRequest.objects.create(exercise_id=exercise_id,
                                                    new_side=side,
                                                    new_page_and_exercise=page_and_exercise,
                                                    new_tenor=tenor,
                                                    new_treble=treble,
-                                                   new_book_id=book_id)
+                                                   new_book_id=book_id,
+                                                   status=0)
         if 'new_tags' in keys:
             # Convert tag payload into a list
             requested_tags = ast.literal_eval(data['new_tags'])
@@ -91,7 +93,8 @@ def edit(request, request_id):
         exercise_info.save()
 
     # delete the request from the database
-    edit_request.delete()
+    edit_request.status = 1
+    edit_request.save()
     return Response({"message": "Approved exercise request."})
 
 
@@ -99,5 +102,8 @@ def edit(request, request_id):
 @permission_classes([IsAdminUser])
 def reject(request, request_id):
         edit_request = EditExerciseRequest.objects.get(id=request_id)
-        edit_request.delete()
+        edit_request.status = 2
+        edit_request.save()
+
+        return Response({"message": "Declined exercise request."})
 
