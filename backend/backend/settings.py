@@ -151,16 +151,16 @@ DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, default='sqlite:///db.sqlite3')
 
 # Uncomment the following DATABASE lines below if using Postgres
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'celloexercises',
-#         'USER': 'admin',
-#         'PASSWORD': 'password',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'celloexercises',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',

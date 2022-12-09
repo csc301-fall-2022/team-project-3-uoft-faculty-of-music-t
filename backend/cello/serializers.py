@@ -7,7 +7,7 @@ class BookSerializer(serializers.ModelSerializer):
         model = Book
         fields = ('id', 'title', 'author', 'date', 'link')
 
-    
+
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
@@ -22,6 +22,7 @@ class ExerciseInfoSerializer(serializers.ModelSerializer):
         model = ExerciseInfo
         fields = ('id', 'side', 'page_and_exercise', 'tenor', 'treble', 'book_id', 'book', 'tag')
 
+
 class SubtagSerializer(serializers.ModelSerializer):
     tag = TagSerializer(source='child_id')
 
@@ -29,11 +30,12 @@ class SubtagSerializer(serializers.ModelSerializer):
         model = Subtag
         fields = ('tag',)
 
+
 class EditExerciseRequestSerializer(serializers.ModelSerializer):
     exercise_info = ExerciseInfoSerializer(source='exercise_id', many=False)
 
     class Meta:
         model = EditExerciseRequest
-        fields = ('id', 'exercise_id' 'exercise_info' 'new_side', 
-                'new_page_and_exercise', 'new_tenor', 'new_treble', 'new_book_id', 'new_book')
+        fields = ('id', 'exercise_id' 'exercise_info' 'new_side',
+                  'new_page_and_exercise', 'new_tenor', 'new_treble', 'tags')
 
