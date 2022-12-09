@@ -32,10 +32,10 @@ class SubtagSerializer(serializers.ModelSerializer):
 
 
 class EditExerciseRequestSerializer(serializers.ModelSerializer):
-    exercise_info = ExerciseInfoSerializer(source='exercise_id', many=False)
+    new_tag = TagSerializer(source='new_tags', many=True)
 
     class Meta:
         model = EditExerciseRequest
-        fields = ('id', 'exercise_id' 'exercise_info' 'new_side',
-                  'new_page_and_exercise', 'new_tenor', 'new_treble', 'tags')
+        fields = ('id', 'exercise_id', 'new_side',
+                  'new_page_and_exercise', 'new_tenor', 'new_treble', 'new_tag')
 
