@@ -85,7 +85,7 @@ class ExerciseInfoView(viewsets.ModelViewSet):
             elif 'tenor' in clef:
                 queryset = queryset.filter(tenor=True)       
 
-        return queryset
+        return queryset.distinct()
 
 class ExerciseRandomView(ListAPIView):
 
