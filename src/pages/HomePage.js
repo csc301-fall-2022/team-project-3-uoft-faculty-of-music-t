@@ -5,19 +5,23 @@ import SearchBar from "../components/SearchBar";
 import { Link } from "react-router-dom";
 import BooksList from "../components/BooksList";
 import TopicList from "../components/TopicList";
-import { getAllBooks, getAllTags } from "../api/requests";
+import ExerciseList from "../components/ExerciseList";
+import { getAllBooks, getAllTags, getRandomExercises } from "../api/requests";
 import { useNavigate } from "react-router";
 import ReactPaginate from "react-paginate";
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
   const [topics, setTopics] = useState([]);
+  const [randomExercises, setRandomExercises] = useState([]);
   const [searchString, setSearchString] = useState("");
   const navigate = useNavigate();
 
+  const numRandomExercises = 3; // number of random exercies to show
   useEffect(() => {
     getAllBooks(setBooks);
     getAllTags(setTopics);
+    getRandomExercises(setRandomExercises, numRandomExercises);
   }, []);
 
   useEffect(() => {
@@ -88,7 +92,9 @@ const HomePage = () => {
         </div>
         <div className="random-exercises-container">
           <h2>Try These Exercises!</h2>
-          <div className="random-exercises-list-container"></div>
+          <div className="random-exercises-list-container">
+            <ExerciseList exercises={randomExercises} excludeBookTitle={false}/>
+          </div>
         </div>
       </div>
     </div>
