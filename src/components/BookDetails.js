@@ -3,9 +3,9 @@ import './BookDetails.css';
 
 export default function BookDetails({ bookdet }) {
   const handleButtonClick = (e) => {
-    e.preventDefault();
-    window.open(bookdet.link);
-  };
+    e.preventDefault()
+    window.location.href=bookdet.link
+  }
 
   return (
     <div className='bookdet-container'>
