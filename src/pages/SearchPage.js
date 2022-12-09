@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../App.css";
 import "./SearchPage.css";
 import SearchBarWithFilter from "../components/SearchBarWithFilter";
 import { Link } from "react-router-dom";
 import ExerciseList from "../components/ExerciseList";
 import { getAllExercises, getExerciseByFiltersOrSearch, getExerciseByPaginationUrl } from "../api/requests";
-import { useLocation } from "react-router-dom";
+import SearchContext from "../contexts/SearchContext";
 
 const SearchPage = () => {
-  const location = useLocation();
   const [exercises, setExercises] = useState([]);
   const [exercisesPaginationNextUrl, setExercisesPaginationNextUrl] = useState("")
-  const [searchString, setSearchString] = useState(location.state.searchString);
   const [selectedTags, setSelectedTags] = useState({});
   const [selectedClefs, setSelectedClefs] = useState([]);
   const [selectedSides, setSelectedSides] = useState([]);
 
-  useEffect(() => {
-    getAllExercises(setExercises);
-  }, []);
+  let {searchString, setSearchString} = useContext(SearchContext)
 
   useEffect(() => {
     if (
@@ -62,7 +58,7 @@ const SearchPage = () => {
           setSearchString={setSearchString}
           setSelectedClefs={setSelectedClefs}
           setSelectedSides={setSelectedSides}
-          defaultSearchString={location.state.searchString}
+          defaultSearchString={searchString}
         />
         <div className="sp-content-list-container" onScroll={(e) => handleExercisesListScroll(e)}>
           <ExerciseList exercises={exercises} />
