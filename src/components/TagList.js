@@ -8,7 +8,11 @@ export default function TagList({ tags, setSelectedTags }) {
       0,
       e.target.innerHTML.indexOf(" ✖️")
     );
-    setSelectedTags(tags.filter((tag) => tag["tag_name"] !== targetValue));
+    setSelectedTags(
+      tags.filter(
+        (tag) => tag["tag_name"] !== targetValue.replace("&amp;", "&")
+      )
+    );
   };
   return (
     <div className="tags-container">

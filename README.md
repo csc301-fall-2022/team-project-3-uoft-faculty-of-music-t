@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Cello Exercise Index
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The code for the Cello Exercise Index website. Located at http://cello-exercise-index.herokuapp.com/ 
 
-## Available Scripts
+It contains the code for the backend and frontend.
 
-In the project directory, you can run:
+# Tech stack
+Django (with Django REST Framework) is used for the backend and React (with Axios) is used for the frontend.
 
-### `npm start`
+# Development requirements
+You will need to have Node, npm and `python3` installed on your machine in order to run this project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installation links:
+* Node/npm: https://nodejs.org/en/download/
+* Python: https://www.python.org/downloads/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Setup
+Clone the project from GitHub 
+```
+git clone https://github.com/csc301-fall-2022/team-project-3-uoft-faculty-of-music-t.git
+ ```
+`cd` into the project root directory
+```
+cd team-project-3-uoft-faculty-of-music-t
+```
 
-### `npm test`
+Add the Django dependencies:
+```
+pip install -r requirements.txt
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install the required node packages and build the project:
+```
+npm install
+npm run build
+```
 
-### `npm run build`
+Migrate the Django migrations to your database:
+```
+python backend/manage.py migrate
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Usage
+After the setup, run the Django server:
+```
+python backend/manage.py runserver
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You should be able to access the local server at http://127.0.0.1:8000/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Contributors
 
-### `npm run eject`
+Past contributors: rebplane, junseomoon9, eun-chae-s, hMarc16, FrayeY, 20leebe, erenfn
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Documentation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Documentation for the backend API endpoints can be found here: https://cello-exercise-index.herokuapp.com/swagger/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Code Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The code for the backend is located in the `backend` directory. The main app is `cello`. It follows standard Django project structure. The views are located in `backend/cello/views` and have separate files per model. When adding dependencies to the backend, make sure to add it to `requirements.txt`.
 
-## Learn More
+The code for the frontend is located in the `src` directory. React Router is used to serve the endpoints and additional endpoints can be added in `App.js`. The frontend is sorted into `api`, `pages`, and `components` directories. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Database
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To get a local copy of the database, you can import the Postgres dump https://github.com/csc301-fall-2022/team-project-3-uoft-faculty-of-music-t/blob/database-conversion/database_conversion/dbexport.pgsql located in the `database-conversion` branch to your local Postgres server.
 
-### Code Splitting
+# Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+There is currently a Github Actions workflow that deploys to Heroku automatically when pushing to the main branch.
 
-### Analyzing the Bundle Size
+# Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+There are unit tests that can be run with
+```
+python backend/manage.py test
+```

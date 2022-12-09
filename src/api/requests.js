@@ -47,7 +47,7 @@ export function getTagsByLevel(level) {
 export function getSubTagsByTag(id) {
   return new Promise((resolve, reject) => {
     axios
-    .get(`${server_url}api/tag/subtag/${id}`)
+    .get(`${server_url}api/tag/subtag/${id}/`, {headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
     .then((res) => {
       resolve(res.data.results)
     })
