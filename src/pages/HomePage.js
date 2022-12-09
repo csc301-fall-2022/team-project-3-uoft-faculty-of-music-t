@@ -13,7 +13,7 @@ const HomePage = () => {
   const [books, setBooks] = useState([]);
   const [topics, setTopics] = useState([]);
   const [searchString, setSearchString] = useState("");
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getAllBooks(setBooks);
@@ -22,13 +22,13 @@ const HomePage = () => {
 
   useEffect(() => {
     if (searchString !== "") {
-      naviagte("/search", {
+      navigate("/search", {
         state: {
           searchString: searchString,
         },
       });
     }
-  }, [searchString]);
+  }, [navigate, searchString]);
 
   const [pageNumber, setPageNumber] = useState(0);
   const [topicPageNumber, setTopicPageNumber] = useState(0);
