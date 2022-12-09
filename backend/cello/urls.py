@@ -5,8 +5,7 @@ from cello.views.author_view import AuthorView
 from cello.views.book_view import BookView
 from cello.views.exerciseinfo_view import ExerciseInfoView, ExerciseRandomView
 from cello.views.tag_view import TagView, TagByExerciseView, TagByLevelView, SubtagView
-from cello.views.exercise_request import EditExerciseRequestView, RejectEditExerciseRequestModel, \
-    ApproveEditExerciseRequestModel
+from cello.views.exercise_request import EditExerciseRequestView, edit
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -31,8 +30,6 @@ urlpatterns = [
     path('tag/subtag/<int:tag_id>/', SubtagView.as_view({'get': 'list'}, name='subtag-view')),
     path('exerciseinfo/exercises/random/', ExerciseRandomView.as_view(), name='exercises-random'),
     path('tag/tags/random/', ExerciseRandomView.as_view(), name='exercises-random'),
-    path('requested/approve/<int:request_id>', ApproveEditExerciseRequestModel.as_view(
-        {'get': 'list'}), name='approve-edit-exercise-request'),
-    path('requested/reject/<int:request_id>', RejectEditExerciseRequestModel.as_view(
-        {'get': 'list'}), name='reject-edit-exercise-request')
+    path('requested/approve/<int:request_id>/', edit, name='approve-edit-exercise-request'),
+    # path('requested/reject/<int:request_id>/', RejectEditExerciseRequestModel.as_view({'get': 'list'}), name='reject-edit-exercise-request')
 ]

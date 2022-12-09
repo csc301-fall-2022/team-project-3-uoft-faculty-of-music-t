@@ -3,13 +3,14 @@ from rest_framework import viewsets
 from ..serializers import EditExerciseRequestSerializer
 from ..models import EditExerciseRequest, ExerciseInfo, Tag, Book
 from ..pagination import StandardResultsSetPagination
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAdminUser
 from rest_framework.generics import ValidationError
 import ast
+from django.shortcuts import get_object_or_404
 
 
 class EditExerciseRequestView(viewsets.ModelViewSet):
@@ -66,42 +67,34 @@ class EditExerciseRequestView(viewsets.ModelViewSet):
         return super().list(self, request, *args, **kwargs)
 
 
-class ApproveEditExerciseRequestModel(viewsets.ModelViewSet):
-    serializer_class = EditExerciseRequestSerializer
-    pagination_class = StandardResultsSetPagination
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def edit(request, request_id):
 
-    def get_queryset(self):
-        request_id = self.kwargs['request_id']
-        queryset = EditExerciseRequest.objects.get(id=request_id)
-        return queryset
+    print(request_id)
+    # get the edit request with id = request_id
+    edit_request = EditExerciseRequest.objects.get(id=request_id)
 
-    @api_view(['POST'])
-    def edit(self):
-        request_id = self.kwargs['request_id']
-        # get the edit request with id = request_id
-        edit_request = EditExerciseRequestView.objects.get(id=request_id)
-        # find the exercise to be changed
-        exercise_info = ExerciseInfo.objects.get(id=edit_request.exercise_id)
+    # find the exercise to be changed
+    exercise_info = ExerciseInfo.objects.get(id=edit_request.exercise_id.id)
 
-        # Edit the exercise info
-        exercise_info.side = edit_request.new_side
-        exercise_info.tenor = edit_request.new_tenor
-        exercise_info.treble = edit_request.new_treble
-        exercise_info.pageAndExercise = edit_request.new_page_and_exercise
+    # Edit the exercise info
+    exercise_info.side = edit_request.new_side
+    exercise_info.tenor = edit_request.new_tenor
+    exercise_info.treble = edit_request.new_treble
+    exercise_info.page_and_exercise = edit_request.new_page_and_exercise
 
-        # Reset and then add the tags
-        exercise_info.tag = None
-        for tag in edit_request.new_tags:
-            exercise_info.tags.add(tag)
+    exercise_info.save()
+    # Reset and then add the tags
+    exercise_info.tags.clear()
 
+    for tag in edit_request.new_tags.all():
+        exercise_info.tags.add(tag)
         exercise_info.save()
-        # delete the request from the database
-        edit_request.delete()
 
-    @swagger_auto_schema(operation_id="Approve edit exercise request",
-                         operation_description="Approve edit exercise request with id")
-    def list(self, request, *args, **kwargs):
-        return super().list(self, request, *args, **kwargs)
+    # delete the request from the database
+    edit_request.delete()
+    return Response({"message": "Approved exercise request."})
 
 
 class RejectEditExerciseRequestModel(viewsets.ModelViewSet):
