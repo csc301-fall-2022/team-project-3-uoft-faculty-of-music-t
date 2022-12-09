@@ -17,8 +17,9 @@ export function getBookDetails(setBookDetails, id) {
 }
 
 /** requests and sets list of exercises according to the passed in setter*/
-export function getAllExercises(setExercises) {
+export function getAllExercises(setExercises, setExercisesPaginationNextUrl) {
   axios.get(server_url + "api/exerciseinfo/").then((res) => {
+    setExercisesPaginationNextUrl(res.data.next)
     setExercises(res.data.results);
   });
 }
@@ -55,15 +56,16 @@ export function getSubTagsByTag(id) {
 }
 
 /** requests and sets exercises according to the passed in setter and book id */
-export function getExerciseByBook(setExercises, id) {
+export function getExerciseByBook(setExercises, id, setExercisesPaginationNextUrl) {
   axios
     .get( `${server_url}api/exerciseinfo/?book_id=${id}` )
     .then((res) => {
+      setExercisesPaginationNextUrl(res.data.next)
       setExercises(res.data.results);
     });
 }
 
-export function getExerciseByFiltersOrSearch(setExercises, tags, searchString, sides, clefs, bookId) {
+export function getExerciseByFiltersOrSearch(setExercises, tags, searchString, sides, clefs, bookId, setExercisesPaginationNextUrl) {
   let paramsEndpoint = ""
   for (const tag in tags) {
     if (paramsEndpoint === "") {
@@ -104,6 +106,19 @@ export function getExerciseByFiltersOrSearch(setExercises, tags, searchString, s
   axios
     .get( `${server_url}api/exerciseinfo/${paramsEndpoint}` )
     .then((res) => {
+      setExercisesPaginationNextUrl(res.data.next)
       setExercises(res.data.results);
     });
+}
+
+export function getExerciseByPaginationUrl(exercises, setExercises, exercisesPaginationNextUrl, setExercisesPaginationNextUrl) {
+  if (exercisesPaginationNextUrl === null) {
+    return
+  }
+
+  axios.get(exercisesPaginationNextUrl)
+  .then((res) => {
+      setExercisesPaginationNextUrl(res.data.next)
+      setExercises([...exercises, ...res.data.results])
+  })
 }
