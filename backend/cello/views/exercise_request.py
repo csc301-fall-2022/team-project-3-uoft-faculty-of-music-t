@@ -69,6 +69,16 @@ class EditExerciseRequestView(viewsets.ModelViewSet):
         return super().list(self, request, *args, **kwargs)
 
 
+class EditApprovedView(viewsets.ModelViewSet):
+    serializer_class = EditExerciseRequestSerializer
+    pagination_class = StandardResultsSetPagination
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        queryset = EditExerciseRequest.objects.filter(status=1)
+        return queryset
+
+
 @api_view(['POST'])
 @permission_classes([IsAdminUser])
 def edit(request, request_id):

@@ -5,7 +5,7 @@ from cello.views.author_view import AuthorView
 from cello.views.book_view import BookView
 from cello.views.exerciseinfo_view import ExerciseInfoView, ExerciseRandomView
 from cello.views.tag_view import TagView, TagByExerciseView, TagByLevelView, SubtagView
-from cello.views.exercise_request import EditExerciseRequestView, edit, reject
+from cello.views.exercise_request import EditExerciseRequestView, edit, reject, EditApprovedView
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView, TokenRefreshView
@@ -32,5 +32,6 @@ urlpatterns = [
     path('exerciseinfo/exercises/random/', ExerciseRandomView.as_view(), name='exercises-random'),
     path('tag/tags/random/', ExerciseRandomView.as_view(), name='exercises-random'),
     path('requested/approve/<int:request_id>/', edit, name='approve'),
-    path('requested/reject/<int:request_id>/', reject, name='reject')
+    path('requested/reject/<int:request_id>/', reject, name='reject'),
+    path('requested/exercises/approved/', EditApprovedView.as_view({'get': 'list'}, name='edit-approved'))
 ]
