@@ -23,23 +23,23 @@ export default function Exercise({ exercise, excludeBookTitle }) {
   if (excludeBookTitle) {
     return (
       <div className="exercise-container">
+        <p className="exercise-tags-list">{tagsAsString}</p>
         <Link to="/exerciseDetails" state={{ exercise: exercise }}>
-          <p>
+          <p className="exercise-page-and-exercise">
             {exercise.page_and_exercise}
           </p>
         </Link>
-        <p className="exercise-tags-list">{tagsAsString}</p>
       </div>
     );
   } else {
     return (
       <div className="exercise-container">
-        <Link to="/exerciseDetails" state={{ exercise: exercise }}>
+        <p className="exercise-tags-list">{tagsAsString}</p>
+        <Link to="/exerciseDetails" state={{ exercise: exercise }} className="exercise-page-and-exercise">
           <p>
             {exercise.book.title} ({exercise.page_and_exercise})
           </p>
         </Link>
-        <p className="exercise-tags-list">{tagsAsString}</p>
       </div>
     );
   }
