@@ -135,32 +135,6 @@
     background-color: #1E3765;
 }
 
-.home-login-container {
-    width: 100px;
-    height: 30px;
-    text-align: center;
-    background-color: #1E3765;
-    border-radius: 0.5rem;
-    border: 1px solid transparent;
-    box-shadow: 3px 3xp 3px#172d56;
-}
-
-.home-login {
-    text-decoration: none;
-    color: #e7e7e7;
-    font-size: 7px;
-}
-
-.home-login-container:hover {
-    background-color: #4d7bb3;
-}
-
-.home-login:hover {
-    text-decoration: none;
-    color: #e7e7e7;
-    font-size: 7px;
-}
-
 /* Media Queries */
 @media only screen and (min-width: 1200px) {
     .homePage-main-container {
