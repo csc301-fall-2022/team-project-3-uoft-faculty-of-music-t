@@ -37,5 +37,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('cello.urls', namespace='api')),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    re_path(r"^(?:.*)?$", TemplateView.as_view(template_name="index.html")),
+    #re_path(r"^(?:.*)?$", TemplateView.as_view(template_name="index.html")),
 ]

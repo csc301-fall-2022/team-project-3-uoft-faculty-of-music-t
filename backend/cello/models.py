@@ -34,5 +34,4 @@ class EditExerciseRequest(models.Model):
     new_page_and_exercise = models.CharField(null=True, max_length=100)
     new_tenor = models.BooleanField()
     new_treble = models.BooleanField()
-    new_link = models.CharField(max_length=150, null=True)
     new_tags = models.ManyToManyField(Tag)
