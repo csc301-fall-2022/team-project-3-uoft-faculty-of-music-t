@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../App.css";
 import "./HomePage.css";
 import SearchBar from "../components/SearchBar";
@@ -8,11 +8,15 @@ import TopicList from "../components/TopicList";
 import { getAllBooks, getAllTags } from "../api/requests";
 import { useNavigate } from "react-router";
 import ReactPaginate from "react-paginate";
+import SearchContext from "../contexts/SearchContext";
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
   const [topics, setTopics] = useState([]);
-  const [searchString, setSearchString] = useState("");
+  const [firstLoad, setFirstLoad] = useState(true);
+
+  let {searchString, setSearchString} = useContext(SearchContext)
+
   const naviagte = useNavigate();
 
   useEffect(() => {
@@ -21,12 +25,12 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
+    if (firstLoad) { // Prevents navigation back to search page, when navigated from search page
+      setFirstLoad(false)
+      return
+    }
     if (searchString !== "") {
-      naviagte("/search", {
-        state: {
-          searchString: searchString,
-        },
-      });
+      naviagte("/search");
     }
   }, [searchString]);
 

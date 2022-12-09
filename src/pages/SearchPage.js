@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../App.css";
 import "./SearchPage.css";
 import SearchBarWithFilter from "../components/SearchBarWithFilter";
 import { Link } from "react-router-dom";
 import ExerciseList from "../components/ExerciseList";
-import { getAllExercises, getExerciseByFiltersOrSearch } from "../api/requests";
-import { useLocation } from "react-router-dom";
-import ReactPaginate from "react-paginate";
+import { getAllExercises, getExerciseByFiltersOrSearch, getExerciseByPaginationUrl } from "../api/requests";
+import SearchContext from "../contexts/SearchContext";
 
 const SearchPage = () => {
-  const location = useLocation();
   const [exercises, setExercises] = useState([]);
-  const [searchString, setSearchString] = useState(location.state.searchString);
+  const [exercisesPaginationNextUrl, setExercisesPaginationNextUrl] = useState("")
   const [selectedTags, setSelectedTags] = useState({});
   const [selectedClefs, setSelectedClefs] = useState([]);
   const [selectedSides, setSelectedSides] = useState([]);
 
-  useEffect(() => {
-    getAllExercises(setExercises);
-  }, []);
+  let {searchString, setSearchString} = useContext(SearchContext)
 
   useEffect(() => {
     if (
@@ -27,7 +23,7 @@ const SearchPage = () => {
       selectedSides.length === 0 &&
       searchString === ""
     ) {
-      getAllExercises(setExercises);
+      getAllExercises(setExercises, setExercisesPaginationNextUrl);
     } else {
       setExercises([]); // Flush out existing exercises in array <- for bug where exercises were still shown even though returned data was empty
       getExerciseByFiltersOrSearch(
@@ -35,25 +31,19 @@ const SearchPage = () => {
         selectedTags,
         searchString,
         selectedSides,
-        selectedClefs
+        selectedClefs,
+        null,
+        setExercisesPaginationNextUrl
       );
     }
   }, [selectedTags, searchString, selectedSides, selectedClefs]);
 
-  const [exPageNumber, setPageNumber] = useState(0);
-  const exPerPage = 10; // number of searched exercise per page.
-  const exPageVisited = exPageNumber * exPerPage;
-
-  const displaySearchExercises = exercises.slice(
-    exPageVisited,
-    exPageVisited + exPerPage
-  );
-
-  const exPageCount = Math.ceil(exercises.length / exPerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
+  const handleExercisesListScroll = (e) => {
+    const bottom = Math.abs(e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight) <= 10
+    if (bottom) {
+      getExerciseByPaginationUrl(exercises, setExercises, exercisesPaginationNextUrl, setExercisesPaginationNextUrl)
+    }
+  }
 
   return (
     <div className="searchPage">
@@ -68,16 +58,10 @@ const SearchPage = () => {
           setSearchString={setSearchString}
           setSelectedClefs={setSelectedClefs}
           setSelectedSides={setSelectedSides}
-          defaultSearchString={location.state.searchString}
+          defaultSearchString={searchString}
         />
-        <div className="sp-content-list-container">
-          <ExerciseList exercises={displaySearchExercises} />
-          <ReactPaginate
-            pageCount={exPageCount}
-            onPageChange={changePage}
-            containerClassName={"sp-pagination-container"}
-            activeClassName={"sp-active-container"}
-          />
+        <div className="sp-content-list-container" onScroll={(e) => handleExercisesListScroll(e)}>
+          <ExerciseList exercises={exercises} />
         </div>
       </div>
     </div>
