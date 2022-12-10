@@ -49,9 +49,9 @@
 
 .browse-by-topic-list-container {
     width: 29.875%;
+    height: calc(100% - 35px);
     display: inline;
     justify-content: center;
-    overflow: auto;
 }
 
 .browse-by-topic-list-container h2 {
