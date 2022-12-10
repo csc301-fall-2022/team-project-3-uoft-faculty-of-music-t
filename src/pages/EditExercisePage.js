@@ -21,10 +21,12 @@ const EditExercisePage = () => {
       new_tags: `[${lstTags}]`,
       new_book_id: detail.book_id,
       new_page_and_exercise: detail.page_and_exercise,
-      new_tenor: detail.tenor,
-      new_treble: detail.treble,
+      new_link: detail.book.link,
+      new_tenor: detail.tenor ? "True" : "False",
+      new_treble: detail.treble ? "True" : "False",
     };
 
+    console.log(req);
     postNewRequest(req, navigate, setMsg);
   };
 

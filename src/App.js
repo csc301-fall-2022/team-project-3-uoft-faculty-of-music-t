@@ -9,7 +9,6 @@ import LoginPage from "./pages/LoginPage";
 import RequestsPage from "./pages/RequestsPage";
 import RequestDetailPage from "./pages/RequestDetailPage";
 import { SearchProvider } from "./contexts/SearchContext";
-import { useState } from "react";
 
 const ProtectedRoute = ({ children }) => {
   let flag = false;
@@ -24,7 +23,6 @@ const ProtectedRoute = ({ children }) => {
 };
 
 function App() {
-  const [token, setToken] = useState(null);
   return (
     <BrowserRouter>
       <SearchProvider>

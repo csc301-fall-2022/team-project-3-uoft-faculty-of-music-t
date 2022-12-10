@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./ExerciseTemplate.css";
-import { getAllTags } from "../api/requests";
+import { getAllTags, getAllTagsByPaginationUrl } from "../api/requests";
 
 const ExerciseTemplate = ({ detail, setDetail }) => {
   const [choice, setChoice] = useState("Neck Positions Only");
   const [tags, setTags] = useState([]);
+  const [tagsPaginationNextUrl, setTagsPaginationNextUrl] = useState("");
 
   useEffect(() => {
-    getAllTags(setTags);
+    getAllTags(setTags, setTagsPaginationNextUrl);
   }, []);
 
   const updateTags = (e) => {
@@ -36,6 +37,21 @@ const ExerciseTemplate = ({ detail, setDetail }) => {
         (tag) => tag["tag_name"] !== targetValue.replace("&amp;", "&")
       ),
     });
+  };
+
+  const handleTagsListScroll = (e) => {
+    const bottom =
+      Math.abs(
+        e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight
+      ) <= 50;
+    if (bottom) {
+      getAllTagsByPaginationUrl(
+        tags,
+        setTags,
+        tagsPaginationNextUrl,
+        setTagsPaginationNextUrl
+      );
+    }
   };
 
   return (
@@ -114,6 +130,7 @@ const ExerciseTemplate = ({ detail, setDetail }) => {
               name="tags"
               value={choice}
               onChange={(e) => setChoice(e.target.value)}
+              onScroll={(e) => handleTagsListScroll(e)}
             >
               {tags.map((tag, index) => {
                 return (

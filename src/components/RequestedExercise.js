@@ -8,7 +8,11 @@ const RequestedExercise = ({ reqExercise, original }) => {
       ? reqExercise.tag
       : []
     : reqExercise.new_tag;
-  const link = reqExercise.book ? reqExercise.book.link : "";
+  const link = original
+    ? reqExercise.book
+      ? reqExercise.book.link
+      : ""
+    : reqExercise.new_link;
   const tenor = original ? reqExercise.tenor : reqExercise.new_tenor;
   const treble = original ? reqExercise.treble : reqExercise.new_treble;
   return (

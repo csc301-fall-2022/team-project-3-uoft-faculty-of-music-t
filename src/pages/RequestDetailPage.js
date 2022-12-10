@@ -2,16 +2,38 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import "./RequestDetailPage.css";
 import RequestedExercise from "../components/RequestedExercise";
-import { Link, useLocation } from "react-router-dom";
-import { getExerciseDetails } from "../api/requests";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  getExerciseDetails,
+  approveRequest,
+  rejectRequest,
+} from "../api/requests";
 
 const RequestDetailPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [original, setOriginal] = useState({});
+  const [msg, setMsg] = useState(false);
 
   useEffect(() => {
     getExerciseDetails(setOriginal, location.state.exercise.exercise_id);
   }, []);
+
+  const handleApprove = (e) => {
+    e.preventDefault();
+    approveRequest(location.state.exercise.id, navigate, setMsg);
+    if (msg) {
+      alert("There is an error. Please try again:(");
+    }
+  };
+
+  const handleReject = (e) => {
+    e.preventDefault();
+    rejectRequest(location.state.exercise.id, navigate, setMsg);
+    if (msg) {
+      alert("There is an error. Please try again:(");
+    }
+  };
 
   return (
     <div className="requestDetailPage">
@@ -39,6 +61,7 @@ const RequestDetailPage = () => {
               <div className="requestDetail-content">
                 <RequestedExercise
                   reqExercise={location.state.exercise}
+                  original={false}
                 ></RequestedExercise>
               </div>
             </div>
@@ -48,8 +71,12 @@ const RequestDetailPage = () => {
         )}
       </div>
       <div className="requestDetail-buttons">
-        <button className="approve-btn">Approve</button>
-        <button className="decline-btn">Decline</button>
+        <button className="approve-btn" onClick={(e) => handleApprove(e)}>
+          Approve
+        </button>
+        <button className="decline-btn" onClick={(e) => handleReject(e)}>
+          Decline
+        </button>
       </div>
     </div>
   );

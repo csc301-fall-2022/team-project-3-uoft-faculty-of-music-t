@@ -47,8 +47,12 @@ function Tabs() {
           className={toggleState === 1 ? "content active-content" : "content"}
         >
           <div>
+            {requestedExercise ? (
+              <ExerciseList exercises={requestedExercise} requested={true} />
+            ) : (
+              <></>
+            )}
             {/* TODO: get requested exercises using api & build components for mapping it out (or use ExerciseList if applicable)*/}
-            <ExerciseList exercises={requestedExercise} requested={true} />
           </div>
         </div>
 
@@ -56,8 +60,12 @@ function Tabs() {
           className={toggleState === 2 ? "content active-content" : "content"}
         >
           <div>
+            {approvedExercise ? (
+              <ExerciseList exercises={approvedExercise} requested={true} />
+            ) : (
+              <></>
+            )}
             {/* TODO: get approved exercises using api & build components for mapping it out (or use ExerciseList if applicable)*/}
-            <ExerciseList exercises={approvedExercise} />
           </div>
         </div>
       </div>

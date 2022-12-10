@@ -33,6 +33,7 @@ export function getAllRequests(setRequests) {
 /** get all the approved exercises */
 export function getAllApprovedRequests(setApprovedRequests) {
   axios.get(server_url + "api/requested/exercises/approved/").then((res) => {
+    console.log(res.data.results);
     setApprovedRequests(res.data.results);
   });
 }
@@ -40,9 +41,13 @@ export function getAllApprovedRequests(setApprovedRequests) {
 /** approves the request (need authHeader) */
 export function approveRequest(id, navigate, setMsg) {
   axios
-    .post(server_url + `${server_url}api/requested/approve/${id}/`, {
-      headers: authHeader(),
-    })
+    .post(
+      `${server_url}api/requested/approve/${id}/`,
+      {},
+      {
+        headers: authHeader(),
+      }
+    )
     .then((res) => {
       if (res.status === 200) {
         alert("Approved!");
@@ -56,9 +61,13 @@ export function approveRequest(id, navigate, setMsg) {
 /** reject the request (need authHeader) */
 export function rejectRequest(id, navigate, setMsg) {
   axios
-    .post(server_url + `${server_url}api/requested/reject/${id}/`, {
-      headers: authHeader(),
-    })
+    .post(
+      `${server_url}api/requested/reject/${id}/`,
+      {},
+      {
+        headers: authHeader(),
+      }
+    )
     .then((res) => {
       if (res.status === 200) {
         alert("Rejected!");
@@ -66,7 +75,8 @@ export function rejectRequest(id, navigate, setMsg) {
       } else {
         setMsg(true);
       }
-    });
+    })
+    .catch((err) => console.log(err));
 }
 
 /** requests and sets list of books according to the passed in setter*/
@@ -100,14 +110,19 @@ export function getExerciseDetails(setExerciseDetails, id) {
 
 export function getAllTags(setTopics, setTopicsPaginationNextUrl) {
   axios.get(`${server_url}api/tag/`).then((res) => {
-    setTopicsPaginationNextUrl(res.data.next)
+    setTopicsPaginationNextUrl(res.data.next);
     setTopics(res.data.results);
   });
 }
 
-export function getAllTagsByPaginationUrl(topics, setTopics, topicsPaginationNextUrl, setTopicsPaginationNextUrl) {
+export function getAllTagsByPaginationUrl(
+  topics,
+  setTopics,
+  topicsPaginationNextUrl,
+  setTopicsPaginationNextUrl
+) {
   axios.get(topicsPaginationNextUrl).then((res) => {
-    setTopicsPaginationNextUrl(res.data.next)
+    setTopicsPaginationNextUrl(res.data.next);
     setTopics([...topics, ...res.data.results]);
   });
 }
