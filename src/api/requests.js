@@ -1,8 +1,7 @@
 import axios from "axios";
 import authHeader from "../services/auth-header";
 
-// const server_url = "https://cello-exercise-index.herokuapp.com/";
-const server_url = "http://127.0.0.1:8000/";
+const server_url = "https://cello-exercise-index.herokuapp.com/";
 
 /** log into the system */
 export function adminLogin(loginInfo, setSuccess) {
