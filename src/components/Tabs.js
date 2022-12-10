@@ -48,7 +48,11 @@ function Tabs() {
         >
           <div>
             {requestedExercise ? (
-              <ExerciseList exercises={requestedExercise} requested={true} />
+              <ExerciseList
+                exercises={requestedExercise}
+                requested={true}
+                approved={false}
+              />
             ) : (
               <></>
             )}
@@ -61,7 +65,7 @@ function Tabs() {
         >
           <div>
             {approvedExercise ? (
-              <ExerciseList exercises={approvedExercise} requested={true} />
+              <ExerciseList exercises={approvedExercise} approved={true} />
             ) : (
               <></>
             )}

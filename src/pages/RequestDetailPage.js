@@ -57,7 +57,9 @@ const RequestDetailPage = () => {
               </div>
             </div>
             <div className="requestDetail-content-container">
-              <h2 className="requestDetail-content-title">Request Detail</h2>
+              <h2 className="requestDetail-content-title">
+                {location.state.approved ? "Approval Detail" : "Request Detail"}
+              </h2>
               <div className="requestDetail-content">
                 <RequestedExercise
                   reqExercise={location.state.exercise}
@@ -70,14 +72,18 @@ const RequestDetailPage = () => {
           <></>
         )}
       </div>
-      <div className="requestDetail-buttons">
-        <button className="approve-btn" onClick={(e) => handleApprove(e)}>
-          Approve
-        </button>
-        <button className="decline-btn" onClick={(e) => handleReject(e)}>
-          Decline
-        </button>
-      </div>
+      {location.state.approved ? (
+        <></>
+      ) : (
+        <div className="requestDetail-buttons">
+          <button className="approve-btn" onClick={(e) => handleApprove(e)}>
+            Approve
+          </button>
+          <button className="decline-btn" onClick={(e) => handleReject(e)}>
+            Decline
+          </button>
+        </div>
+      )}
     </div>
   );
 };
