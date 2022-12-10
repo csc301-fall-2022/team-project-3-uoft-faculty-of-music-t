@@ -1,6 +1,7 @@
 import axios from "axios";
 import authHeader from "../services/auth-header";
 
+// const server_url = "https://cello-exercise-index.herokuapp.com/";
 const server_url = "http://127.0.0.1:8000/";
 
 /** log into the system */
@@ -14,7 +15,6 @@ export function adminLogin(loginInfo, setSuccess) {
       }
 
       return response.data;
-      // setAuth something...
     })
     .catch((err) => {
       console.log(err);
@@ -25,6 +25,7 @@ export function adminLogin(loginInfo, setSuccess) {
 /** get all the requests */
 export function getAllRequests(setRequests) {
   axios.get(server_url + "api/requested/").then((res) => {
+    console.log(res.data.results);
     setRequests(res.data.results);
   });
 }

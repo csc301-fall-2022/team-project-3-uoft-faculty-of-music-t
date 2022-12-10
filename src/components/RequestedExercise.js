@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "./RequestedExercise.css";
 
-const RequestedExercise = ({ reqExercise }) => {
+const RequestedExercise = ({ reqExercise, original }) => {
   console.log(reqExercise);
-  const tags = reqExercise.tag ? reqExercise.tag : [];
+  const tags = original
+    ? reqExercise.tag
+      ? reqExercise.tag
+      : []
+    : reqExercise.new_tag;
   const link = reqExercise.book ? reqExercise.book.link : "";
+  const tenor = original ? reqExercise.tenor : reqExercise.new_tenor;
+  const treble = original ? reqExercise.treble : reqExercise.new_treble;
   return (
     <div className="detail-main-container">
       <form className="detail-form">
         <div className="reqexercise-title">
           <label className="req_label_left">Exercise Title & Page</label>
-          <div className="req_text">{reqExercise["page_and_exercise"]}</div>
+          <div className="req_text">
+            {original
+              ? reqExercise["page_and_exercise"]
+              : reqExercise.new_page_and_exercise}
+          </div>
         </div>
         <div className="reqexercise-link">
           <label className="req_label_left">Link</label>
@@ -18,7 +28,9 @@ const RequestedExercise = ({ reqExercise }) => {
         </div>
         <div className="reqexercise-side">
           <label className="req_label_left">Side</label>
-          <div className="req_text">{reqExercise["side"]}</div>
+          <div className="req_text">
+            {original ? reqExercise["side"] : reqExercise.new_side}
+          </div>
         </div>
         <div className="reqexercise-levels">
           <label className="req_label_left">Tags</label>
@@ -40,12 +52,8 @@ const RequestedExercise = ({ reqExercise }) => {
         <div className="reqexercise-clef">
           <label className="req_label_left">Clef</label>
           <div className="req_text">
-            {reqExercise.tenor ? "tenor" : ""}
-            {reqExercise.treble
-              ? reqExercise.tenor
-                ? ", treble"
-                : "treble"
-              : ""}
+            {tenor ? "tenor" : ""}
+            {treble ? (tenor ? ", treble" : "treble") : ""}
           </div>
         </div>
       </form>

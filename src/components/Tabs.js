@@ -2,16 +2,12 @@ import React, { useEffect } from "react";
 import "./Tabs.css";
 import { useState } from "react";
 import ExerciseList from "./ExerciseList"; // For approved TODO: Replace with requested if implemented
-import { getAllExercises } from "../api/requests";
+import { getAllApprovedRequests, getAllRequests } from "../api/requests";
 
 function Tabs() {
   const [toggleState, setToggleState] = useState(1);
   const [requestedExercise, setReqExercise] = useState([]);
-  const [reqExercisesPaginationNextUrl, setReqExercisesPaginationNextUrl] =
-    useState("");
   const [approvedExercise, setApvdExercise] = useState([]);
-  const [appExercisesPaginationNextUrl, setAppExercisesPaginationNextUrl] =
-    useState("");
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -19,12 +15,12 @@ function Tabs() {
 
   useEffect(() => {
     // TODO: replace with api for requested
-    getAllExercises(setReqExercise, setReqExercisesPaginationNextUrl);
+    getAllRequests(setReqExercise);
   }, []);
 
   useEffect(() => {
     // TODO: replace with api for requested
-    getAllExercises(setApvdExercise, setAppExercisesPaginationNextUrl);
+    getAllApprovedRequests(setApvdExercise);
   }, []);
 
   return (

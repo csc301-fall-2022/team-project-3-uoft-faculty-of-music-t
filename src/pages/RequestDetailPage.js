@@ -10,7 +10,7 @@ const RequestDetailPage = () => {
   const [original, setOriginal] = useState({});
 
   useEffect(() => {
-    getExerciseDetails(setOriginal, location.state.exercise.id);
+    getExerciseDetails(setOriginal, location.state.exercise.exercise_id);
   }, []);
 
   return (
@@ -28,7 +28,10 @@ const RequestDetailPage = () => {
                 Original Exercise Detail
               </h2>
               <div className="requestDetail-content">
-                <RequestedExercise reqExercise={original}></RequestedExercise>
+                <RequestedExercise
+                  reqExercise={original}
+                  original={true}
+                ></RequestedExercise>
               </div>
             </div>
             <div className="requestDetail-content-container">

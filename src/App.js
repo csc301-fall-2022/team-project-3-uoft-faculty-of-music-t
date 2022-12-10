@@ -9,7 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import RequestsPage from "./pages/RequestsPage";
 import RequestDetailPage from "./pages/RequestDetailPage";
 import { SearchProvider } from "./contexts/SearchContext";
-import { createContext, useState } from "react";
+import { useState } from "react";
 
 const ProtectedRoute = ({ children }) => {
   let flag = false;

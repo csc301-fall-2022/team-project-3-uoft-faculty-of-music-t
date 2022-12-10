@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 
 export default function Exercise({ exercise, excludeBookTitle, requested }) {
   const [tagsAsString, setTagsAsString] = useState("");
+  const [bookDetail, setBookDetail] = useState({});
 
   useEffect(() => {
     let str = "";
-    const tags = exercise.tag;
+    let tags;
+    requested ? (tags = exercise.new_tag) : (tags = exercise.tag);
     let i = 0;
     for (const tag of tags) {
       if (i === 0) {
@@ -24,18 +26,21 @@ export default function Exercise({ exercise, excludeBookTitle, requested }) {
     return (
       <div className="exercise-container">
         <p className="exercise-tags-list">{tagsAsString}</p>
-        <Link to="/exerciseDetails" state={{ exercise: exercise }} className="exercise-page-and-exercise">
+        <Link
+          to="/exerciseDetails"
+          state={{ exercise: exercise }}
+          className="exercise-page-and-exercise"
+        >
           {exercise.page_and_exercise}
         </Link>
       </div>
     );
   } else if (requested) {
     return (
+      // need to add book title
       <div className="exercise-container">
         <Link to="/requestDetail" state={{ exercise: exercise }}>
-          <p>
-            {exercise.book.title} ({exercise.page_and_exercise})
-          </p>
+          <p>{exercise.new_page_and_exercise}</p>
         </Link>
         <p className="exercise-tags-list">{tagsAsString}</p>
       </div>
@@ -44,7 +49,11 @@ export default function Exercise({ exercise, excludeBookTitle, requested }) {
     return (
       <div className="exercise-container">
         <p className="exercise-tags-list">{tagsAsString}</p>
-        <Link to="/exerciseDetails" state={{ exercise: exercise }} className="exercise-page-and-exercise">
+        <Link
+          to="/exerciseDetails"
+          state={{ exercise: exercise }}
+          className="exercise-page-and-exercise"
+        >
           <p>
             {exercise.book.title} ({exercise.page_and_exercise})
           </p>
