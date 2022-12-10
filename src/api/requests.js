@@ -1,4 +1,5 @@
 import axios from "axios";
+import authHeader from "../services/auth-header";
 
 const server_url = "http://127.0.0.1:8000/";
 
@@ -7,14 +8,63 @@ export function adminLogin(loginInfo, setSuccess) {
   axios
     .post(`${server_url}api/token/`, loginInfo)
     .then((response) => {
-      const token = response.data.token;
-      localStorage.setItem("token", token);
-      setSuccess(true);
+      if (response.data.access) {
+        localStorage.setItem("admin", JSON.stringify(response.data));
+        setSuccess(true);
+      }
+
+      return response.data;
       // setAuth something...
     })
     .catch((err) => {
       console.log(err);
       setSuccess(false);
+    });
+}
+
+/** get all the requests */
+export function getAllRequests(setRequests) {
+  axios.get(server_url + "api/requested/").then((res) => {
+    setRequests(res.data.results);
+  });
+}
+
+/** get all the approved exercises */
+export function getAllApprovedRequests(setApprovedRequests) {
+  axios.get(server_url + "api/requested/exercises/approved/").then((res) => {
+    setApprovedRequests(res.data.results);
+  });
+}
+
+/** approves the request (need authHeader) */
+export function approveRequest(id, navigate, setMsg) {
+  axios
+    .post(server_url + `${server_url}api/requested/approve/${id}/`, {
+      headers: authHeader(),
+    })
+    .then((res) => {
+      if (res.status === 200) {
+        alert("Approved!");
+        navigate(-1);
+      } else {
+        setMsg(true);
+      }
+    });
+}
+
+/** reject the request (need authHeader) */
+export function rejectRequest(id, navigate, setMsg) {
+  axios
+    .post(server_url + `${server_url}api/requested/reject/${id}/`, {
+      headers: authHeader(),
+    })
+    .then((res) => {
+      if (res.status === 200) {
+        alert("Rejected!");
+        navigate(-1);
+      } else {
+        setMsg(true);
+      }
     });
 }
 
