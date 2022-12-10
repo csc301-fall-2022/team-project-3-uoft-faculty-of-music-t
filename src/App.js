@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, json } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SearchPage from "./pages/SearchPage";
 import BookDetailsPage from "./pages/BookDetailsPage";
@@ -9,6 +9,14 @@ import LoginPage from "./pages/LoginPage";
 import RequestsPage from "./pages/RequestsPage";
 import RequestDetailPage from "./pages/RequestDetailPage";
 import { SearchProvider } from "./contexts/SearchContext";
+
+const parseJwt = (token) => {
+  try {
+    return JSON.parse(atob(token.split(".")[1]));
+  } catch (e) {
+    return null;
+  }
+};
 
 const ProtectedRoute = ({ children }) => {
   let flag = false;
@@ -20,6 +28,13 @@ const ProtectedRoute = ({ children }) => {
   }
 
   // check if the time is expired
+  const admin = JSON.parse(localStorage.getItem("admin"));
+  const decodedJwt = parseJwt(admin.access);
+
+  if (decodedJwt.exp * 1000 + 3600000 < Date.now()) {
+    localStorage.removeItem("admin");
+    return <Navigate to="/login" replace />;
+  }
 
   return children;
 };
