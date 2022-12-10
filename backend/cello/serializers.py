@@ -36,6 +36,6 @@ class EditExerciseRequestSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = EditExerciseRequest
-        fields = ('id', 'exercise_id', 'new_side',
+        fields = ('id', 'exercise_id', 'new_side', 'new_link',
                   'new_page_and_exercise', 'new_tenor', 'new_treble', 'new_tag')
 
