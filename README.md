@@ -1,6 +1,6 @@
 # Cello Exercise Index
 
-The code for the Cello Exercise Index website. Located at http://cello-exercise-index.herokuapp.com/ 
+The code for the Cello Exercise Index website. Located at https://cello-exercise-index.herokuapp.com/ 
 
 It contains the code for the backend and frontend.
 
