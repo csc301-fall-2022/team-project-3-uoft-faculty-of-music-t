@@ -98,9 +98,17 @@ export function getExerciseDetails(setExerciseDetails, id) {
   });
 }
 
-export function getAllTags(setTopics) {
+export function getAllTags(setTopics, setTopicsPaginationNextUrl) {
   axios.get(`${server_url}api/tag/`).then((res) => {
+    setTopicsPaginationNextUrl(res.data.next)
     setTopics(res.data.results);
+  });
+}
+
+export function getAllTagsByPaginationUrl(topics, setTopics, topicsPaginationNextUrl, setTopicsPaginationNextUrl) {
+  axios.get(topicsPaginationNextUrl).then((res) => {
+    setTopicsPaginationNextUrl(res.data.next)
+    setTopics([...topics, ...res.data.results]);
   });
 }
 

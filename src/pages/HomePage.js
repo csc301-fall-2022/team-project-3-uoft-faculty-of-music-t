@@ -5,7 +5,7 @@ import SearchBar from "../components/SearchBar";
 import { Link } from "react-router-dom";
 import BooksList from "../components/BooksList";
 import TopicList from "../components/TopicList";
-import { getAllBooks, getAllTags } from "../api/requests";
+import { getAllBooks, getAllTags, getAllTagsByPaginationUrl } from "../api/requests";
 import { useNavigate } from "react-router";
 import ReactPaginate from "react-paginate";
 import SearchContext from "../contexts/SearchContext";
@@ -13,6 +13,7 @@ import SearchContext from "../contexts/SearchContext";
 const HomePage = () => {
   const [books, setBooks] = useState([]);
   const [topics, setTopics] = useState([]);
+  const [topicsPaginationNextUrl, setTopicsPaginationNextUrl] = useState("")
   const [firstLoad, setFirstLoad] = useState(true);
 
   let {searchString, setSearchString} = useContext(SearchContext)
@@ -21,7 +22,7 @@ const HomePage = () => {
 
   useEffect(() => {
     getAllBooks(setBooks);
-    getAllTags(setTopics);
+    getAllTags(setTopics, setTopicsPaginationNextUrl);
   }, []);
 
   useEffect(() => {
@@ -35,28 +36,23 @@ const HomePage = () => {
   }, [searchString]);
 
   const [pageNumber, setPageNumber] = useState(0);
-  const [topicPageNumber, setTopicPageNumber] = useState(0);
   const bookPerPage = 10; // number of books per page.
-  const topicPerPage = 10; // number of topics per page.
   const pagesVisited = pageNumber * bookPerPage;
-  const topicPagesVisited = topicPageNumber * topicPerPage;
 
   const displayBooks = books.slice(pagesVisited, pagesVisited + bookPerPage);
-  const displayTopics = topics.slice(
-    topicPagesVisited,
-    topicPagesVisited + topicPerPage
-  );
 
   const pageCount = Math.ceil(books.length / bookPerPage);
-  const topicPageCount = Math.ceil(topics.length / topicPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
 
-  const changeTopicPage = ({ selected }) => {
-    setTopicPageNumber(selected);
-  };
+  const handleTopicsListScroll = (e) => {
+    const bottom = Math.abs(e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight) <= 10
+    if (bottom) {
+      getAllTagsByPaginationUrl(topics, setTopics, topicsPaginationNextUrl, setTopicsPaginationNextUrl)
+    }
+  }
 
   return (
     <div className="homePage">
@@ -81,13 +77,7 @@ const HomePage = () => {
           <div className="content-list-container-divider"></div>
           <div className="browse-by-topic-list-container">
             <h2>Browse By Topic</h2>
-            <TopicList topics={displayTopics} />
-            <ReactPaginate
-              pageCount={topicPageCount}
-              onPageChange={changeTopicPage}
-              containerClassName={"topic-pagination-container"}
-              activeClassName={"topic-active-container"}
-            />
+            <TopicList topics={topics} onScroll={(e) => handleTopicsListScroll(e)}/>
           </div>
         </div>
         <div className="random-exercises-container">
