@@ -6,7 +6,7 @@ import "./ExerciseDetails.css";
 export default function ExerciseDetails({ exercisedet }) {
   const handleButtonClick = (e) => {
     e.preventDefault();
-    window.location.href = exercisedet.book.link;
+    window.open(exercisedet.book.link);
   };
 
   const navigate = useNavigate();
