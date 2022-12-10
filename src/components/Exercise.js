@@ -23,12 +23,10 @@ export default function Exercise({ exercise, excludeBookTitle, requested }) {
   if (excludeBookTitle) {
     return (
       <div className="exercise-container">
-        <Link to="/exerciseDetails" state={{ exercise: exercise }}>
-          <p>
-            {exercise.page_and_exercise}
-          </p>
-        </Link>
         <p className="exercise-tags-list">{tagsAsString}</p>
+        <Link to="/exerciseDetails" state={{ exercise: exercise }} className="exercise-page-and-exercise">
+          {exercise.page_and_exercise}
+        </Link>
       </div>
     );
   } else if (requested) {
@@ -45,12 +43,12 @@ export default function Exercise({ exercise, excludeBookTitle, requested }) {
   } else {
     return (
       <div className="exercise-container">
-        <Link to="/exerciseDetails" state={{ exercise: exercise }}>
+        <p className="exercise-tags-list">{tagsAsString}</p>
+        <Link to="/exerciseDetails" state={{ exercise: exercise }} className="exercise-page-and-exercise">
           <p>
             {exercise.book.title} ({exercise.page_and_exercise})
           </p>
         </Link>
-        <p className="exercise-tags-list">{tagsAsString}</p>
       </div>
     );
   }

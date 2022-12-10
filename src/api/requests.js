@@ -33,8 +33,9 @@ export function getBookDetails(setBookDetails, id) {
 }
 
 /** requests and sets list of exercises according to the passed in setter*/
-export function getAllExercises(setExercises) {
+export function getAllExercises(setExercises, setExercisesPaginationNextUrl) {
   axios.get(server_url + "api/exerciseinfo/").then((res) => {
+    setExercisesPaginationNextUrl(res.data.next);
     setExercises(res.data.results);
   });
 }
@@ -76,8 +77,13 @@ export function getSubTagsByTag(id) {
 }
 
 /** requests and sets exercises according to the passed in setter and book id */
-export function getExerciseByBook(setExercises, id) {
+export function getExerciseByBook(
+  setExercises,
+  id,
+  setExercisesPaginationNextUrl
+) {
   axios.get(`${server_url}api/exerciseinfo/?book_id=${id}`).then((res) => {
+    setExercisesPaginationNextUrl(res.data.next);
     setExercises(res.data.results);
   });
 }
@@ -88,7 +94,8 @@ export function getExerciseByFiltersOrSearch(
   searchString,
   sides,
   clefs,
-  bookId
+  bookId,
+  setExercisesPaginationNextUrl
 ) {
   let paramsEndpoint = "";
   for (const tag in tags) {
@@ -128,6 +135,37 @@ export function getExerciseByFiltersOrSearch(
   }
 
   axios.get(`${server_url}api/exerciseinfo/${paramsEndpoint}`).then((res) => {
+    setExercisesPaginationNextUrl(res.data.next);
     setExercises(res.data.results);
   });
+}
+
+export function getExerciseByPaginationUrl(
+  exercises,
+  setExercises,
+  exercisesPaginationNextUrl,
+  setExercisesPaginationNextUrl
+) {
+  if (exercisesPaginationNextUrl === null) {
+    return;
+  }
+
+  axios.get(exercisesPaginationNextUrl).then((res) => {
+    setExercisesPaginationNextUrl(res.data.next);
+    setExercises([...exercises, ...res.data.results]);
+  });
+}
+
+export function postNewRequest(newRequest, navigate, setMsg) {
+  axios
+    .post(`${server_url}api/requested/`, newRequest)
+    .then((response) => {
+      if (response.status === 200) {
+        alert("Submitted");
+        navigate(-2);
+      } else {
+        setMsg(true);
+      }
+    })
+    .catch((err) => console.log(err));
 }

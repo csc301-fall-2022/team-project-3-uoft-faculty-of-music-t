@@ -8,20 +8,26 @@ import EditExercisePage from "./pages/EditExercisePage";
 import LoginPage from "./pages/LoginPage";
 import RequestsPage from "./pages/RequestsPage";
 import RequestDetailPage from "./pages/RequestDetailPage";
+import { SearchProvider } from "./contexts/SearchContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="search" element={<SearchPage />}></Route>
-        <Route path="bookDetails" element={<BookDetailsPage />}></Route>
-        <Route path="exerciseDetails" element={<ExerciseDetailsPage />}></Route>
-        <Route path="editExercise" element={<EditExercisePage />}></Route>
-        <Route path="login" element={<LoginPage />}></Route>
-        <Route path="requested" element={<RequestsPage />}></Route>
-        <Route path="requestDetail" element={<RequestDetailPage />}></Route>
-      </Routes>
+      <SearchProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="search" element={<SearchPage />}></Route>
+          <Route path="bookDetails" element={<BookDetailsPage />}></Route>
+          <Route
+            path="exerciseDetails"
+            element={<ExerciseDetailsPage />}
+          ></Route>
+          <Route path="editExercise" element={<EditExercisePage />}></Route>
+          <Route path="login" element={<LoginPage />}></Route>
+          <Route path="requested" element={<RequestsPage />}></Route>
+          <Route path="requestDetail" element={<RequestDetailPage />}></Route>
+        </Routes>
+      </SearchProvider>
     </BrowserRouter>
   );
 }

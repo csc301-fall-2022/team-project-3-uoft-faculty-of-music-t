@@ -16,11 +16,15 @@
     margin: 0;
 }
 
-.exercise-tags-list {
-    text-align: right;
+.exercise-tags-list { 
     width: 30%;
     overflow-wrap: break-word;
     font-weight: bold;
+}
+
+.exercise-page-and-exercise {
+    text-align: right;
+    width: 60%;
 }
 
 .author-date-labels {
