@@ -82,3 +82,11 @@
     width: 1000px;
   }
 }
+
+.req-message {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: 500;
+  color: rgb(217, 50, 50);
+  font-size: large;
+}

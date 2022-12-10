@@ -3,14 +3,29 @@ import "../App.css";
 import "./EditExercisePage.css";
 import ExerciseTemplate from "../components/ExerciseTemplate";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { postNewRequest } from "../api/requests";
 
 const EditExercisePage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const exercisedet = location.state.exercisedet;
   const [detail, setDetail] = useState(exercisedet);
+  const [msg, setMsg] = useState(false);
 
   const handleRequest = () => {
-    console.log(detail);
+    const lstTags = Array.from(detail.tag, (tag) => tag.id);
+    const req = {
+      exercise_id: detail.id,
+      new_side: detail.side,
+      // need a list of ids, not list of json
+      new_tags: `[${lstTags}]`,
+      new_book_id: detail.book_id,
+      new_page_and_exercise: detail.page_and_exercise,
+      new_tenor: detail.tenor,
+      new_treble: detail.treble,
+    };
+
+    postNewRequest(req, navigate, setMsg);
   };
 
   return (
@@ -31,6 +46,15 @@ const EditExercisePage = () => {
                 detail={detail}
                 setDetail={setDetail}
               ></ExerciseTemplate>
+            ) : (
+              <></>
+            )}
+          </div>
+          <div className="req-message">
+            {msg ? (
+              <text>
+                Failed to submit the request. Check if you made any mistake.
+              </text>
             ) : (
               <></>
             )}
