@@ -53,6 +53,7 @@ class EditExerciseRequest(models.Model):
     new_side = models.CharField(max_length=50)
     new_page_and_exercise = models.CharField(null=True, max_length=100)
     new_tenor = models.BooleanField()
+    new_link = models.CharField(max_length=2048)
     new_treble = models.BooleanField()
     new_book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
     new_tags = models.ManyToManyField(Tag)
