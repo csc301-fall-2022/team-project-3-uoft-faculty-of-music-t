@@ -107,6 +107,13 @@ export function getExerciseDetails(setExerciseDetails, id) {
   });
 }
 
+/** requests and sets <num> count of random exercises according to the passed in setter*/
+export function getRandomExercises(setRandomExercises, num) {
+  axios.get(`${server_url}api/exerciseinfo/exercises/random/?page_size=${num}`).then((res) => {
+    setRandomExercises(res.data.results);
+  });
+}
+
 export function getAllTags(setTopics, setTopicsPaginationNextUrl) {
   axios.get(`${server_url}api/tag/`).then((res) => {
     setTopicsPaginationNextUrl(res.data.next);
@@ -204,7 +211,7 @@ export function getExerciseByFiltersOrSearch(
   }
 
   if (bookId) {
-    paramsEndpoint += "&book_id=" + bookId;
+    paramsEndpoint += "&book_id=" + bookId
   }
 
   axios.get(`${server_url}api/exerciseinfo/${paramsEndpoint}`).then((res) => {

@@ -3,9 +3,10 @@ import "../App.css";
 import "./HomePage.css";
 import SearchBar from "../components/SearchBar";
 import { Link } from "react-router-dom";
+import ExerciseList from "../components/ExerciseList";
 import BooksList from "../components/BooksList";
 import TopicList from "../components/TopicList";
-import { getAllBooks, getAllTags, getAllTagsByPaginationUrl } from "../api/requests";
+import { getAllBooks, getAllTags, getRandomExercises, getAllTagsByPaginationUrl } from "../api/requests";
 import { useNavigate } from "react-router";
 import ReactPaginate from "react-paginate";
 import SearchContext from "../contexts/SearchContext";
@@ -13,6 +14,7 @@ import SearchContext from "../contexts/SearchContext";
 const HomePage = () => {
   const [books, setBooks] = useState([]);
   const [topics, setTopics] = useState([]);
+  const [randomExercises, setRandomExercises] = useState([]);
   const [topicsPaginationNextUrl, setTopicsPaginationNextUrl] = useState("")
   const [firstLoad, setFirstLoad] = useState(true);
 
@@ -20,9 +22,11 @@ const HomePage = () => {
 
   const naviagte = useNavigate();
 
+  const numRandomExercises = 3; // number of random exercies to show
   useEffect(() => {
     getAllBooks(setBooks);
     getAllTags(setTopics, setTopicsPaginationNextUrl);
+    getRandomExercises(setRandomExercises, numRandomExercises);
   }, []);
 
   useEffect(() => {
@@ -82,7 +86,9 @@ const HomePage = () => {
         </div>
         <div className="random-exercises-container">
           <h2>Try These Exercises!</h2>
-          <div className="random-exercises-list-container"></div>
+          <div className="random-exercises-list-container">
+            <ExerciseList exercises={randomExercises} excludeBookTitle={false}/>
+          </div>
         </div>
       </div>
     </div>
