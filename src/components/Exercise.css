@@ -16,7 +16,8 @@
     margin: 0;
 }
 
-.exercise-tags-list { 
+.exercise-tags-list {
+    text-align: left;
     width: 30%;
     overflow-wrap: break-word;
     font-weight: bold;
