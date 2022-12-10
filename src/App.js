@@ -19,6 +19,8 @@ const ProtectedRoute = ({ children }) => {
     return <Navigate to="/login" replace />;
   }
 
+  // check if the time is expired
+
   return children;
 };
 
@@ -35,27 +37,25 @@ function App() {
             element={<ExerciseDetailsPage />}
           ></Route>
           <Route path="editExercise" element={<EditExercisePage />}></Route>
+          <Route path="login" element={<LoginPage />}></Route>
+          <Route
+            path="requested"
+            element={
+              <ProtectedRoute>
+                <RequestsPage />
+              </ProtectedRoute>
+            }
+          ></Route>
+          <Route
+            path="requestDetail"
+            element={
+              <ProtectedRoute>
+                <RequestDetailPage />
+              </ProtectedRoute>
+            }
+          ></Route>
         </Routes>
       </SearchProvider>
-      <Routes>
-        <Route path="login" element={<LoginPage />}></Route>
-        <Route
-          path="requested"
-          element={
-            <ProtectedRoute>
-              <RequestsPage />
-            </ProtectedRoute>
-          }
-        ></Route>
-        <Route
-          path="requestDetail"
-          element={
-            <ProtectedRoute>
-              <RequestDetailPage />
-            </ProtectedRoute>
-          }
-        ></Route>
-      </Routes>
     </BrowserRouter>
   );
 }

@@ -24,7 +24,6 @@ export function adminLogin(loginInfo, setSuccess) {
 /** get all the requests */
 export function getAllRequests(setRequests) {
   axios.get(server_url + "api/requested/").then((res) => {
-    console.log(res.data.results);
     setRequests(res.data.results);
   });
 }
@@ -32,7 +31,6 @@ export function getAllRequests(setRequests) {
 /** get all the approved exercises */
 export function getAllApprovedRequests(setApprovedRequests) {
   axios.get(server_url + "api/requested/exercises/approved/").then((res) => {
-    console.log(res.data.results);
     setApprovedRequests(res.data.results);
   });
 }
@@ -118,7 +116,6 @@ export function getRandomExercises(setRandomExercises, num) {
 
 export function getAllTags(setTopics) {
   axios.get(`${server_url}api/tag/`).then((res) => {
-    // console.log(res.data);
     setTopics(res.data);
   });
 }
