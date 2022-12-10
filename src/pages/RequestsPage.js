@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function AdminPage() {
   return (
     <div className="requestsPage">
-      <div className="title-container">
+      <div className="requestsPage-title-container">
         <Link to="/" className="title-link">
           <h1 className="title">Cello Exercise Index</h1>
         </Link>
