@@ -23,6 +23,11 @@
     font-weight: bold;
 }
 
+.exercise-page-and-exercise {
+    text-align: right;
+    width: 60%;
+}
+
 .author-date-labels {
     text-align: right
 }
