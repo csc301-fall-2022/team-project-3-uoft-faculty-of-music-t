@@ -1,4 +1,4 @@
-.editExercisePage {
+.requestDetailPage {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -7,16 +7,21 @@
   min-width: 800px;
 }
 
-.editExercise-main-container {
-  width: 80%;
+.requestDetail-main-container {
+  width: 100%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-self: center;
 }
 
-.editExercise-content-container {
-  width: 100% -20px;
+.requestDetail-content-container {
+  width: 95%;
   background-color: #e7e7e7;
   margin-top: 1.5rem;
+  margin: 1rem;
   min-height: 500px;
   height: 50%;
   display: flex;
@@ -26,11 +31,11 @@
   overflow: auto;
 }
 
-.editExercise-content-container h2 {
+.requestDetail-content-container h2 {
   font-family: "Glory", sans-serif;
 }
 
-.editExercise-buttons {
+.requestDetail-buttons {
   display: flex;
   flex-direction: row;
   margin-top: 1.5rem;
@@ -38,11 +43,11 @@
   justify-content: flex-end;
 }
 
-.request-btn,
-.back-btn {
+.approve-btn,
+.decline-btn {
   margin: 10px;
   height: 40px;
-  width: 20%;
+  width: 200px;
   cursor: pointer;
   font-size: 1.1rem;
   border: none;
@@ -50,17 +55,17 @@
   font-family: "Glory", sans-serif;
 }
 
-.request-btn {
+.approve-btn {
   background-color: #0b4982;
   color: white;
   box-shadow: 0px 3px 10px rgb(100, 100, 100);
 }
 
-.request-btn:hover {
+.approve-btn:hover {
   background-color: #1b76cc;
 }
 
-.back-btn {
+.decline-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,22 +76,14 @@
   box-shadow: 0px 3px 10px rgb(100, 100, 100);
 }
 
-.back-btn:hover {
+.decline-btn:hover {
   background-color: #7d7c7c;
   color: white;
 }
 
 /* Media Queries */
 @media only screen and (min-width: 1200px) {
-  .editExercise-main-container {
+  .requestDetail-main-container {
     width: 1000px;
   }
-}
-
-.req-message {
-  text-align: center;
-  margin-top: 50px;
-  font-weight: 500;
-  color: rgb(217, 50, 50);
-  font-size: large;
 }

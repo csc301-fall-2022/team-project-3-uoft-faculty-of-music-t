@@ -9,7 +9,8 @@ from rest_framework.generics import ListAPIView
 class TagView(viewsets.ModelViewSet):
     serializer_class = TagSerializer
     queryset = Tag.objects.all().order_by('id')
-    pagination_class = StandardResultsSetPagination
+    # pagination_class = StandardResultsSetPagination
+    pagination_class = None
 
     @swagger_auto_schema(operation_id="Get all tags", operation_description="Get all tags (paginated)")
     def list(self, request, *args, **kwargs):

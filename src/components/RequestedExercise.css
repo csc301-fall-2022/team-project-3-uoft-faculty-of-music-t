@@ -1,0 +1,27 @@
+.detail-main-container {
+  width: 100%;
+}
+
+.reqexercise-title,
+.reqexercise-side,
+.reqexercise-link,
+.reqexercise-levels,
+.reqexercise-clef,
+.reqexercise-tags {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* label = inline element */
+.req_label_left {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.req_text {
+  display: inline-block;
+  margin-left: 20px;
+}

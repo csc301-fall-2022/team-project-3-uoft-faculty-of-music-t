@@ -1,0 +1,26 @@
+.go-to-admin {
+    text-align: center;
+    border: none;
+    margin-top: 1rem;
+    font-size: large;
+    padding: 1rem;
+    background-color:#1e3a6d;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.go-to-admin:hover {
+    cursor: pointer;
+    background-color: #1b76cc;
+}
+
+.admin-link {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.admin-link:hover {
+    text-decoration: none;
+    color: white;
+}

@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./ExerciseTemplate.css";
-import TagList from "./TagList";
-import { getAllTags } from "../api/requests";
+import { getAllTags, getAllTagsByPaginationUrl } from "../api/requests";
 
-const ExerciseTemplate = ({ exercisedet }) => {
-  const [detail, setDetail] = useState(exercisedet);
-  const [tags, setTags] = useState([]);
-  const [selectedTags, setSelectedTags] = useState(exercisedet.tag);
+const ExerciseTemplate = ({ detail, setDetail }) => {
   const [choice, setChoice] = useState("Neck Positions Only");
-  const [side, setSide] = useState(detail.side);
-  const [tenor, setTenor] = useState(detail.tenor);
-  const [treble, setTreble] = useState(detail.treble);
+  const [tags, setTags] = useState([]);
 
   useEffect(() => {
     getAllTags(setTags);
@@ -18,21 +12,30 @@ const ExerciseTemplate = ({ exercisedet }) => {
 
   const updateTags = (e) => {
     e.preventDefault();
-    // console.log(choice);
     const newTag = tags.find((tag) => tag["tag_name"] === choice);
-    // Prevent adding already existing tag
-    // console.log(newTag);
-    // console.log(selectedTags);
-    // console.log(
-    //   selectedTags.findIndex((tag) => tag["tag_name"] === newTag["tag_name"])
-    // );
     if (
-      selectedTags.findIndex(
-        (tag) => tag["tag_name"] === newTag["tag_name"]
-      ) === -1
+      detail.tag.findIndex((tag) => tag["tag_name"] === newTag["tag_name"]) ===
+      -1
     ) {
-      setSelectedTags(selectedTags.concat([newTag]));
+      setDetail({
+        ...detail,
+        tag: detail.tag.concat([newTag]),
+      });
     }
+  };
+
+  const deleteTag = (e) => {
+    e.preventDefault();
+    const targetValue = e.target.innerHTML.substr(
+      0,
+      e.target.innerHTML.indexOf(" ✖️")
+    );
+    setDetail({
+      ...detail,
+      tag: detail.tag.filter(
+        (tag) => tag["tag_name"] !== targetValue.replace("&amp;", "&")
+      ),
+    });
   };
 
   return (
@@ -75,8 +78,13 @@ const ExerciseTemplate = ({ exercisedet }) => {
             <select
               className="select-box-select"
               name="sides"
-              value={side}
-              onChange={(e) => setSide(e.target.value)}
+              value={detail.side}
+              onChange={(e) =>
+                setDetail({
+                  ...detail,
+                  side: e.target.value,
+                })
+              }
             >
               <option value="Left Side">Left Side</option>
               <option value="Right Side">Right Side</option>
@@ -87,10 +95,19 @@ const ExerciseTemplate = ({ exercisedet }) => {
         <div className="exercise-levels">
           <label className="label_left">Tags</label>
           <div className="select-box">
-            <TagList
-              tags={selectedTags}
-              setSelectedTags={setSelectedTags}
-            ></TagList>
+            <div className="tags-container">
+              {detail.tag.map((tag, index) => {
+                return (
+                  <button
+                    key={index}
+                    className={"tag-icon" + tag["level"]}
+                    onClick={(e) => deleteTag(e)}
+                  >
+                    {tag["tag_name"]} {"✖️"}
+                  </button>
+                );
+              })}
+            </div>
             <select
               className="select-box-select"
               name="tags"
@@ -118,8 +135,10 @@ const ExerciseTemplate = ({ exercisedet }) => {
               type="checkbox"
               id="tenor"
               name="tenor"
-              checked={tenor}
-              onChange={(e) => setTenor(e.target.checked)}
+              checked={detail.tenor}
+              onChange={(e) =>
+                setDetail({ ...detail, tenor: e.target.checked })
+              }
             ></input>
             <label for="tenor">Tenor</label>
           </div>
@@ -129,8 +148,13 @@ const ExerciseTemplate = ({ exercisedet }) => {
               type="checkbox"
               id="treble"
               name="treble"
-              checked={treble}
-              onChange={(e) => setTreble(e.target.checked)}
+              checked={detail.treble}
+              onChange={(e) =>
+                setDetail({
+                  ...detail,
+                  treble: e.target.checked,
+                })
+              }
             ></input>
             <label for="treble">Treble</label>
           </div>

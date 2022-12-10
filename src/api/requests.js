@@ -1,6 +1,80 @@
 import axios from "axios";
+import authHeader from "../services/auth-header";
 
-const server_url = "https://cello-exercise-index.herokuapp.com/"
+const server_url = "https://cello-exercise-index.herokuapp.com/";
+
+/** log into the system */
+export function adminLogin(loginInfo, setSuccess) {
+  axios
+    .post(`${server_url}api/token/`, loginInfo)
+    .then((response) => {
+      if (response.data.access) {
+        localStorage.setItem("admin", JSON.stringify(response.data));
+        setSuccess(true);
+      }
+
+      return response.data;
+    })
+    .catch((err) => {
+      console.log(err);
+      setSuccess(false);
+    });
+}
+
+/** get all the requests */
+export function getAllRequests(setRequests) {
+  axios.get(server_url + "api/requested/").then((res) => {
+    setRequests(res.data.results);
+  });
+}
+
+/** get all the approved exercises */
+export function getAllApprovedRequests(setApprovedRequests) {
+  axios.get(server_url + "api/requested/exercises/approved/").then((res) => {
+    setApprovedRequests(res.data.results);
+  });
+}
+
+/** approves the request (need authHeader) */
+export function approveRequest(id, navigate, setMsg) {
+  axios
+    .post(
+      `${server_url}api/requested/approve/${id}/`,
+      {},
+      {
+        headers: authHeader(),
+      }
+    )
+    .then((res) => {
+      if (res.status === 200) {
+        alert("Approved!");
+        navigate(-1);
+      } else {
+        setMsg(true);
+      }
+    });
+}
+
+/** reject the request (need authHeader) */
+export function rejectRequest(id, navigate, setMsg) {
+  axios
+    .post(
+      `${server_url}api/requested/reject/${id}/`,
+      {},
+      {
+        headers: authHeader(),
+      }
+    )
+    .then((res) => {
+      if (res.status === 200) {
+        alert("Rejected!");
+        navigate(-1);
+      } else {
+        setMsg(true);
+      }
+    })
+    .catch((err) => console.log(err));
+}
 
 /** requests and sets list of books according to the passed in setter*/
 export function getAllBooks(setBooks) {
@@ -19,7 +93,7 @@ export function getBookDetails(setBookDetails, id) {
 /** requests and sets list of exercises according to the passed in setter*/
 export function getAllExercises(setExercises, setExercisesPaginationNextUrl) {
   axios.get(server_url + "api/exerciseinfo/").then((res) => {
-    setExercisesPaginationNextUrl(res.data.next)
+    setExercisesPaginationNextUrl(res.data.next);
     setExercises(res.data.results);
   });
 }
@@ -33,21 +107,27 @@ export function getExerciseDetails(setExerciseDetails, id) {
 
 /** requests and sets <num> count of random exercises according to the passed in setter*/
 export function getRandomExercises(setRandomExercises, num) {
-  axios.get(`${server_url}api/exerciseinfo/exercises/random/?page_size=${num}`).then((res) => {
-    setRandomExercises(res.data.results);
-  });
+  axios
+    .get(`${server_url}api/exerciseinfo/exercises/random/?page_size=${num}`)
+    .then((res) => {
+      setRandomExercises(res.data.results);
+    });
 }
 
-export function getAllTags(setTopics, setTopicsPaginationNextUrl) {
+export function getAllTags(setTopics) {
   axios.get(`${server_url}api/tag/`).then((res) => {
-    setTopicsPaginationNextUrl(res.data.next)
-    setTopics(res.data.results);
+    setTopics(res.data);
   });
 }
 
-export function getAllTagsByPaginationUrl(topics, setTopics, topicsPaginationNextUrl, setTopicsPaginationNextUrl) {
+export function getAllTagsByPaginationUrl(
+  topics,
+  setTopics,
+  topicsPaginationNextUrl,
+  setTopicsPaginationNextUrl
+) {
   axios.get(topicsPaginationNextUrl).then((res) => {
-    setTopicsPaginationNextUrl(res.data.next)
+    setTopicsPaginationNextUrl(res.data.next);
     setTopics([...topics, ...res.data.results]);
   });
 }
@@ -63,28 +143,43 @@ export function getTagsByLevel(level) {
 export function getSubTagsByTag(id) {
   return new Promise((resolve, reject) => {
     axios
-    .get(`${server_url}api/tag/subtag/${id}/`, {headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}})
-    .then((res) => {
-      resolve(res.data.results)
-    })
-  })
+      .get(`${server_url}api/tag/subtag/${id}/`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        resolve(res.data.results);
+      });
+  });
 }
 
 /** requests and sets exercises according to the passed in setter and book id */
-export function getExerciseByBook(setExercises, id, setExercisesPaginationNextUrl) {
-  axios
-    .get( `${server_url}api/exerciseinfo/?book_id=${id}` )
-    .then((res) => {
-      setExercisesPaginationNextUrl(res.data.next)
-      setExercises(res.data.results);
-    });
+export function getExerciseByBook(
+  setExercises,
+  id,
+  setExercisesPaginationNextUrl
+) {
+  axios.get(`${server_url}api/exerciseinfo/?book_id=${id}`).then((res) => {
+    setExercisesPaginationNextUrl(res.data.next);
+    setExercises(res.data.results);
+  });
 }
 
-export function getExerciseByFiltersOrSearch(setExercises, tags, searchString, sides, clefs, bookId, setExercisesPaginationNextUrl) {
-  let paramsEndpoint = ""
+export function getExerciseByFiltersOrSearch(
+  setExercises,
+  tags,
+  searchString,
+  sides,
+  clefs,
+  bookId,
+  setExercisesPaginationNextUrl
+) {
+  let paramsEndpoint = "";
   for (const tag in tags) {
     if (paramsEndpoint === "") {
-      paramsEndpoint += "?tag_id=" + tags[tag]
+      paramsEndpoint += "?tag_id=" + tags[tag];
     } else {
       paramsEndpoint += "&tag_id=" + tags[tag];
     }
@@ -92,48 +187,64 @@ export function getExerciseByFiltersOrSearch(setExercises, tags, searchString, s
 
   if (searchString) {
     if (paramsEndpoint === "") {
-      paramsEndpoint = "?search=" + searchString
+      paramsEndpoint = "?search=" + searchString;
     } else {
-      paramsEndpoint += "&search=" + searchString
+      paramsEndpoint += "&search=" + searchString;
     }
   }
 
   for (const side of sides) {
     if (paramsEndpoint === "") {
-      paramsEndpoint += "?side=" + side
+      paramsEndpoint += "?side=" + side;
     } else {
-      paramsEndpoint += "&side=" + side
+      paramsEndpoint += "&side=" + side;
     }
   }
 
   for (const clef of clefs) {
     if (paramsEndpoint === "") {
-      paramsEndpoint += "?clef=" + clef
+      paramsEndpoint += "?clef=" + clef;
     } else {
-      paramsEndpoint += "&clef=" + clef
+      paramsEndpoint += "&clef=" + clef;
     }
   }
 
   if (bookId) {
-    paramsEndpoint += "&book_id=" + bookId
+    paramsEndpoint += "&book_id=" + bookId;
   }
 
-  axios
-    .get( `${server_url}api/exerciseinfo/${paramsEndpoint}` )
-    .then((res) => {
-      setExercisesPaginationNextUrl(res.data.next)
-      setExercises(res.data.results);
-    });
+  axios.get(`${server_url}api/exerciseinfo/${paramsEndpoint}`).then((res) => {
+    setExercisesPaginationNextUrl(res.data.next);
+    setExercises(res.data.results);
+  });
 }
 
-export function getExerciseByPaginationUrl(exercises, setExercises, exercisesPaginationNextUrl, setExercisesPaginationNextUrl) {
+export function getExerciseByPaginationUrl(
+  exercises,
+  setExercises,
+  exercisesPaginationNextUrl,
+  setExercisesPaginationNextUrl
+) {
   if (exercisesPaginationNextUrl === null) {
-    return
+    return;
   }
 
-  axios.get(exercisesPaginationNextUrl)
-  .then((res) => {
-      setExercisesPaginationNextUrl(res.data.next)
-      setExercises([...exercises, ...res.data.results])
-  })
+  axios.get(exercisesPaginationNextUrl).then((res) => {
+    setExercisesPaginationNextUrl(res.data.next);
+    setExercises([...exercises, ...res.data.results]);
+  });
+}
+
+export function postNewRequest(newRequest, navigate, setMsg) {
+  axios
+    .post(`${server_url}api/requested/`, newRequest)
+    .then((response) => {
+      if (response.status === 200) {
+        alert("Submitted");
+        navigate(-2);
+      } else {
+        setMsg(true);
+      }
+    })
+    .catch((err) => console.log(err));
 }
