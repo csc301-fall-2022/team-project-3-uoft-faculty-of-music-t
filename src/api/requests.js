@@ -118,8 +118,8 @@ export function getRandomExercises(setRandomExercises, num) {
 
 export function getAllTags(setTopics) {
   axios.get(`${server_url}api/tag/`).then((res) => {
-    console.log(res.data.results);
-    setTopics(res.data.results);
+    // console.log(res.data);
+    setTopics(res.data);
   });
 }
 
