@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import ExerciseList from "../components/ExerciseList";
 import BooksList from "../components/BooksList";
 import TopicList from "../components/TopicList";
-import { getAllBooks, getAllTags, getRandomExercises, getAllTagsByPaginationUrl } from "../api/requests";
+import { getAllBooks, getAllTags, getRandomExercises } from "../api/requests";
 import { useNavigate } from "react-router";
 import ReactPaginate from "react-paginate";
 import SearchContext from "../contexts/SearchContext";
@@ -15,24 +15,24 @@ const HomePage = () => {
   const [books, setBooks] = useState([]);
   const [topics, setTopics] = useState([]);
   const [randomExercises, setRandomExercises] = useState([]);
-  const [topicsPaginationNextUrl, setTopicsPaginationNextUrl] = useState("")
   const [firstLoad, setFirstLoad] = useState(true);
 
-  let {searchString, setSearchString} = useContext(SearchContext)
+  let { searchString, setSearchString } = useContext(SearchContext);
 
   const naviagte = useNavigate();
 
   const numRandomExercises = 3; // number of random exercies to show
   useEffect(() => {
     getAllBooks(setBooks);
-    getAllTags(setTopics, setTopicsPaginationNextUrl);
+    getAllTags(setTopics);
     getRandomExercises(setRandomExercises, numRandomExercises);
   }, []);
 
   useEffect(() => {
-    if (firstLoad) { // Prevents navigation back to search page, when navigated from search page
-      setFirstLoad(false)
-      return
+    if (firstLoad) {
+      // Prevents navigation back to search page, when navigated from search page
+      setFirstLoad(false);
+      return;
     }
     if (searchString !== "") {
       naviagte("/search");
@@ -50,13 +50,6 @@ const HomePage = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
-
-  const handleTopicsListScroll = (e) => {
-    const bottom = Math.abs(e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight) <= 10
-    if (bottom) {
-      getAllTagsByPaginationUrl(topics, setTopics, topicsPaginationNextUrl, setTopicsPaginationNextUrl)
-    }
-  }
 
   return (
     <div className="homePage">
@@ -81,13 +74,16 @@ const HomePage = () => {
           <div className="content-list-container-divider"></div>
           <div className="browse-by-topic-list-container">
             <h2>Browse By Topic</h2>
-            <TopicList topics={topics} onScroll={(e) => handleTopicsListScroll(e)}/>
+            <TopicList topics={topics} />
           </div>
         </div>
         <div className="random-exercises-container">
           <h2>Try These Exercises!</h2>
           <div className="random-exercises-list-container">
-            <ExerciseList exercises={randomExercises} excludeBookTitle={false}/>
+            <ExerciseList
+              exercises={randomExercises}
+              excludeBookTitle={false}
+            />
           </div>
         </div>
       </div>
