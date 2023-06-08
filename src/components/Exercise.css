@@ -23,8 +23,20 @@
     font-weight: bold;
 }
 
+.exercise-tags-list-text {
+    text-align: right;
+    width: 30%;
+    overflow-wrap: break-word;
+    font-weight: bold;
+}
+
 .exercise-page-and-exercise {
     text-align: right;
+    width: 60%;
+}
+
+.exercise-page-and-exercise-tags {
+    text-align: left;
     width: 60%;
 }
 
