@@ -27,7 +27,6 @@ export default function Exercise({
     }
     setTagsAsString(str);
     if (requested || (approved && exercise)) {
-      console.log(exercise);
       getExerciseDetails(setExerciseDetail, exercise.exercise_id);
       // getBookDetails(setBookDetail, exercise.new_book_id);
     }
@@ -36,14 +35,14 @@ export default function Exercise({
   if (excludeBookTitle) {
     return (
       <div className="exercise-container">
-        <p className="exercise-tags-list">{tagsAsString}</p>
         <Link
           to="/exerciseDetails"
           state={{ exercise: exercise }}
-          className="exercise-page-and-exercise"
+          className="exercise-page-and-exercise-tags"
         >
           {exercise.page_and_exercise}
         </Link>
+        <p className="exercise-tags-list-text">{tagsAsString}</p>
       </div>
     );
   } else if (requested || approved) {
@@ -67,16 +66,16 @@ export default function Exercise({
   } else {
     return (
       <div className="exercise-container">
-        <p className="exercise-tags-list">{tagsAsString}</p>
         <Link
           to="/exerciseDetails"
           state={{ exercise: exercise }}
-          className="exercise-page-and-exercise"
+          className="exercise-page-and-exercise-tags"
         >
           <p>
             {exercise.book.title} ({exercise.page_and_exercise})
           </p>
         </Link>
+        <p className="exercise-tags-list-text">{tagsAsString}</p>
       </div>
     );
   }
