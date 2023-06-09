@@ -12,7 +12,7 @@ const SearchBarWithFilter = ({
   setSearchString,
   setSelectedClefs,
   setSelectedSides,
-  defaultSearchString
+  defaultSearchString,
 }) => {
   const searchBarRef = useRef();
   const [filterBarEnabled, setFilterBarEnabled] = useState(false);
@@ -20,8 +20,15 @@ const SearchBarWithFilter = ({
     useState("white");
 
   useEffect(() => {
-    searchBarRef.current.value = defaultSearchString
-  }, [])
+    searchBarRef.current.value = defaultSearchString;
+  }, []);
+
+  // Handles enter key press in search bar
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearchButtonClicked(e);
+    }
+  };
 
   const handleFilterButtonClicked = (e) => {
     e.preventDefault();
@@ -36,7 +43,11 @@ const SearchBarWithFilter = ({
   return (
     <div className="search-filter-bar-container">
       <div className="search-filter-bar-top-container">
-        <input className="search-filter-bar" ref={searchBarRef}></input>
+        <input
+          className="search-filter-bar"
+          ref={searchBarRef}
+          onKeyDown={(e) => handleKeyDown(e)}
+        ></input>
         <button
           className="search-filter-bar-search-button"
           onClick={(e) => handleSearchButtonClicked(e)}
