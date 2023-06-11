@@ -1,8 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
+import Select from "react-select";
 import "./FilterBar.css";
 import { getTagsByLevel, getSubTagsByTag } from "../api/requests";
 
-const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overrideBackgroundColor, currSearchString, setSearchString }) => {
+const FilterBar = ({
+  setSelectedTags,
+  setSelectedClefs,
+  setSelectedSides,
+  overrideBackgroundColor,
+  currSearchString,
+  setSearchString,
+}) => {
   const level1TagSelectRef = useRef();
   const level2TagSelectRef = useRef();
   const level3TagSelectRef = useRef();
@@ -19,68 +27,147 @@ const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overri
   const [categoryInLevel3, setCategoryInlevel3] = useState("-1");
   const [filtersApplied, setFiltersApplied] = useState(false);
 
+  const selectStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      background: "#fff",
+      borderColor: "#9e9e9e",
+      minHeight: "24px",
+      height: "24px",
+      boxShadow: state.isFocused ? null : null,
+    }),
+    valueContainer: (provided, state) => ({
+      ...provided,
+      height: "24px",
+      padding: "0 5px",
+    }),
+    input: (provided, state) => ({
+      ...provided,
+      margin: "0px",
+      padding: "0px",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: "24px",
+    }),
+  };
+
   // DEFAULT
   useEffect(() => {
+    getLevel1Tags();
+  }, []);
+
+  const getLevel1Tags = () => {
     getTagsByLevel(1).then((tags) => {
       tags.unshift({});
-      setLevel1Tags(tags);
+      const transformedTags = transformRawTagsList(tags);
+      setLevel1Tags(transformedTags);
     });
-  }, []);
+  };
+
+  const getLevel2Tags = (tagId) => {
+    getSubTagsByTag(tagId).then((tags) => {
+      if (tags.length !== 0) {
+        tags.unshift({ tag: {} });
+        const transformedTags = transformRawSubtagsList(tags);
+        setLevel2Tags(transformedTags);
+      }
+    });
+  };
+
+  const getLevel3Tags = (tagId) => {
+    getSubTagsByTag(tagId).then((tags) => {
+      if (tags.length !== 0) {
+        tags.unshift({ tag: {} });
+        const transformedTags = transformRawSubtagsList(tags);
+        setLevel3Tags(transformedTags);
+      }
+    });
+  };
+
+  const transformRawTagsList = (tags) => {
+    let transformedTags = [];
+    for (let tag of tags) {
+      if (Object.keys(tag).length === 0) {
+        transformedTags.push({ value: "-1", label: "" });
+      } else {
+        transformedTags.push({ value: tag.id, label: tag.tag_name });
+      }
+    }
+    return transformedTags;
+  };
+
+  const transformRawSubtagsList = (tags) => {
+    let transformedTags = [];
+    for (let tag of tags) {
+      if (Object.keys(tag.tag).length === 0) {
+        transformedTags.push({ value: "-1", label: "" });
+      } else {
+        transformedTags.push({ value: tag.tag.id, label: tag.tag.tag_name });
+      }
+    }
+    return transformedTags;
+  };
 
   const areFiltersSelected = () => {
     let filtersSelected = false;
-    if (categoryInLevel1 !== "-1" || categoryInLevel2 !== "-1" || categoryInLevel3 !== "-1") {
-        filtersSelected = true
+    if (
+      categoryInLevel1 !== "-1" ||
+      categoryInLevel2 !== "-1" ||
+      categoryInLevel3 !== "-1"
+    ) {
+      filtersSelected = true;
     }
 
-    const leftSideCheckboxChecked = leftSideCheckboxRef.current.checked
-    const rightSideCheckboxChecked = rightSideCheckboxRef.current.checked
-    const otherCheckboxChecked = otherCheckboxRef.current.checked
-    const tenorCheckboxChecked = tenorClefCheckboxRef.current.checked
-    const trebleCheckboxChecked = trebleClefCheckboxRef.current.checked
-    if (leftSideCheckboxChecked || rightSideCheckboxChecked || otherCheckboxChecked || tenorCheckboxChecked || trebleCheckboxChecked) {
-        filtersSelected = true
+    const leftSideCheckboxChecked = leftSideCheckboxRef.current.checked;
+    const rightSideCheckboxChecked = rightSideCheckboxRef.current.checked;
+    const otherCheckboxChecked = otherCheckboxRef.current.checked;
+    const tenorCheckboxChecked = tenorClefCheckboxRef.current.checked;
+    const trebleCheckboxChecked = trebleClefCheckboxRef.current.checked;
+    if (
+      leftSideCheckboxChecked ||
+      rightSideCheckboxChecked ||
+      otherCheckboxChecked ||
+      tenorCheckboxChecked ||
+      trebleCheckboxChecked
+    ) {
+      filtersSelected = true;
     }
-    return filtersSelected
-  }
+    return filtersSelected;
+  };
 
-  const handleCategory1SelectChange = (e) => {
-    e.preventDefault();
-    const tagId = level1TagSelectRef.current.value;
+  const handleCategory1SelectChange = (selectedOption) => {
+    if (selectedOption === null) {
+      return
+    }
+
+    const tagId = selectedOption.value;
     setCategoryInlevel1(tagId);
-    if (tagId === "-1") {
-      setLevel2Tags([]);
-      setLevel3Tags([]);
-      setCategoryInlevel2("-1");
-      setCategoryInlevel3("-1");
-      return;
-    }
 
-    getSubTagsByTag(tagId).then((tags) => {
-      tags.unshift({ tag: {} });
-      setLevel2Tags(tags);
-    });
+    // Reset Dependent Subtags
+    setLevel2Tags([]);
+    setLevel3Tags([]);
+    setCategoryInlevel2("-1");
+    setCategoryInlevel3("-1");
+
+    // Get Subtags
+    getLevel2Tags(tagId);
   };
 
-  const handleCategory2SelectChange = (e) => {
-    e.preventDefault();
-    const tagId = level2TagSelectRef.current.value;
+  const handleCategory2SelectChange = (selectedOption) => {
+    const tagId = selectedOption.value;
     setCategoryInlevel2(tagId);
-    if (tagId === "-1") {
-      setLevel3Tags([]);
-      setCategoryInlevel3("-1");
-      return;
-    }
 
-    getSubTagsByTag(tagId).then((tags) => {
-      tags.unshift({ tag: {} });
-      setLevel3Tags(tags);
-    });
+    // Reset Dependent Subtag
+    setLevel3Tags([]);
+    setCategoryInlevel3("-1");
+
+    // Get Subtags
+    getLevel3Tags(tagId);
   };
 
-  const handleCategory3SelectChange = (e) => {
-    e.preventDefault();
-    setCategoryInlevel3(level3TagSelectRef.current.value);
+  const handleCategory3SelectChange = (selectedOption) => {
+    setCategoryInlevel3(selectedOption.value);
   };
 
   const handleApplyFiltersButtonClick = (e) => {
@@ -97,22 +184,22 @@ const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overri
 
     let sides = [];
     if (leftSideCheckboxRef.current.checked) {
-       sides.push("left")
+      sides.push("left");
     }
     if (rightSideCheckboxRef.current.checked) {
-        sides.push("right")
+      sides.push("right");
     }
     if (otherCheckboxRef.current.checked) {
-        sides.push("other")
+      sides.push("other");
     }
 
     let clefs = [];
     if (tenorClefCheckboxRef.current.checked) {
-        clefs.push("tenor")
-    } 
+      clefs.push("tenor");
+    }
     if (trebleClefCheckboxRef.current.checked) {
-        clefs.push("treble")
-    } 
+      clefs.push("treble");
+    }
 
     if (!areFiltersSelected()) {
       setFiltersApplied(false);
@@ -122,30 +209,33 @@ const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overri
 
     setSelectedTags(tags);
     setSelectedSides(sides);
-    setSelectedClefs(clefs)
-    setSearchString(currSearchString)
+    setSelectedClefs(clefs);
+    setSearchString(currSearchString);
   };
 
   const handleClearFiltersButtonClick = () => {
     setFiltersApplied(false);
-    level1TagSelectRef.current.value = "-1"
-    leftSideCheckboxRef.current.checked = false
-    rightSideCheckboxRef.current.checked = false
-    otherCheckboxRef.current.checked = false
-    tenorClefCheckboxRef.current.checked = false
-    trebleClefCheckboxRef.current.checked = false
+    level1TagSelectRef.current.clearValue()
+    leftSideCheckboxRef.current.checked = false;
+    rightSideCheckboxRef.current.checked = false;
+    otherCheckboxRef.current.checked = false;
+    tenorClefCheckboxRef.current.checked = false;
+    trebleClefCheckboxRef.current.checked = false;
     setLevel2Tags([]);
     setLevel3Tags([]);
     setCategoryInlevel1("-1");
     setCategoryInlevel2("-1");
     setCategoryInlevel3("-1");
     setSelectedTags({});
-    setSelectedSides([])
-    setSelectedClefs([])
+    setSelectedSides([]);
+    setSelectedClefs([]);
   };
 
   return (
-    <div className="filter-bar-container" style={{backgroundColor: overrideBackgroundColor}}>
+    <div
+      className="filter-bar-container"
+      style={{ backgroundColor: overrideBackgroundColor }}
+    >
       <h2 className="filter-title">Filter</h2>
       <div className="inputs-container">
         <div className="side-inputs-container">
@@ -167,59 +257,39 @@ const FilterBar = ({ setSelectedTags, setSelectedClefs, setSelectedSides, overri
           <h3 className="tag-levels-inputs-container-title">Categories</h3>
           <div className="tag-levels-inputs-container-select-label-container">
             <p>Category 1</p>
-            <select
-              className="tag-levels-inputs-container-select"
-              ref={level1TagSelectRef}
-              onChange={(e) => handleCategory1SelectChange(e)}
-            >
-              {level1Tags.map((tag) => {
-                if (Object.keys(tag).length === 0) {
-                  return <option value="-1"></option>;
-                } else {
-                  return <option value={tag.id}>{tag.tag_name}</option>;
-                }
-              })}
-            </select>
+            <div className="tag-levels-inputs-container-select-container">
+              <Select
+                options={level1Tags}
+                onChange={handleCategory1SelectChange}
+                styles={selectStyles}
+                ref={level1TagSelectRef}
+              />
+            </div>
           </div>
           {level2Tags.length !== 0 && (
             <div className="tag-levels-inputs-container-select-label-container">
               <p>Category 2</p>
-              <select
-                className="tag-levels-inputs-container-select"
-                ref={level2TagSelectRef}
-                onChange={(e) => handleCategory2SelectChange(e)}
-              >
-                {level2Tags.length !== 0 &&
-                  level2Tags.map((tag, index) => {
-                    if (Object.keys(tag.tag).length === 0) {
-                      return <option value="-1"></option>;
-                    } else {
-                      return (
-                        <option value={tag.tag.id}>{tag.tag.tag_name}</option>
-                      );
-                    }
-                  })}
-              </select>
+              <div className="tag-levels-inputs-container-select-container">
+                <Select
+                  options={level2Tags}
+                  onChange={handleCategory2SelectChange}
+                  styles={selectStyles}
+                  ref={level2TagSelectRef}
+                />
+              </div>
             </div>
           )}
           {level3Tags.length !== 0 && (
             <div className="tag-levels-inputs-container-select-label-container">
               <p>Category 3</p>
-              <select
-                className="tag-levels-inputs-container-select"
-                ref={level3TagSelectRef}
-                onChange={(e) => handleCategory3SelectChange(e)}
-              >
-                {level3Tags.map((tag, index) => {
-                  if (Object.keys(tag.tag).length === 0) {
-                    return <option value="-1"></option>;
-                  } else {
-                    return (
-                      <option value={tag.tag.id}>{tag.tag.tag_name}</option>
-                    );
-                  }
-                })}
-              </select>
+              <div className="tag-levels-inputs-container-select-container">
+                <Select
+                  options={level3Tags}
+                  onChange={handleCategory3SelectChange}
+                  styles={selectStyles}
+                  ref={level3TagSelectRef}
+                />
+              </div>
             </div>
           )}
         </div>

@@ -20,18 +20,20 @@
     font-family: 'Glory', sans-serif;
 }
 
-.side-inputs-container, .clef-inputs-container {
+.side-inputs-container {
     width: 30%;
     min-width: 160px;
 }
 
 .tag-levels-inputs-container {
-    width: 40%;
+    width: 45%;
     min-width: 160px;
 }
 
 .clef-inputs-container {
     margin-left: 1rem;
+    width: 25%;
+    min-width: 150px;
 }
 
 .side-inputs-container-input-label-container, .clef-inputs-container-input-label-container {
@@ -61,6 +63,11 @@
 
 .tag-levels-inputs-container-select-label-container p {
     margin: 0;
+    min-width: 70px;
+}
+
+.tag-levels-inputs-container-select-container {
+    width: 70%;
 }
 
 .tag-levels-inputs-container-select-label-container select {
