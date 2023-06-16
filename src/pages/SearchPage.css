@@ -11,10 +11,24 @@
     width: 80%;
 }
 
-.sp-content-list-container {
+.searchPage-main-container h2 {
+    padding: 0;
+    margin-top: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.sp-books-list-container {
     width: 100%;
     background-color: #e7e7e7;
-    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: .5rem;
+    overflow: auto;
+    max-height: 35vh;
+}
+
+.sp-exercises-list-container {
+    width: 100%;
+    background-color: #e7e7e7;
     margin-bottom: 1.5rem;
     border-radius: .5rem;
     overflow: auto;

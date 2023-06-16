@@ -83,6 +83,12 @@ export function getAllBooks(setBooks) {
   });
 }
 
+export function getBooksBySearch(setBooks, searchString) {
+  axios.get(server_url + "api/book/?search=" + searchString).then((res) => {
+    setBooks(res.data.results);
+  });
+}
+
 /** requests and sets book details according to the passed in setter and book id*/
 export function getBookDetails(setBookDetails, id) {
   axios.get(`${server_url}api/book/${id}/`).then((res) => {

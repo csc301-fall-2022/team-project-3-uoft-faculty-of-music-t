@@ -236,7 +236,7 @@ const FilterBar = ({
       className="filter-bar-container"
       style={{ backgroundColor: overrideBackgroundColor }}
     >
-      <h2 className="filter-title">Filter</h2>
+      <h2 className="filter-title">Filter Exercises</h2>
       <div className="inputs-container">
         <div className="side-inputs-container">
           <h3 className="side-inputs-container-title">Left Side/Right Side</h3>
