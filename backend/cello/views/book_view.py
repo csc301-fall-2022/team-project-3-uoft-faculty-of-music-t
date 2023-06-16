@@ -27,8 +27,17 @@ class BookView(viewsets.ModelViewSet):
         author = self.request.query_params.getlist('author')
         title = self.request.query_params.getlist('title')
         date = self.request.query_params.getlist('date')
+        search = self.request.query_params.get('search')
 
         queryset = Book.objects.all()
+
+        if search:
+            # Book title match
+            book_title_matches = Book.objects.filter(title__icontains=search)
+            # Author match
+            author_matches = Book.objects.filter(author__icontains=search)
+
+            queryset = queryset.filter(Q(id__in=book_title_matches) | Q(id__in=author_matches))
 
         if title:
             queryset = queryset.filter(title__in=title)
